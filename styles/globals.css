@@ -16,6 +16,9 @@ html * {
 header {
   height: 10vh;
   background-color: red;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 main {

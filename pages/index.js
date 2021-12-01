@@ -1,11 +1,25 @@
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Seo from '../components/Seo'
 import Layout from '../components/Layout'
+import Hero from '../components/Hero'
+import About from '../components/About'
+import Skills from '../components/Skills'
+import Projects from '../components/Projects'
+import Contact from '../components/Contact'
 
-export default function Home() {
+const Home = () => {
   return (
     <Layout>
-      <h1>Hola</h1>
+      <Seo
+        title='prueba'
+        description='descripción de prueba'
+      />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
     </Layout>
   )
 }
+
+export default Home
