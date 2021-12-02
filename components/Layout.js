@@ -1,14 +1,14 @@
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children, lang, setLang }) => {
+const Layout = ({ children, translations }) => {
     return (
         <>
-            <Header lang={lang} setLang={setLang} />
+            <Header translations={translations} />
             <main>
                 {children}
             </main>
-            <Footer lang={lang} />
+            <Footer />
         </>
     )
 }

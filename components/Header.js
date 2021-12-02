@@ -3,12 +3,12 @@ import Theme from "./Theme"
 import Language from "./Language"
 import styles from '../styles/Header.module.css'
 
-const Header = ({ lang, setLang }) => {
+const Header = ({ translations }) => {
     return (
         <header>
-            <NavBar lang={lang} />
+            <NavBar translations={translations} />
             <Theme />
-            <Language lang={lang} setLang={setLang} />
+            <Language />
         </header>
     )
 }

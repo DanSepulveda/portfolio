@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import useLocale from '../hooks/useLocale'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
@@ -7,28 +6,16 @@ import About from '../components/About'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
-import { connect } from 'react-redux'
-import otherActions from '../redux/actions/otherActions'
-import useLocale from '../hooks/useLocale'
 
-const Home = ({ lang, setLang }) => {
-  const { locale, locales, defaultLocale, asPath } = useRouter()
-  const data = useLocale(locale)
-
-  const title = lang === 'es'
-    ? 'Bienvenido'
-    : 'Welcome'
-
-  const description = lang === 'es'
-    ? 'Descripción'
-    : 'Description'
+const Home = ({ translations }) => {
+  // const [translations] = useLocale('home')
 
   return (
-    <Layout setLang={setLang}>
-      <Seo
-        title={title}
-        description={description}
-      />
+    <Layout translations={translations}>
+      {/* <Seo
+        title={translations?.seo?.title}
+        description={translations?.seo?.description}
+      /> */}
       <Hero />
       <About />
       <Skills />
@@ -38,14 +25,20 @@ const Home = ({ lang, setLang }) => {
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    lang: state.others.lang
-  }
+export default Home
+
+export const getStaticProps = async ({ locale }) => {
+  const translations = await import(`../locales/${locale}/navbar.json`)
+  return { props: { translations: translations.default } }
 }
 
-const mapDispatchToProps = {
-  setLang: otherActions.setLang
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+// export const getStaticPaths = async ({ locales }) => {
+//   const paths = [
+//     { params: { index: 'es' }, locale: 'es' },
+//     { params: { index: 'en' }, locale: 'es' },
+//   ]
+//   return {
+//     paths,
+//     fallback: true
+//   }
+// }
