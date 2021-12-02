@@ -6,6 +6,7 @@
         "contact": "Contact"
     },
     "languages": {
+        "title": "Language",
         "en": {
             "src": "/assets/en-lang.png",
             "alt": "United Kingdom Flag"

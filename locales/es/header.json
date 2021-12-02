@@ -6,6 +6,7 @@
         "contact": "Contacto"
     },
     "languages": {
+        "title": "Idioma",
         "en": {
             "src": "/assets/en.png",
             "alt": "Bandera de Reino Unido"

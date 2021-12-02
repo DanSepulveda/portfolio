@@ -18,3 +18,8 @@ section.links nav a {
   font-size: 17px;
   margin-right: 1em;
 }
+
+/* FLAGS */
+section.flags > a:last-child {
+  margin-left: 0.7em;
+}

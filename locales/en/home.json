@@ -1,18 +1,36 @@
 {
     "seo": {
-        "title": "Page title",
+        "title": "Daniel Sepúlveda Portfolio",
         "description": "Page description"
     },
-    "hero": {},
+    "hero": {
+        "title": "Full Stack Developer",
+        "subtitle": "",
+        "button": "Contact me"
+    },
     "about": {},
     "skills": {},
     "projects": {},
     "contact": {
-        "labels": {
-            "firstname": "First Name",
-            "lastname": "Last name",
-            "email": "Email",
-            "message": "Message"
-        }
+        "title": "Send me a message",
+        "inputs": {
+            "firstname": {
+                "label": "First Name",
+                "placeholder": ""
+            },
+            "lastname": {
+                "label": "Last name",
+                "placeholder": ""
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": ""
+            },
+            "message": {
+                "label": "Message",
+                "placeholder": ""
+            }
+        },
+        "button": "Send message"
     }
 }
