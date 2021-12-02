@@ -1,5 +1,4 @@
 const Language = ({ lang, setLang }) => {
-    console.log(lang)
     return (
         <section>
             <img

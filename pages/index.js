@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
@@ -9,11 +9,11 @@ import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import { connect } from 'react-redux'
 import otherActions from '../redux/actions/otherActions'
-import Link from "next/link";
+import useLocale from '../hooks/useLocale'
 
 const Home = ({ lang, setLang }) => {
   const { locale, locales, defaultLocale, asPath } = useRouter()
-  console.log(locale, locales, defaultLocale, asPath)
+  const data = useLocale(locale)
 
   const title = lang === 'es'
     ? 'Bienvenido'
