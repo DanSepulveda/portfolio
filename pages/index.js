@@ -6,18 +6,26 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
-const Home = () => {
+const Home = ({ lang, setLang }) => {
+  const title = lang === 'es'
+    ? 'Bienvenido'
+    : 'Welcome'
+
+  const description = lang === 'es'
+    ? 'Descripción'
+    : 'Description'
+
   return (
-    <Layout>
+    <Layout lang={lang} setLang={setLang}>
       <Seo
-        title='prueba'
-        description='descripción de prueba'
+        title={title}
+        description={description}
       />
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+      <Hero lang={lang} />
+      <About lang={lang} />
+      <Skills lang={lang} />
+      <Projects lang={lang} />
+      <Contact lang={lang} />
     </Layout>
   )
 }

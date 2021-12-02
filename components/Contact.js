@@ -31,7 +31,6 @@ const Contact = () => {
                     <Button type="submit">Enviar</Button>
                 </Form>
             </Formik>
-
         </section>
     )
 }

@@ -1,13 +1,14 @@
-const Header = () => {
+import NavBar from './Navbar'
+import Theme from "./Theme"
+import Language from "./Language"
+import styles from '../styles/Header.module.css'
+
+const Header = ({ lang, setLang }) => {
     return (
         <header>
-            <img src='/assets/projects/tgif/tgif.png' />
-            <nav>
-                <a href='#'>Home</a>
-                <a href='#about'>About me</a>
-                <a href='#projects'>Projects</a>
-                <a href='#contact'>Contact</a>
-            </nav>
+            <NavBar lang={lang} />
+            <Theme />
+            <Language lang={lang} setLang={setLang} />
         </header>
     )
 }
