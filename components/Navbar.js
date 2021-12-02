@@ -1,15 +1,15 @@
-import useLocale from "../hooks/useLocale"
+import styles from '../styles/Header.module.css'
+import Image from 'next/image'
 
-const Navbar = ({ translations }) => {
-    // const [translations] = useLocale('navbar')
+const Navbar = ({ trans }) => {
     return (
-        <section>
-            <img src='/assets/projects/tgif/tgif.png' />
+        <section className={styles.links}>
+            <Image src='/assets/en.png' width={40} height={20} />
             <nav>
-                <a href='#'>{translations?.home}</a>
-                <a href='#about'>{translations?.about}</a>
-                <a href='#projects'>{translations?.projects}</a>
-                <a href='#contact'>{translations?.contact}</a>
+                <a href='#'>{trans.home}</a>
+                <a href='#about'>{trans.about}</a>
+                <a href='#projects'>{trans.projects}</a>
+                <a href='#contact'>{trans.contact}</a>
             </nav>
         </section>
     )

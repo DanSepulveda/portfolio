@@ -1,14 +1,15 @@
 import NavBar from './Navbar'
-import Theme from "./Theme"
+// import Theme from "./Theme"
 import Language from "./Language"
-import styles from '../styles/Header.module.css'
 
-const Header = ({ translations }) => {
+const Header = ({ trans }) => {
+    const { navbar, languages } = trans
+
     return (
         <header>
-            <NavBar translations={translations} />
-            <Theme />
-            <Language />
+            <NavBar trans={navbar} />
+            {/* <Theme /> */}
+            <Language trans={languages} />
         </header>
     )
 }

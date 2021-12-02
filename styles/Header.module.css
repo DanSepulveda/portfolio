@@ -1,0 +1,20 @@
+section.links {
+  display: flex;
+}
+
+section.links > span {
+  margin-right: 2em !important;
+}
+
+section.links nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.links nav a {
+  color: #444;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  margin-right: 1em;
+}

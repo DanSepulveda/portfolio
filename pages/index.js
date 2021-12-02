@@ -1,4 +1,3 @@
-import useLocale from '../hooks/useLocale'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
@@ -7,20 +6,17 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
-const Home = ({ translations }) => {
-  // const [translations] = useLocale('home')
+const Home = ({ translations, header, footer }) => {
+  const { seo, hero, about, skills, projects, contact } = translations
 
   return (
-    <Layout translations={translations}>
-      {/* <Seo
-        title={translations?.seo?.title}
-        description={translations?.seo?.description}
-      /> */}
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+    <Layout trans={{ header, footer }}>
+      <Seo trans={seo} />
+      <Hero trans={hero} />
+      <About trans={about} />
+      <Skills trans={skills} />
+      <Projects trans={projects} />
+      <Contact trans={contact} />
     </Layout>
   )
 }
@@ -28,17 +24,14 @@ const Home = ({ translations }) => {
 export default Home
 
 export const getStaticProps = async ({ locale }) => {
-  const translations = await import(`../locales/${locale}/navbar.json`)
-  return { props: { translations: translations.default } }
+  const translations = await import(`../locales/${locale}/home.json`)
+  const header = await import(`../locales/${locale}/header.json`)
+  const footer = await import(`../locales/${locale}/footer.json`)
+  return {
+    props: {
+      translations: translations.default,
+      header: header.default,
+      footer: footer.default
+    }
+  }
 }
-
-// export const getStaticPaths = async ({ locales }) => {
-//   const paths = [
-//     { params: { index: 'es' }, locale: 'es' },
-//     { params: { index: 'en' }, locale: 'es' },
-//   ]
-//   return {
-//     paths,
-//     fallback: true
-//   }
-// }

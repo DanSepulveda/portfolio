@@ -1,14 +1,16 @@
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ children, translations }) => {
+const Layout = ({ children, trans }) => {
+    const { header, footer } = trans
+
     return (
         <>
-            <Header translations={translations} />
+            <Header trans={header} />
             <main>
                 {children}
             </main>
-            <Footer />
+            <Footer trans={footer} />
         </>
     )
 }

@@ -1,0 +1,18 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "about": "Sobre Mí",
+        "projects": "Proyectos",
+        "contact": "Contacto"
+    },
+    "languages": {
+        "en": {
+            "src": "/assets/en.png",
+            "alt": "Bandera de Reino Unido"
+        },
+        "es": {
+            "src": "/assets/es-lang.png",
+            "alt": "Bander de España"
+        } 
+    }
+}

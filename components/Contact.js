@@ -3,7 +3,8 @@ import * as Yup from 'yup'
 import InputText from './InputText'
 import Button from './Button'
 
-const Contact = () => {
+const Contact = ({ trans }) => {
+    const { labels } = trans
     return (
         <section>
             <Formik
@@ -24,10 +25,10 @@ const Contact = () => {
                 onSubmit={values => console.log(values)}
             >
                 <Form>
-                    <InputText label="lala" name="firstName" />
-                    <InputText label="lala" name="lastName" />
-                    <InputText label="lala" name="email" />
-                    <InputText label="lala" name="message" />
+                    <InputText label={labels.firstname} name="firstName" />
+                    <InputText label={labels.lastname} name="lastName" />
+                    <InputText label={labels.email} name="email" />
+                    <InputText label={labels.message} name="message" />
                     <Button type="submit">Enviar</Button>
                 </Form>
             </Formik>

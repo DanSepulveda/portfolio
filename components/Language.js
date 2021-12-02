@@ -1,22 +1,33 @@
-const Language = ({ lang, setLang }) => {
+import { useRouter } from 'next/router'
+import Link from 'next/link'
+import Image from 'next/image'
+
+const Language = ({ trans }) => {
+    const { en, es } = trans
+    const { asPath } = useRouter()
+
     return (
         <section>
-            <img
-                src={`/assets/${lang === 'en' ? 'en-lang' : 'en'}.png`}
-                alt="English Icon"
-                onClick={() => {
-                    setLang('en')
-                    localStorage.setItem('lang', 'en')
-                }}
-            />
-            <img
-                src={`/assets/${lang === 'es' ? 'es-lang' : 'es'}.png`}
-                alt="Spanish Icon"
-                onClick={() => {
-                    setLang('es')
-                    localStorage.setItem('lang', 'es')
-                }}
-            />
+            <Link href={asPath} locale='en'>
+                <a>
+                    <Image
+                        src={en.src}
+                        alt={en.alt}
+                        width={40}
+                        height={26}
+                    />
+                </a>
+            </Link>
+            <Link href={asPath} locale='es'>
+                <a>
+                    <Image
+                        src={es.src}
+                        alt={es.alt}
+                        width={40}
+                        height={26}
+                    />
+                </a>
+            </Link>
         </section>
     )
 }

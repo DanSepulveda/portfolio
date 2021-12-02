@@ -1,0 +1,18 @@
+{
+    "navbar": {
+        "home": "Home",
+        "about": "About Me",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "languages": {
+        "en": {
+            "src": "/assets/en-lang.png",
+            "alt": "United Kingdom Flag"
+        },
+        "es": {
+            "src": "/assets/es.png",
+            "alt": "Spain Flag"
+        } 
+    }
+}

@@ -3,5 +3,16 @@
         "title": "Page title",
         "description": "Page description"
     },
-    "test": "hola"
+    "hero": {},
+    "about": {},
+    "skills": {},
+    "projects": {},
+    "contact": {
+        "labels": {
+            "firstname": "First Name",
+            "lastname": "Last name",
+            "email": "Email",
+            "message": "Message"
+        }
+    }
 }
