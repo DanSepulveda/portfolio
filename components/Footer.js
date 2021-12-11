@@ -1,8 +1,8 @@
 import Image from 'next/image'
 
-const Footer = () => {
+const Footer = ({trans, theme}) => {
     return (
-        <footer>
+        <footer data-theme={theme}>
             <section>
                 {/* <Image />
                 <Image />

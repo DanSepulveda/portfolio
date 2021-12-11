@@ -1,12 +1,13 @@
 section.contact {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 12vh;
+  justify-content: space-between;
+  padding-top: 7vh;
+  padding-bottom: 12vh;
   /* background-color: red; */
-  background-color: var(--background);
 }
 
 section.contact form {

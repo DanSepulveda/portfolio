@@ -21,7 +21,7 @@ const useTheme = () => {
         }
     }, [theme])
 
-    return theme
+    return [theme, setTheme]
 }
 
 export default useTheme
