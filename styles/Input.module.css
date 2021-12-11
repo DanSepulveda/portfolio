@@ -1,0 +1,46 @@
+div.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+div.container label {
+  margin-bottom: 0.3em;
+  font-size: 23px;
+}
+
+div.container input,
+div.container textarea {
+  width: 100%;
+  padding: 0.4em 0.5em;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  color: rgba(68, 68, 68, 0.9);
+  background-color: #eee;
+  box-shadow: 1px 1px 6px rgba(121, 121, 121, 0.2),
+    -1px -1px 6px rgba(121, 121, 121, 0.2);
+  border: 2px solid transparent;
+  transition: all 0.5s ease;
+}
+
+div.container input:focus,
+div.container textarea:focus {
+  border: 2px solid rgba(121, 121, 121, 0.3);
+}
+
+div.container input::placeholder,
+div.container textarea::placeholder {
+  color: rgba(68, 68, 68, 0.5);
+}
+
+div.container div {
+  min-height: 25px;
+  margin-top: 0.25em;
+}
+
+div.container span {
+  color: rgb(247, 57, 23);
+}

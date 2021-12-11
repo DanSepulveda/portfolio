@@ -12,24 +12,27 @@
     "skills": {},
     "projects": {},
     "contact": {
-        "title": "Send me a message",
+        "title": "Contact",
         "inputs": {
-            "firstname": {
-                "label": "First Name",
-                "placeholder": ""
-            },
-            "lastname": {
-                "label": "Last name",
-                "placeholder": ""
+            "name": {
+                "label": "Name",
+                "placeholder": "John"
             },
             "email": {
                 "label": "Email",
-                "placeholder": ""
+                "placeholder": "example@example.com"
             },
             "message": {
                 "label": "Message",
-                "placeholder": ""
+                "placeholder": "Write your message here..."
             }
+        },
+        "errors": {
+            "required": "Required field.",
+            "min3": "Must be 3 characters or more.",
+            "min4": "Must be 4 characters or more.",
+            "max15": "Must be 15 characters or less.",
+            "email": "Invalid email address."
         },
         "button": "Send message"
     }

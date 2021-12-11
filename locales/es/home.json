@@ -12,25 +12,28 @@
     "skills": {},
     "projects": {},
     "contact": {
-        "title": "Mándame un mensaje",
+        "title": "Contacto",
         "inputs": {
-            "firstname": {
+            "name": {
                 "label": "Nombre",
-                "placeholder": ""
-            },
-            "lastname": {
-                "label": "Apellido",
-                "placeholder": ""
+                "placeholder": "Juan"
             },
             "email": {
                 "label": "Correo electrónico",
-                "placeholder": ""
+                "placeholder": "ejemplo@ejemplo.com"
             },
             "message": {
                 "label": "Mensaje",
-                "placeholder": ""
+                "placeholder": "Escribe tu mensaje acá..."
             }
         },
-        "button": "Enviar mensaje!"
+        "errors": {
+            "required": "Campo requerido.",
+            "min3": "Debe tener 3 caracteres o más.",
+            "min4": "Debe tener 4 caracteres o más.",
+            "max15": "Debe tener 15 caracteres o menos.",
+            "email": "Correo inválido."
+        },
+        "button": "Enviar mensaje"
     }
 }

@@ -2,35 +2,49 @@ import styles from '../styles/Contact.module.css'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import InputText from './InputText'
+import InputArea from './InputArea'
 import Button from './Button'
 
 const Contact = ({ trans }) => {
-    const { title, inputs, button } = trans
+    const { title, inputs, errors, button } = trans
     return (
         <section id="contact" className={styles.contact}>
             <h2>{title}</h2>
             <Formik
-                initialValues={{ firstName: '', lastName: '', email: '', message: '' }}
+                initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={Yup.object({
-                    firstName: Yup.string()
-                        .max(15, 'Must be 15 characters or less')
-                        .required('Required'),
-                    lastName: Yup.string()
-                        .max(20, 'Must be 20 characters or less'),
+                    name: Yup.string()
+                        .min(3, errors.min3)
+                        .max(15, errors.max15)
+                        .required(errors.required),
                     email: Yup.string()
-                        .email('Invalid email address')
-                        .required('Required'),
+                        .email(errors.email)
+                        .required(errors.required),
                     message: Yup.string()
-                        .min(4, 'Too short message')
-                        .required('Required')
+                        .min(4, errors.min4)
+                        .required(errors.required)
                 })}
                 onSubmit={values => console.log(values)}
             >
                 <Form>
-                    <InputText label={inputs.firstname.label} name="firstName" />
-                    <InputText label={inputs.lastname.label} name="lastName" />
-                    <InputText label={inputs.email.label} name="email" />
-                    <InputText label={inputs.message.label} name="message" />
+                    <InputText
+                        name="name"
+                        id="name"
+                        label={inputs.name.label}
+                        placeholder={inputs.name.placeholder}
+                    />
+                    <InputText
+                        name="email"
+                        id="email"
+                        label={inputs.email.label}
+                        placeholder={inputs.email.placeholder}
+                    />
+                    <InputArea
+                        name="message"
+                        id="message"
+                        label={inputs.message.label}
+                        placeholder={inputs.message.placeholder}
+                    />
                     <Button type="submit">{button}</Button>
                 </Form>
             </Formik>
