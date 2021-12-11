@@ -3,9 +3,11 @@ import NavBar from './Navbar'
 import Theme from "./Theme"
 import Language from "./Language"
 
-const SideMenu = ({ navbar, languages, theme, setTheme }) => {
+const SideMenu = ({ navbar, languages, theme, setTheme, open }) => {
+    const openStyles = open ? `${styles.canvas}` : `${styles.closed}`
+
     return (
-        <div className={styles.canvas}>
+        <div className={openStyles}>
             <NavBar trans={navbar} theme={theme} side={true} />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <Theme theme={theme} setTheme={setTheme} side={true} />

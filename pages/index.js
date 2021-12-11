@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Head from 'next/head'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
@@ -13,16 +14,16 @@ const Home = ({ translations, header, footer }) => {
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
-    if(!savedTheme){
+    if (!savedTheme) {
       localStorage.setItem('theme', 'light')
-    }else{
+    } else {
       setTheme(savedTheme)
     }
   }, [])
 
   return (
     <Layout trans={{ header, footer }} theme={theme} setTheme={setTheme}>
-      <Seo trans={seo} />
+      <Seo seo={seo} />
       <Hero trans={hero} />
       <About trans={about} />
       <Skills trans={skills} />

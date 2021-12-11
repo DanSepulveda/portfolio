@@ -27,7 +27,6 @@ const Theme = ({ theme, setTheme, side }) => {
                     >
                     </div>
                 </label>
-
             </div>
         </section>
     )

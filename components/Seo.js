@@ -1,10 +1,10 @@
 import Head from 'next/head'
 
-const Seo = ({ title, description }) => {
+const Seo = ({ seo }) => {
     return (
         <Head>
-            <title>{title}</title>
-            <meta name="description" content={description} />
+            <title>{seo.title}</title>
+            <meta name="description" content={seo.description} />
             <link rel="icon" href="/favicon.ico" />
         </Head>
     )

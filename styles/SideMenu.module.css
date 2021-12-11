@@ -1,4 +1,6 @@
-div.canvas{
+div.canvas,
+div.closed{
+    animation: appear .3s linear;
     width: 250px;
     height: 100vh;
     padding: 2em 1em;
@@ -12,4 +14,25 @@ div.canvas{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+@keyframes appear {
+    0%{
+        transform: translateX(-250px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 769px) {
+    div.canvas,
+    div.closed{
+        display: none;
+    }
+}
+
+div.closed{
+    animation: none;
+    transform: translateX(-250px);
 }

@@ -15,7 +15,7 @@ const Header = ({ trans, theme, setTheme }) => {
             <Theme theme={theme} setTheme={setTheme} side={false} />
             <Language trans={languages} side={false} />
             <Hamburger open={open} setOpen={setOpen} />
-            {open && <SideMenu navbar={navbar} languages={languages} theme={theme} setTheme={setTheme} />}
+            <SideMenu navbar={navbar} languages={languages} theme={theme} setTheme={setTheme} open={open} />
         </header>
     )
 }
