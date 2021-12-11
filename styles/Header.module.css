@@ -96,7 +96,7 @@ section.sidetoggle input:checked ~label div.button{
 
 /* TOGGLE SIDE */
 section.sidetoggle{
-  margin-top: 12em;
+  margin-bottom: 1em;
 }
 
 /* FLAGS */
