@@ -1,8 +1,10 @@
+/* NAVBAR */
 section.links {
+  flex: 1;
   display: flex;
 }
 
-section.links > span {
+section.links > a {
   margin-right: 3em !important;
 }
 
@@ -14,16 +16,128 @@ section.links nav {
 section.links nav a {
   text-decoration: none;
   font-weight: 600;
-  font-size: 17px;
+  font-size: 18px;
   margin-right: 1em;
 }
 
-/* FLAGS */
-section.flags h4{
-  text-align: center;
-  margin-bottom: 3px;
-  color: var(--prueba)
+/* NAVBAR SIDE */
+section.sidelinks{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
 }
-section.flags > a:last-child {
+
+section.sidelinks > a{
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+section.sidelinks nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.sidelinks nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 22px;
+  border-bottom: 1px solid var(--text-color);
+  width: 100%;
+  text-align: center;
+  padding: .5em 0;
+}
+
+section.sidelinks nav a:first-child{
+  border-top: 1px solid var(--text-color);
+}
+
+/* TOOGLE */
+section.toggle{
+  margin-right: 3em;
+}
+
+section.toggle > div,
+section.sidetoggle > div{
+  width: 60px;
+  height: 35px;
+  border-radius: 20px;
+  background-color: #ccc;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+}
+
+section.toggle input,
+section.sidetoggle input{
+  display: none;
+}
+
+section.toggle > div div,
+section.sidetoggle > div div{
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+
+div.button{
+  transition: all .5s;
+  cursor: pointer;
+}
+
+section.toggle input:checked ~label div.button,
+section.sidetoggle input:checked ~label div.button{
+  transform: translateX(23px);
+}
+
+/* TOGGLE SIDE */
+section.sidetoggle{
+  margin-top: 12em;
+}
+
+/* FLAGS */
+section.flags a,
+section.sideflags a{
+  height: 26px !important;
+}
+
+section.flags > a:last-child,
+section.sideflags > a:last-child{
   margin-left: 0.7em;
+}
+
+/* MENU */
+div.menu{
+  display: none;
+  background-color: #ccc;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+div.menu svg{
+  padding-top: 3px;
+  font-size: 2em;
+  fill: rgb(39, 39, 39);
+}
+
+@media (max-width: 992px) {
+  section.toggle{
+    margin-right: 1.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  section.links nav,
+  section.toggle,
+  section.flags{
+    display: none;
+  }
+
+  div.menu{
+    display: block;
+  }
 }

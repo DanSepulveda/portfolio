@@ -3,13 +3,13 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Language = ({ trans }) => {
+const Language = ({ trans, side }) => {
     const { en, es, title } = trans
     const { asPath } = useRouter()
+    const classType = side ? `${styles.sideflags}` : `${styles.flags}`
 
     return (
-        <section className={styles.flags}>
-            <h4>{title}</h4>
+        <section className={classType}>
             <Link href={asPath} locale='en'>
                 <a>
                     <Image

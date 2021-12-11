@@ -1,9 +1,12 @@
 {
     "navbar": {
-        "home": "Inicio",
-        "about": "Sobre Mí",
-        "projects": "Proyectos",
-        "contact": "Contacto"
+        "links": {
+            "home": "Inicio",
+            "about": "Sobre Mí",
+            "projects": "Proyectos",
+            "contact": "Contacto"
+        },
+        "alt": "Logo Daniel Sepúlveda"
     },
     "languages": {
         "title": "Idioma",
@@ -14,6 +17,6 @@
         "es": {
             "src": "/assets/es-lang.png",
             "alt": "Bander de España"
-        } 
+        }
     }
 }

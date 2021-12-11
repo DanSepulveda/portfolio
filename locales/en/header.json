@@ -1,9 +1,12 @@
 {
     "navbar": {
-        "home": "Home",
-        "about": "About Me",
-        "projects": "Projects",
-        "contact": "Contact"
+        "links": {
+            "home": "Home",
+            "about": "About Me",
+            "projects": "Projects",
+            "contact": "Contact"
+        },
+        "alt": "Daniel Sepúlveda Logo"
     },
     "languages": {
         "title": "Language",
@@ -14,6 +17,6 @@
         "es": {
             "src": "/assets/es.png",
             "alt": "Spain Flag"
-        } 
+        }
     }
 }
