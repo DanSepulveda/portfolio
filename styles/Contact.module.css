@@ -1,21 +1,25 @@
 section.contact {
-  /* min-height: 100vh; */
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  /* flex-direction: column; */
+  align-items: flex-start;
+  justify-content: center;
   padding-top: 7vh;
   padding-bottom: 12vh;
-  /* background-color: red; */
+  flex-wrap: wrap;
+}
+
+section.contact h2{
+  width: 100%;
+  text-align: center;
 }
 
 section.contact form {
-  width: 60%;
+  width: 40%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* grid-template-rows: repeat(3, 1fr); */
   column-gap: 2em;
+  margin-right: 5em;
 }
 
 section.contact form div:first-child {
@@ -41,6 +45,11 @@ section.contact form div:last-child {
 section.contact form button {
   grid-column-start: span 2;
   grid-row: 4;
+}
+
+section.contact svg{
+  font-size: 20em;
+  fill: #32C1CD;
 }
 
 @media (max-width: 992px) {

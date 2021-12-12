@@ -18,6 +18,7 @@ section.links nav a {
   font-weight: 600;
   font-size: 18px;
   margin-right: 1em;
+  /* color: var(--primary-color) */
 }
 
 /* NAVBAR SIDE */
@@ -42,14 +43,14 @@ section.sidelinks nav a {
   text-decoration: none;
   font-weight: 600;
   font-size: 22px;
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--primary-color);
   width: 100%;
   text-align: center;
   padding: .5em 0;
 }
 
 section.sidelinks nav a:first-child{
-  border-top: 1px solid var(--text-color);
+  border-top: 1px solid var(--primary-color);
 }
 
 /* TOOGLE */

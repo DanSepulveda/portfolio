@@ -9,7 +9,9 @@
         "button": "Contáctame"
     },
     "about": {},
-    "skills": {},
+    "skills": {
+        "title": "Tecnologías"
+    },
     "projects": {},
     "contact": {
         "title": "Contacto",

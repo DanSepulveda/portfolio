@@ -4,12 +4,14 @@ import * as Yup from 'yup'
 import InputText from './InputText'
 import InputArea from './InputArea'
 import Button from './Button'
+import { BsMailbox } from 'react-icons/bs'
 
 const Contact = ({ trans }) => {
     const { title, inputs, errors, button } = trans
     return (
         <section id="contact" className={styles.contact}>
             <h2>{title}</h2>
+            <BsMailbox />
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={Yup.object({

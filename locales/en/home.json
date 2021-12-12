@@ -9,7 +9,9 @@
         "button": "Contact me"
     },
     "about": {},
-    "skills": {},
+    "skills": {
+        "title": "Skills"
+    },
     "projects": {},
     "contact": {
         "title": "Contact",

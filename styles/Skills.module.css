@@ -1,0 +1,12 @@
+section.skills{
+    width: 60%;
+    margin-bottom: 15vh;
+}
+
+section.skills > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 70px);
+    justify-content: space-between;
+    column-gap: 5em;
+    row-gap: 4em;
+}
