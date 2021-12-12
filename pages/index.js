@@ -1,5 +1,5 @@
+import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Head from 'next/head'
 import Seo from '../components/Seo'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
@@ -39,11 +39,15 @@ export const getStaticProps = async ({ locale }) => {
   const translations = await import(`../locales/${locale}/home.json`)
   const header = await import(`../locales/${locale}/header.json`)
   const footer = await import(`../locales/${locale}/footer.json`)
+  // const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
+  // const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
   return {
     props: {
       translations: translations.default,
       header: header.default,
-      footer: footer.default
+      footer: footer.default,
+      // technologies: technologies.data.response,
+      // projects: projects.data.response
     }
   }
 }

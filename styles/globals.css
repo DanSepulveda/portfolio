@@ -1,24 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 :root{
-  --bg-header: rgba(238, 238, 238, 0.95);
-  --header-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
-  --bg-main: rgb(236, 233, 230);
-  --bg-main2: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
-  --bg-main3: linear-gradient(to right, #FFFFFF, #ECE9E6);
-  --bg-side: rgb(231, 231, 231);
+  --bg-header: #eeeeeef2;
+  --header-shadow: 0px 5px 5px #0000001a;
+  --bg-main: #ece9e6;
+  --bg-main2: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
+  --bg-main3: linear-gradient(to right, #ffffff, #ece9e6);
+  --bg-side: #e7e7e7;
+  --basic-shadow: 2px 2px 5px #0000001a, -2px -2px 5px #0000001a;
 
   --primary-color: rgb(24, 46, 53);
-  --secondary-color: rgb(39, 39, 39);
+  /* --secondary-color: rgb(39, 39, 39); */
+  --secondary-color: #437d96;
 }
 
 [data-theme='dark']{
-  --bg-header: rgb(24, 46, 53);
-  --header-shadow: 0px 5px 10px rgb(29, 57, 70);
-  --bg-main: rgb(29, 57, 70);
-  --bg-main2: -webkit-linear-gradient(to right, #2C5364, #203A43, #152c36);
-  --bg-main3: linear-gradient(to right, #2C5364, #203A43, #152c36);
+  --bg-header: #182e35;
+  --header-shadow: 0px 5px 10px #1d3946;
+  --bg-main: #1d3946;
+  --bg-main2: -webkit-linear-gradient(to right, #2c5364, #203a43, #152c36);
+  --bg-main3: linear-gradient(to right, #2c5364, #203a43, #152c36);
   --bg-side: rgb(19, 37, 43);
+  --basic-shadow: 2px 2px 5px #2c5364, -2px -2px 5px #2c5364;
 
   --primary-color: rgb(236, 233, 230);
   --secondary-color: rgb(14, 173, 179);
