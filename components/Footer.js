@@ -1,5 +1,4 @@
 import styles from '../styles/Footer.module.css'
-import Image from 'next/image'
 import { BsLinkedin, BsGithub, BsEnvelopeFill } from 'react-icons/bs'
 
 const Footer = ({ trans, theme }) => {
@@ -16,7 +15,11 @@ const Footer = ({ trans, theme }) => {
                     <BsGithub />
                 </a>
             </section>
-            <span>Daniel Sepúlveda Pérez - &copy; All Rigths Reserved</span>
+            <div className={styles.spanContainer}>
+                <span>Daniel Sepúlveda</span>
+                <span className={styles.line}> - </span>
+                <span>&copy; {trans.rights}</span>
+            </div>
         </footer>
     )
 }

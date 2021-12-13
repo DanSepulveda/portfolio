@@ -12,8 +12,8 @@ div.closed{
     background-color: var(--bg-side);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 @keyframes appear {
@@ -25,14 +25,14 @@ div.closed{
     }
 }
 
+div.closed{
+    animation: none;
+    transform: translateX(-250px);
+}
+
 @media (min-width: 769px) {
     div.canvas,
     div.closed{
         display: none;
     }
-}
-
-div.closed{
-    animation: none;
-    transform: translateX(-250px);
 }

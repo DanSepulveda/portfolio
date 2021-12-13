@@ -12,3 +12,14 @@ section.icons a:nth-child(2){
 section.icons a:hover{
     text-decoration: underline;
 }
+
+@media (max-width: 595px) {
+    span.line{
+        display: none;
+    }
+    div.spanContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
