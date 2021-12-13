@@ -18,10 +18,9 @@ div.container textarea {
   outline: none;
   border: none;
   font-size: 17px;
-  color: rgba(68, 68, 68, 0.9);
-  background-color: #eee;
-  box-shadow: 1px 1px 6px rgba(121, 121, 121, 0.2),
-    -1px -1px 6px rgba(121, 121, 121, 0.2);
+  color: var(--input-color);
+  background-color: var(--bg-input);
+  box-shadow: var(--basic-shadow);
   border: 2px solid transparent;
   transition: all 0.5s ease;
 }
@@ -33,7 +32,7 @@ div.container textarea:focus {
 
 div.container input::placeholder,
 div.container textarea::placeholder {
-  color: rgba(68, 68, 68, 0.5);
+  color: var(--placeholder-color);
 }
 
 div.container div {
@@ -42,5 +41,5 @@ div.container div {
 }
 
 div.container span {
-  color: rgb(247, 57, 23);
+  color: var(--error-color);
 }

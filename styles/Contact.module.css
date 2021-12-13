@@ -1,15 +1,14 @@
 section.contact {
   width: 100%;
   display: flex;
-  /* flex-direction: column; */
   align-items: flex-start;
   justify-content: center;
-  padding-top: 7vh;
   padding-bottom: 12vh;
   flex-wrap: wrap;
 }
 
-section.contact h2{
+section.contact h2,
+section.contact p{
   width: 100%;
   text-align: center;
 }
@@ -20,6 +19,7 @@ section.contact form {
   grid-template-columns: repeat(2, 1fr);
   column-gap: 2em;
   margin-right: 5em;
+  padding-top: 10px;
 }
 
 section.contact form div:first-child {
@@ -37,37 +37,74 @@ section.contact form div:nth-child(3) {
   grid-row: 2;
 }
 
-section.contact form div:last-child {
+section.contact form button {
   grid-column-start: span 2;
   grid-row: 3;
 }
 
-section.contact form button {
-  grid-column-start: span 2;
-  grid-row: 4;
+div.container{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.message{
+  border: 2px solid #32C1CD;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3em .5em;
+  /* box-shadow: var(--big-shadow); */
+}
+
+div.message p{
+  font-size: 18px;
 }
 
 section.contact svg{
-  font-size: 20em;
+  font-size: 6em;
   fill: #32C1CD;
+  position: relative;
+  top: 16px;
+}
+
+@media (max-width: 1200px) {
+  section.contact form{
+    width: 50%;
+  }
+  
 }
 
 @media (max-width: 992px) {
   section.contact form{
-    width: 75%;
+    width: 60%;
+    margin-right: 2.5em;
+  }
+
+  div.container{
+    width: 30%;
   }
 }
 
 @media (max-width: 768px) {
   section.contact form{
     width: 85%;
-  }
-}
-
-@media (max-width: 576px) {
-  section.contact form{
-    width: 90%;
     display: flex;
     flex-direction: column;
+    margin-right: 0;
+    order: 2;
+  }
+
+  div.container{
+    width: 85%;
+    order: 1;
+    margin-bottom: 2em;
+  }
+
+  div.message{
+    padding: 1.5em 1em;
+    padding-top: 1.8em;
   }
 }

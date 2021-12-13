@@ -20,11 +20,11 @@ div.container span.name{
     transform: translatey(80px);
     display: none;
     transition: all .1s;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1), -1px -1px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--basic-shadow);
 }
 
 div.container div.tech:hover{
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1), -1px -1px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--big-shadow);
 }
 
 div.container div.tech:hover ~ span.name{

@@ -4,14 +4,13 @@ import * as Yup from 'yup'
 import InputText from './InputText'
 import InputArea from './InputArea'
 import Button from './Button'
-import { BsMailbox } from 'react-icons/bs'
+import { FaEnvelopeOpenText } from 'react-icons/fa'
 
 const Contact = ({ trans }) => {
-    const { title, inputs, errors, button } = trans
+    const { title, subtitle, inputs, errors, button } = trans
     return (
         <section id="contact" className={styles.contact}>
             <h2>{title}</h2>
-            <BsMailbox />
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={Yup.object({
@@ -50,6 +49,12 @@ const Contact = ({ trans }) => {
                     <Button type="submit">{button}</Button>
                 </Form>
             </Formik>
+            <div className={styles.container}>
+                <FaEnvelopeOpenText />
+                <div className={styles.message}>
+                    <p>{subtitle}</p>
+                </div>
+            </div>
         </section>
     )
 }

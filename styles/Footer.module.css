@@ -2,15 +2,15 @@ section.icons svg{
     font-size: 2em;
     line-height: 2.2em;
     cursor: pointer;
-    transition: all .3s;
+    transition: all .1s;
 }
 
 section.icons a:nth-child(2){
     margin: 0 3em;
 }
 
-section.icons a:hover{
-    text-decoration: underline;
+section.icons svg:hover{
+    fill: var(--secondary-color);
 }
 
 @media (max-width: 595px) {

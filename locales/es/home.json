@@ -15,6 +15,7 @@
     "projects": {},
     "contact": {
         "title": "Contacto",
+        "subtitle": "Si quieres saber más sobre mí, puedes enviarme un mensaje llenando el formulario o a través de los enlaces de más abajo.",
         "inputs": {
             "name": {
                 "label": "Nombre",

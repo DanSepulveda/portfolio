@@ -5,14 +5,15 @@
   font-size: 20px;
   border-radius: 5px;
   cursor: pointer;
-  /* box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1), -1px -1px 5px rgba(0, 0, 0, 0.1); */
-  border: 1px solid #1565C0;
-  color: #1565C0;
+  box-shadow: var(--big-shadow);
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
   font-weight: 600;
   transition: all .5s ease;
 }
 
 .button:hover{
-  background-color: rgba(21, 101, 193, 0.09);
-  box-shadow: 1px 1px 5px rgba(21, 101, 193, 0.09);
+  background-color: var(--secondary-color);
+  color: whitesmoke;
 }

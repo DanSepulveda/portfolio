@@ -8,7 +8,7 @@ import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
-const Home = ({ translations, header, footer }) => {
+const Home = ({ translations, header }) => {
   const { seo, hero, about, skills, projects, contact } = translations
   const [theme, setTheme] = useState('light')
 
@@ -22,7 +22,7 @@ const Home = ({ translations, header, footer }) => {
   }, [])
 
   return (
-    <Layout trans={{ header, footer }} theme={theme} setTheme={setTheme}>
+    <Layout trans={header} theme={theme} setTheme={setTheme}>
       <Seo seo={seo} />
       <Hero trans={hero} />
       <About trans={about} />
@@ -38,14 +38,12 @@ export default Home
 export const getStaticProps = async ({ locale }) => {
   const translations = await import(`../locales/${locale}/home.json`)
   const header = await import(`../locales/${locale}/header.json`)
-  const footer = await import(`../locales/${locale}/footer.json`)
   // const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
   // const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
   return {
     props: {
       translations: translations.default,
       header: header.default,
-      footer: footer.default,
       // technologies: technologies.data.response,
       // projects: projects.data.response
     }

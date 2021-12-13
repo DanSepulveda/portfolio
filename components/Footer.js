@@ -8,7 +8,7 @@ const Footer = ({ trans, theme }) => {
                 <a href="https://www.linkedin.com/in/dansepulvedap/" target='_blank'>
                     <BsLinkedin />
                 </a>
-                <a href="">
+                <a href="mailto:dansepdev@gmail.com">
                     <BsEnvelopeFill />
                 </a>
                 <a href="https://github.com/DanSepulveda" target='_blank'>
@@ -18,7 +18,7 @@ const Footer = ({ trans, theme }) => {
             <div className={styles.spanContainer}>
                 <span>Daniel Sepúlveda</span>
                 <span className={styles.line}> - </span>
-                <span>&copy; {trans.rights}</span>
+                <span>&copy; {trans}</span>
             </div>
         </footer>
     )
