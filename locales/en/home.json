@@ -37,6 +37,20 @@
             "max15": "Must be 15 characters or less.",
             "email": "Invalid email address."
         },
-        "button": "Send message"
+        "button": "Send message",
+        "alertMessages": {
+            "saving": {
+                "title": "Sending message",
+                "subtitle": "Please wait a moment"
+            },
+            "success": {
+                "title": "Message sent",
+                "subtitle": "A copy has been sent to your email"
+            },
+            "error": {
+                "title": "An error ocurred",
+                "subtitle": "Please try again later"
+            }
+        }
     }
 }

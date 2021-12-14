@@ -37,6 +37,20 @@
             "max15": "Debe tener 15 caracteres o menos.",
             "email": "Correo inválido."
         },
-        "button": "Enviar mensaje"
+        "button": "Enviar mensaje",
+        "alertMessages": {
+            "saving": {
+                "title": "Enviando mensaje",
+                "subtitle": "Por favor espere un momento"
+            },
+            "success": {
+                "title": "Mensaje enviado",
+                "subtitle": "Recibirá un copia en su correo"
+            },
+            "error": {
+                "title": "Ocurrió un problema",
+                "subtitle": "Intente más tarde por favor"
+            }
+        }
     }
 }

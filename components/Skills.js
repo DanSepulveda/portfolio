@@ -27,7 +27,7 @@ const Skills = ({ trans }) => {
 
     return (
         <section className={styles.skills}>
-            <h2>{trans.title}</h2>
+            <h2>&#60;<span>{trans.title}</span> /&#62;</h2>
             <div>
                 {techs.map(tech => <TechCard image={tech} key={tech} />)}
             </div>

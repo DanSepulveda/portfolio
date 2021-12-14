@@ -9,9 +9,11 @@
   --bg-side: #e7e7e7;
   --bg-input: #eee;
   --basic-shadow: 2px 2px 5px #0000001a, -2px -2px 5px #0000001a;
+  --vg-alert: rgb(19, 37, 43);
 
   --primary-color: rgb(24, 46, 53);
   --secondary-color: #437d96;
+  --third-color: rgb(236, 233, 230);
   --placeholder-color: rgba(68, 68, 68, 0.5);
   --input-color: rgba(68, 68, 68, 0.9);
   --error-color: rgb(247, 57, 23);
@@ -25,15 +27,26 @@
   --bg-main: #1d3946;
   --bg-main2: -webkit-linear-gradient(to right, #2c5364, #203a43, #152c36);
   --bg-main3: linear-gradient(to right, #2c5364, #203a43, #152c36);
+
+  --vs-red: rgb(241, 69, 78);
+  --vs-blue: rgb(114, 212, 218);
+  --vs-orange: rgb(255, 184, 48);
+  --vs-purple: rgb(178, 101, 230);
+
   --bg-side: rgb(19, 37, 43);
   --bg-input: rgba(238, 238, 238, 0.075);
   --basic-shadow: 2px 2px 5px #2c5364, -2px -2px 5px #2c5364;
+  --basic-shadow: 1px 1px 1px var(--vs-blue), -1px -1px 1px var(--vs-blue);
+  --bg-alert: #e7e7e7;
 
   --primary-color: rgb(236, 233, 230);
   --secondary-color: #32C1CD;
+  --third-color: rgb(24, 46, 53);
   --placeholder-color: rgba(202, 202, 202, 0.774);
   --input-color: rgb(240, 240, 240);
   --error-color: rgb(0, 255, 242);
+
+
 
   --big-shadow: 1px 1px 15px rgba(245, 245, 227, 0.15), -1px -1px 15px rgba(245, 245, 227, 0.15);
 }
@@ -96,6 +109,11 @@ h2{
   font-size: 4em;
   margin-bottom: 1em;
   text-align: center;
+  color: var(--vs-blue) ;
+}
+
+h2 span{
+  color: var(--vs-red);
 }
 
 textarea {

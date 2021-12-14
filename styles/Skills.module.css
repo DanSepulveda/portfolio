@@ -33,3 +33,9 @@ section.skills > div {
         row-gap: 2em;
     }
 }
+
+@media (max-width: 422px){
+    section.skills h2{
+        font-size: 2.5em;
+    }
+}

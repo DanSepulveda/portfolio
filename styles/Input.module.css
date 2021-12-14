@@ -8,6 +8,7 @@ div.container {
 div.container label {
   margin-bottom: 0.3em;
   font-size: 23px;
+  color: var(--vs-orange);
 }
 
 div.container input,
@@ -41,5 +42,5 @@ div.container div {
 }
 
 div.container span {
-  color: var(--error-color);
+  color: var(--vs-purple);
 }
