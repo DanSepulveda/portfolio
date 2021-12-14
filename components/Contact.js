@@ -1,8 +1,9 @@
-import axios from 'axios'
-import { useState } from 'react'
 import styles from '../styles/Contact.module.css'
+import axios from 'axios'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
+import H2 from './H2'
+import Comment from './Comment'
 import InputText from './InputText'
 import InputArea from './InputArea'
 import Button from './Button'
@@ -12,22 +13,27 @@ import toast, { Toaster } from 'react-hot-toast'
 
 const Contact = ({ trans }) => {
     const { title, subtitle, inputs, errors, button, alertMessages } = trans
-    const [loading, setLoading] = useState(false)
 
     const sendMail = async (values) => {
+        const boton = document.getElementById('send')
         try {
+            boton.setAttribute('disabled', true)
             // const response = await axios.post('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/sendMail', { values })
             // if (!response.data.success) throw new Error()
             toast(() => <Alert message={alertMessages.success} type='success' />)
+            boton.removeAttribute('disabled')
+            return true
         } catch (error) {
             toast(() => <Alert message={alertMessages.error} type='error' />)
+            boton.removeAttribute('disabled')
+            return false
         }
     }
 
     return (
         <section id="contact" className={styles.contact}>
-            <Toaster />
-            <h2>&#60;<span>{title}</span> /&#62;</h2>
+            <Toaster position='bottom-left' />
+            <H2>{title}</H2>
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={Yup.object({
@@ -42,7 +48,12 @@ const Contact = ({ trans }) => {
                         .min(4, errors.min4)
                         .required(errors.required)
                 })}
-                onSubmit={values => sendMail(values)}
+                onSubmit={async (values, { resetForm }) => {
+                    const response = await sendMail(values)
+                    if (response) {
+                        resetForm({ name: '', email: '', message: '' })
+                    }
+                }}
             >
                 <Form>
                     <InputText
@@ -63,13 +74,13 @@ const Contact = ({ trans }) => {
                         label={inputs.message.label}
                         placeholder={inputs.message.placeholder}
                     />
-                    <Button type="submit">{button}</Button>
+                    <Button type="submit" id='send'>{button}</Button>
                 </Form>
             </Formik>
             <div className={styles.container}>
                 <FaEnvelopeOpenText />
                 <div className={styles.message}>
-                    <p>{subtitle}</p>
+                    <Comment>{subtitle}</Comment>
                 </div>
             </div>
         </section>

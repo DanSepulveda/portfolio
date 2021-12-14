@@ -16,6 +16,12 @@ div.closed{
     align-items: center;
 }
 
+div.extras{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @keyframes appear {
     0%{
         transform: translateX(-250px);

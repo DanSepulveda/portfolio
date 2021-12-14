@@ -1,7 +1,11 @@
 import styles from '../styles/Skills.module.css'
+import H2 from './H2'
 import TechCard from './TechCard'
+import Comment from './Comment'
 
 const Skills = ({ trans }) => {
+    const { title, subtitle } = trans
+
     const techs = [
         'html.png',
         'css.png',
@@ -27,9 +31,10 @@ const Skills = ({ trans }) => {
 
     return (
         <section className={styles.skills}>
-            <h2>&#60;<span>{trans.title}</span> /&#62;</h2>
+            <H2>{title}</H2>
+            <Comment>{subtitle}</Comment>
             <div>
-                {techs.map(tech => <TechCard image={tech} key={tech} />)}
+                {techs.map(tech => <TechCard tech={tech} key={tech} />)}
             </div>
         </section>
     )

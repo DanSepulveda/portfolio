@@ -50,7 +50,6 @@ div.container{
 }
 
 div.message{
-  border: 2px solid var(--vs-blue);
   border: 2px solid var(--vs-red);
   border-radius: 1em;
   display: flex;
@@ -64,7 +63,7 @@ div.message p{
   line-height: 25px;
 }
 
-section.contact svg{
+section.contact .container svg{
   font-size: 6em;
   fill: var(--vs-orange);
   position: relative;
@@ -111,7 +110,6 @@ section.contact svg{
 }
 
 section.contact > div:first-child > div > div{
-  /* background-color: red !important; */
   padding: 0 !important ;
   background-color: transparent;
 }

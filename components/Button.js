@@ -1,8 +1,9 @@
 import styles from '../styles/Button.module.css'
 
 const Button = ({ children, ...props }) => {
+
     return (
-        <button {...props} className={styles.button}>
+        <button {...props} className={styles.button} >
             {children}
         </button>
     )

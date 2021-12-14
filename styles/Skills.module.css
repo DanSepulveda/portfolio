@@ -8,6 +8,7 @@ section.skills > div {
     justify-content: space-between;
     column-gap: 5em;
     row-gap: 4em;
+    margin-top: 3.5em;
 }
 
 @media (max-width: 992px) {
@@ -20,7 +21,9 @@ section.skills > div {
     section.skills > div{
         column-gap: 3em;
     }
-    
+    section.skills h2{
+        font-size: 3.8em;
+    }
 }
 
 @media (max-width: 576px) {
@@ -34,8 +37,20 @@ section.skills > div {
     }
 }
 
+@media (max-width: 563px) {
+    section.skills h2{
+        font-size: 3.5em;
+    }
+}
+
+@media (max-width: 493px){
+    section.skills h2{
+        font-size: 3em
+    }
+}
+
 @media (max-width: 422px){
     section.skills h2{
-        font-size: 2.5em;
+        font-size: 2.7em;
     }
 }

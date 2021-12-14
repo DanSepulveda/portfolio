@@ -9,7 +9,7 @@ const SideMenu = ({ navbar, languages, theme, setTheme, open }) => {
     return (
         <div className={openStyles}>
             <NavBar trans={navbar} theme={theme} side={true} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className={styles.extras}>
                 <Theme theme={theme} setTheme={setTheme} side={true} />
                 <Language trans={languages} side={true} />
             </div>

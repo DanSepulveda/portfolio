@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const Navbar = ({ trans, theme, side }) => {
+    const { home, about, projects, contact } = trans.links
     const logo = theme === 'dark' ? 'logo-ligth.png' : 'logo-dark.png'
     const { locale, asPath } = useRouter()
     const classType = side ? `${styles.sidelinks}` : `${styles.links}`
@@ -21,10 +22,10 @@ const Navbar = ({ trans, theme, side }) => {
                 </a>
             </Link>
             <nav>
-                <a href='#'>{trans.links.home}</a>
-                <a href='#about'>{trans.links.about}</a>
-                <a href='#projects'>{trans.links.projects}</a>
-                <a href='#contact'>{trans.links.contact}</a>
+                <a href='#'>{home}</a>
+                <a href='#about'>{about}</a>
+                <a href='#projects'>{projects}</a>
+                <a href='#contact'>{contact}</a>
             </nav>
         </section>
     )

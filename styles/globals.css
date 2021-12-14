@@ -1,53 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Ubuntu:wght@400;500;700&display=swap');
 
 :root{
-  --bg-header: #eeeeeef2;
-  --header-shadow: 0px 5px 5px #0000001a;
-  --bg-main: #ece9e6;
-  --bg-main2: -webkit-linear-gradient(to right, #ffffff, #ece9e6);
-  --bg-main3: linear-gradient(to right, #ffffff, #ece9e6);
-  --bg-side: #e7e7e7;
-  --bg-input: #eee;
-  --basic-shadow: 2px 2px 5px #0000001a, -2px -2px 5px #0000001a;
-  --vg-alert: rgb(19, 37, 43);
+  --bg-header: rgba(238, 238, 238, 0.95);
+  --header-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  --bg-side: rgb(231, 231, 231);
 
-  --primary-color: rgb(24, 46, 53);
-  --secondary-color: #437d96;
-  --third-color: rgb(236, 233, 230);
-  --placeholder-color: rgba(68, 68, 68, 0.5);
+  --bg-main: rgb(236, 233, 230);
+  --bg-main2: -webkit-linear-gradient(to right, #ffffff, #ebe8e5, #d6d3cf);
+  --bg-main3: linear-gradient(to right, #ffffff, #ece9e6, #d6d3cf);
+
+  --primary-color: rgb(29, 60, 70);
+  --secondary-color: rgb(67, 125, 150);
+
+  --vs-red: rgb(29, 60, 70);
+  --vs-blue: rgb(241, 69, 78);
+  --vs-orange: var(--secondary-color);
+  --vs-comment: var(--secondary-color);
+  
+  --bg-alert: #eee;
+  --color-alert: rgb(40, 75, 90);
+  --border-alert: black;
+
+  --bg-input: rgba(238, 238, 238, 0.25);
   --input-color: rgba(68, 68, 68, 0.9);
-  --error-color: rgb(247, 57, 23);
-  /* --secondary-color: rgb(39, 39, 39); */
+  --placeholder-color: rgba(68, 68, 68, 0.5);
+  --error-color: rgb(241, 69, 78);
+  --label-color: var(--primary-color);
+  
+  --basic-shadow: 2px 2px 5px rgba(0, 0, 0, 0.102), -2px -2px 5px rgba(0, 0, 0, 0.102);
   --big-shadow: 1px 1px 15px rgba(0, 0, 0, 0.1), -1px -1px 15px rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark']{
-  --bg-header: #182e35;
+    /* --vs-purple: rgb(178, 101, 230);
+  --vs-green: rgb(181, 231, 106); */
+  --bg-header: rgb(24, 46, 53);
   --header-shadow: 0px 5px 10px #1d3946;
+  --bg-side: rgb(19, 37, 43);
+
   --bg-main: #1d3946;
   --bg-main2: -webkit-linear-gradient(to right, #2c5364, #203a43, #152c36);
   --bg-main3: linear-gradient(to right, #2c5364, #203a43, #152c36);
 
+  --primary-color: rgb(197, 192, 187);
+  --secondary-color: rgb(50, 193, 205);
+
   --vs-red: rgb(241, 69, 78);
   --vs-blue: rgb(114, 212, 218);
-  --vs-orange: rgb(255, 184, 48);
-  --vs-purple: rgb(178, 101, 230);
+  --vs-orange: rgb(196, 141, 40);
+  --vs-comment: rgb(151, 147, 147);
 
-  --bg-side: rgb(19, 37, 43);
+  --bg-alert: rgb(24, 46, 53);
+  --color-alert: whitesmoke;
+  --border-alert: var(--vs-blue);
+
   --bg-input: rgba(238, 238, 238, 0.075);
-  --basic-shadow: 2px 2px 5px #2c5364, -2px -2px 5px #2c5364;
+  --input-color: rgb(214, 214, 214);
+  --placeholder-color: rgba(187, 184, 184, 0.774);
+  --error-color: rgb(233, 135, 204);
+  --label-color: var(--vs-orange);
+  
   --basic-shadow: 1px 1px 1px var(--vs-blue), -1px -1px 1px var(--vs-blue);
-  --bg-alert: #e7e7e7;
-
-  --primary-color: rgb(236, 233, 230);
-  --secondary-color: #32C1CD;
-  --third-color: rgb(24, 46, 53);
-  --placeholder-color: rgba(202, 202, 202, 0.774);
-  --input-color: rgb(240, 240, 240);
-  --error-color: rgb(0, 255, 242);
-
-
-
   --big-shadow: 1px 1px 15px rgba(245, 245, 227, 0.15), -1px -1px 15px rgba(245, 245, 227, 0.15);
 }
 
@@ -103,6 +116,7 @@ main > section{
 
 main > section:first-child{
   margin-top: 0;
+  padding-top: 0;
 }
 
 h2{
@@ -114,6 +128,16 @@ h2{
 
 h2 span{
   color: var(--vs-red);
+}
+
+p.comment{
+  font-size: 18px;
+  text-align: center;
+  color: var(--vs-comment);
+}
+
+p.comment span{
+  color: var(--vs-comment)
 }
 
 textarea {

@@ -10,6 +10,10 @@ div.container .tech{
     border-radius: 12px;
 }
 
+div.container div.tech:hover{
+    box-shadow: var(--big-shadow);
+}
+
 div.container span.name{
     animation: appear .5s linear;
     color: var(--primary-color);
@@ -23,10 +27,6 @@ div.container span.name{
     box-shadow: var(--basic-shadow);
 }
 
-div.container div.tech:hover{
-    box-shadow: var(--big-shadow);
-}
-
 div.container div.tech:hover ~ span.name{
     display: block;
 }
@@ -37,5 +37,11 @@ div.container div.tech:hover ~ span.name{
     }
     100%{
         opacity: 100%;
+    }
+}
+
+@media (max-width: 576px){
+    div.container div.tech:hover ~ span.name{
+        display: none;
     }
 }

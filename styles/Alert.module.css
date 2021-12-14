@@ -1,17 +1,54 @@
-div.container {
+div.alertContainer {
     width: 100%;
+    padding: .5em 1em;
+    border-radius: 10px;
+    border: 1px solid var(--border-alert);
+    background-color: var(--bg-alert);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--bg-alert);
-    padding: .5em 1em;
-    border-radius: 10px;
 }
 
-div.container h3,
-div.container h4{
-    color: var(--third-color);
+div.messageContainer{
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+div.messageContainer > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+div.alertContainer svg{
+    font-size: 50px;
+    margin-right: 7px;
+}
+
+div.alertContainer svg.success{
+    fill: rgb(114, 212, 218);
+}
+
+div.alertContainer svg.error{
+    fill: rgb(255, 184, 48);
+}
+
+div.alertContainer p{
+    color: var(--color-alert);
+    text-align: left;
+}
+
+div.alertContainer p:first-child{
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+div.alertContainer p:nth-child(2){
+    font-size: 14px;
 }
 
 div.success,
@@ -19,8 +56,15 @@ div.error{
     height: 5px;
     animation: decrease 4s linear;
     width: 0;
-    background-color: rgb(191, 255, 15);
     align-self: flex-start;
+}
+
+div.success{
+    background-color: rgb(181, 231, 106);
+}
+
+div.error{
+    background-color: rgb(241, 69, 78);
 }
 
 @keyframes decrease {

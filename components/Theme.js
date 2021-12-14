@@ -12,7 +12,6 @@ const Theme = ({ theme, setTheme, side }) => {
                     type="checkbox"
                     name="theme"
                     id="theme"
-                    className={styles.checkbox}
                     checked={theme === 'dark' && true}
                     onChange={(e) => e.target.checked = false}
                 />

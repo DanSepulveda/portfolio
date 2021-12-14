@@ -1,13 +1,22 @@
 import styles from '../styles/TechCard.module.css'
 import Image from "next/image"
 
-const TechCard = ({ image }) => {
+const TechCard = ({ tech }) => {
+    const { name, image, link } = tech
+
     return (
         <div className={styles.container}>
             <div className={styles.tech}>
-                <Image src={`/assets/technologies/${image}`} width={70} height={70} />
+                <a href="">
+                    <Image
+                        src={`/assets/technologies/${tech}`}
+                        width={70}
+                        height={70}
+                        alt='cambiar'
+                    />
+                </a>
             </div>
-            <span className={styles.name}>{image}</span>
+            <span className={styles.name}>{tech}</span>
         </div>
     )
 }
