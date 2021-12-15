@@ -18,5 +18,12 @@
             "alt": "Spain Flag"
         }
     },
-    "rights": "All Rights Reserved"
+    "rights": "All Rights Reserved",
+    "social": {
+        "resume": "Download CV",
+        "github": "Github Profile",
+        "linkedin": "Linkedin Profile",
+        "email": "Send email",
+        "file": "/assets/Dansep-fullstack-dev.pdf"
+    }
 }

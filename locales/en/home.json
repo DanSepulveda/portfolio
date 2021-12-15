@@ -5,8 +5,9 @@
     },
     "hero": {
         "title": "Full Stack Developer",
-        "subtitle": "",
-        "button": "Contact me"
+        "desciption": "",
+        "button": "Contact me",
+        "alt": ""
     },
     "about": {},
     "skills": {

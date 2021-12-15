@@ -7,10 +7,12 @@ import About from '../components/About'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
+import Social from '../components/Social'
 
 const Home = ({ translations, header }) => {
   const { seo, hero, about, skills, projects, contact } = translations
   const [theme, setTheme] = useState('light')
+  const [show, setShow] = useState(null)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -19,11 +21,15 @@ const Home = ({ translations, header }) => {
     } else {
       setTheme(savedTheme)
     }
+    if (window.innerWidth > 992) {
+      setShow(true)
+    }
   }, [])
 
   return (
     <Layout trans={header} theme={theme} setTheme={setTheme}>
       <Seo seo={seo} />
+      {show && <Social trans={header.social} />}
       <Hero trans={hero} />
       <About trans={about} />
       <Skills trans={skills} />

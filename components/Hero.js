@@ -3,12 +3,17 @@ import Button from './Button'
 import Image from 'next/image'
 
 const Hero = ({ trans }) => {
-    const { title, subtitle, button } = trans
+    const { title, description, button, alt } = trans
     return (
         <section className={styles.hero}>
-            <h2>Daniel Sepúlveda Pérez</h2>
+            <h3>Daniel Sepúlveda Pérez</h3>
             <h1>{title}</h1>
-            <Image src="/assets/mickey.jpg" width={200} height={150} />
+            <Image
+                src="/assets/mickey.jpg"
+                width={200}
+                height={150}
+                alt={alt}
+            />
             <a href="#contact">
                 <Button>{button}</Button>
             </a>

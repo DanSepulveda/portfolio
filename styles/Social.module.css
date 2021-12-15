@@ -1,0 +1,84 @@
+div.socialContainer{
+    position:fixed;
+    top: 40%;
+    left: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+div.socialContainer > div {
+    display: flex;
+    align-items: center;
+}
+
+div.icon{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+div.icon:hover{
+    opacity: 1;
+}
+
+div.icon svg{
+    font-size: 23px;
+    transition: all .15s;
+    fill: rgb(218, 213, 213);
+}
+
+div.socialContainer > div:first-child div{
+    background-color: rgb(223, 157, 35);
+}
+
+div.socialContainer > div:nth-child(2) div{
+    background-color: rgb(10, 102, 194);
+}
+
+div.socialContainer > div:nth-child(3) div{
+    background-color: rgb(36, 41, 47);
+}
+
+div.socialContainer > div:last-child div{
+    background-color: rgb(234, 67, 53);
+}
+
+div.icon:hover svg{
+    fill: white !important;
+}
+
+div.socialContainer a:hover ~ span{
+    animation: appear .5s linear;
+    display: block;
+}
+
+@keyframes appear {
+    0%{
+        display: block;
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+
+span.text{
+    margin-left: .5em;
+    background-color: #444;
+    padding: .3em .5em;
+    border-radius: 3px;
+    color: white;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    div.socialContainer{
+        display: none;
+    }  
+}

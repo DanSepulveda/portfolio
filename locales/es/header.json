@@ -18,5 +18,12 @@
             "alt": "Bandera de España"
         }
     },
-    "rights": "Todos los derechos reservados"
+    "rights": "Todos los derechos reservados",
+    "social": {
+        "resume": "Descargar CV",
+        "github": "Perfil de Github",
+        "linkedin": "Perfil de Linkedin",
+        "email": "Enviar correo",
+        "file": "/assets/Dansep-desarrollador-fullstack.pdf"
+    }
 }

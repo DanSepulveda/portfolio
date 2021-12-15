@@ -5,8 +5,9 @@
     },
     "hero": {
         "title": "Desarrollador Full Stack",
-        "subtitle": "",
-        "button": "Contáctame"
+        "description": "",
+        "button": "Contáctame",
+        "alt": ""
     },
     "about": {},
     "skills": {
