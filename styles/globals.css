@@ -116,14 +116,14 @@ main {
 }
 
 main > section{
-  margin: 5vh 0;
-  padding-top: 11vh;
+  /* margin: 5vh 0; */
+  /* padding: 12vh 0; */
 }
 
-main > section:first-child{
+/* main > section:first-child{
   margin-top: 0;
   padding-top: 0;
-}
+} */
 
 h2{
   font-size: 4em;

@@ -3,7 +3,7 @@ section.contact {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-bottom: 12vh;
+  padding: 12vh 0;
   flex-wrap: wrap;
 }
 

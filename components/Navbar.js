@@ -24,10 +24,10 @@ const Navbar = ({ trans, theme, side }) => {
                 </a>
             </Link>
             <nav>
-                <a href='#'>{home}</a>
+                <a href='/#'>{home}</a>
                 <a href='#about'>{about}</a>
-                <a href='#projects'>{projects}</a>
-                <a href='#contact'>{contact}</a>
+                <a href='/#projects'>{projects}</a>
+                <a href='/contact'>{contact}</a>
             </nav>
         </section>
     )

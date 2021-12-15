@@ -1,0 +1,40 @@
+{
+    "title": "Contact",
+    "subtitle": "If you want to know more about me you can send me a message filling out the form or using the links below.",
+    "inputs": {
+        "name": {
+            "label": "Name",
+            "placeholder": "John"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "example@example.com"
+        },
+        "message": {
+            "label": "Message",
+            "placeholder": "Write your message here..."
+        }
+    },
+    "errors": {
+        "required": "Required field.",
+        "min3": "Must be 3 characters or more.",
+        "min4": "Must be 4 characters or more.",
+        "max15": "Must be 15 characters or less.",
+        "email": "Invalid email address."
+    },
+    "button": "Send message",
+    "alertMessages": {
+        "saving": {
+            "title": "Sending message",
+            "subtitle": "Please wait a moment"
+        },
+        "success": {
+            "title": "Message sent",
+            "subtitle": "A copy has been sent to your email"
+        },
+        "error": {
+            "title": "An error ocurred",
+            "subtitle": "Please try again later"
+        }
+    }
+}
