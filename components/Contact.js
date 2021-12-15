@@ -18,8 +18,8 @@ const Contact = ({ trans }) => {
         const boton = document.getElementById('send')
         try {
             boton.setAttribute('disabled', true)
-            // const response = await axios.post('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/sendMail', { values })
-            // if (!response.data.success) throw new Error()
+            const response = await axios.post('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/sendMail', values)
+            if (!response.data.success) throw new Error()
             toast(() => <Alert message={alertMessages.success} type='success' />)
             boton.removeAttribute('disabled')
             return true

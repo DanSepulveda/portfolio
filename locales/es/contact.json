@@ -1,40 +1,46 @@
 {
-    "title": "Contacto",
-    "subtitle": "Si quieres saber más sobre mí, puedes enviarme un mensaje llenando el formulario o a través de los enlaces de más abajo.",
-    "inputs": {
-        "name": {
-            "label": "Nombre",
-            "placeholder": "Juan"
-        },
-        "email": {
-            "label": "Correo electrónico",
-            "placeholder": "ejemplo@ejemplo.com"
-        },
-        "message": {
-            "label": "Mensaje",
-            "placeholder": "Escribe tu mensaje acá..."
-        }
+    "seo": {
+        "title": "Contacto | Daniel Sepúlveda | Desarrollador FullStack",
+        "description": "Si tienes cualquier duda o comentario, no dudes en enviarme un mensaje a través del formulario de contacto. Te responderé lo más rápido posible."
     },
-    "errors": {
-        "required": "Campo requerido.",
-        "min3": "Debe tener 3 caracteres o más.",
-        "min4": "Debe tener 4 caracteres o más.",
-        "max15": "Debe tener 15 caracteres o menos.",
-        "email": "Correo inválido."
-    },
-    "button": "Enviar mensaje",
-    "alertMessages": {
-        "saving": {
-            "title": "Enviando mensaje",
-            "subtitle": "Por favor espere un momento"
+    "content": {
+        "title": "Contacto",
+        "subtitle": "Si quieres saber más sobre mí, puedes enviarme un mensaje llenando el formulario o a través de los enlaces de más abajo.",
+        "inputs": {
+            "name": {
+                "label": "Nombre",
+                "placeholder": "Juan"
+            },
+            "email": {
+                "label": "Correo electrónico",
+                "placeholder": "ejemplo@ejemplo.com"
+            },
+            "message": {
+                "label": "Mensaje",
+                "placeholder": "Escribe tu mensaje acá..."
+            }
         },
-        "success": {
-            "title": "Mensaje enviado",
-            "subtitle": "Recibirá un copia en su correo"
+        "errors": {
+            "required": "Campo requerido.",
+            "min3": "Debe tener 3 caracteres o más.",
+            "min4": "Debe tener 4 caracteres o más.",
+            "max15": "Debe tener 15 caracteres o menos.",
+            "email": "Correo inválido."
         },
-        "error": {
-            "title": "Ocurrió un problema",
-            "subtitle": "Intente más tarde por favor"
+        "button": "Enviar mensaje",
+        "alertMessages": {
+            "saving": {
+                "title": "Enviando mensaje",
+                "subtitle": "Por favor espere un momento"
+            },
+            "success": {
+                "title": "Mensaje enviado",
+                "subtitle": "Recibirá un copia en su correo"
+            },
+            "error": {
+                "title": "Ocurrió un problema",
+                "subtitle": "Intente más tarde por favor"
+            }
         }
     }
 }

@@ -2,8 +2,10 @@ import { useState, useEffect } from "react"
 import Layout from "../../components/Layout"
 import Contact from "../../components/Contact"
 import Social from "../../components/Social"
+import Seo from "../../components/Seo"
 
 const index = ({ header, contact }) => {
+    const { seo, content } = contact
     const [theme, setTheme] = useState('light')
 
     useEffect(() => {
@@ -17,7 +19,8 @@ const index = ({ header, contact }) => {
 
     return (
         <Layout trans={header} theme={theme} setTheme={setTheme}>
-            <Contact trans={contact} />
+            <Seo seo={seo} />
+            <Contact trans={content} />
             <Social trans={header.social} />
         </Layout>
     )

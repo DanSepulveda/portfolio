@@ -19,45 +19,5 @@
     },
     "projects": {
         "title": "Proyectos"
-    },
-    "contact": {
-        "title": "Contacto",
-        "subtitle": "Si quieres saber más sobre mí, puedes enviarme un mensaje llenando el formulario o a través de los enlaces de más abajo.",
-        "inputs": {
-            "name": {
-                "label": "Nombre",
-                "placeholder": "Juan"
-            },
-            "email": {
-                "label": "Correo electrónico",
-                "placeholder": "ejemplo@ejemplo.com"
-            },
-            "message": {
-                "label": "Mensaje",
-                "placeholder": "Escribe tu mensaje acá..."
-            }
-        },
-        "errors": {
-            "required": "Campo requerido.",
-            "min3": "Debe tener 3 caracteres o más.",
-            "min4": "Debe tener 4 caracteres o más.",
-            "max15": "Debe tener 15 caracteres o menos.",
-            "email": "Correo inválido."
-        },
-        "button": "Enviar mensaje",
-        "alertMessages": {
-            "saving": {
-                "title": "Enviando mensaje",
-                "subtitle": "Por favor espere un momento"
-            },
-            "success": {
-                "title": "Mensaje enviado",
-                "subtitle": "Recibirá un copia en su correo"
-            },
-            "error": {
-                "title": "Ocurrió un problema",
-                "subtitle": "Intente más tarde por favor"
-            }
-        }
     }
 }

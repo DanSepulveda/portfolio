@@ -7,12 +7,12 @@ import HideLink from './HideLink'
 const Navbar = ({ trans, theme, side }) => {
     const { home, about, projects, contact } = trans.links
     const logo = theme === 'dark' ? 'logo-ligth.png' : 'logo-dark.png'
-    const { locale, asPath } = useRouter()
+    const { locale } = useRouter()
     const classType = side ? `${styles.sidelinks}` : `${styles.links}`
 
     return (
         <section className={classType}>
-            <Link href={asPath} locale={locale} >
+            <Link href='/' locale={locale} >
                 <a>
                     <Image
                         src={`/assets/${logo}`}
@@ -24,10 +24,10 @@ const Navbar = ({ trans, theme, side }) => {
                 </a>
             </Link>
             <nav>
-                <a href='/#'>{home}</a>
-                <a href='#about'>{about}</a>
-                <a href='/#projects'>{projects}</a>
-                <a href='/contact'>{contact}</a>
+                <Link href='/' locale={locale}>{home}</Link>
+                <Link href='/about' locale={locale}>{about}</Link>
+                <Link href='/projects' locale={locale}>{projects}</Link>
+                <Link href='/contact' locale={locale}>{contact}</Link>
             </nav>
         </section>
     )

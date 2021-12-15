@@ -89,6 +89,10 @@ section.contact .container svg{
 }
 
 @media (max-width: 768px) {
+  section.contact{
+    padding: 7vh 0;
+  }
+  
   section.contact form{
     width: 85%;
     display: flex;

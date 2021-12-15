@@ -6,11 +6,10 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-import Contact from '../components/Contact'
 import Social from '../components/Social'
 
 const Home = ({ translations, header }) => {
-  const { seo, hero, about, skills, projects, contact } = translations
+  const { seo, hero, about, skills, projects } = translations
   const [theme, setTheme] = useState('light')
   const [show, setShow] = useState(null)
 
@@ -34,7 +33,6 @@ const Home = ({ translations, header }) => {
       <About trans={about} />
       <Skills trans={skills} />
       <Projects trans={projects} />
-      <Contact trans={contact} />
     </Layout>
   )
 }
