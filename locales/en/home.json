@@ -9,12 +9,17 @@
         "button": "Contact me",
         "alt": ""
     },
-    "about": {},
+    "about": {
+        "title": "About me",
+        "subtitle": ""
+    },
     "skills": {
         "title": "Skills",
         "subtitle": "These are some of the tools and technologies that I've used recently"
     },
-    "projects": {},
+    "projects": {
+        "title": "Projects"
+    },
     "contact": {
         "title": "Contact",
         "subtitle": "If you want to know more about me you can send me a message filling out the form or using the links below.",

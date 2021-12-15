@@ -9,12 +9,17 @@
         "button": "Contáctame",
         "alt": ""
     },
-    "about": {},
+    "about": {
+        "title": "Sobre mí",
+        "subtitle": ""
+    },
     "skills": {
         "title": "Tecnologías",
         "subtitle": "Estas son algunas de las herramientas y tecnologías que he utilizado recientemente"
     },
-    "projects": {},
+    "projects": {
+        "title": "Proyectos"
+    },
     "contact": {
         "title": "Contacto",
         "subtitle": "Si quieres saber más sobre mí, puedes enviarme un mensaje llenando el formulario o a través de los enlaces de más abajo.",

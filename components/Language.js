@@ -2,6 +2,7 @@ import styles from '../styles/Header.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
+import HideLink from './HideLink'
 
 const Language = ({ trans, side }) => {
     const { en, es } = trans
@@ -18,6 +19,7 @@ const Language = ({ trans, side }) => {
                         width={40}
                         height={26}
                     />
+                    <HideLink>{en.text}</HideLink>
                 </a>
             </Link>
             <Link href={asPath} locale='es'>
@@ -28,6 +30,7 @@ const Language = ({ trans, side }) => {
                         width={40}
                         height={26}
                     />
+                    <HideLink>{es.text}</HideLink>
                 </a>
             </Link>
         </section>

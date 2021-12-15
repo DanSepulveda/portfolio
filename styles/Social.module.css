@@ -58,6 +58,10 @@ div.socialContainer a:hover ~ span{
     display: block;
 }
 
+div.socialContainer a span{
+    display: none;
+}
+
 @keyframes appear {
     0%{
         display: block;

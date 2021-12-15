@@ -6,24 +6,46 @@
             "projects": "Proyectos",
             "contact": "Contacto"
         },
-        "alt": "Logo Daniel Sepúlveda"
+        "alt": "Logo Daniel Sepúlveda",
+        "text": "Inicio"
     },
     "languages": {
         "en": {
             "src": "/assets/en.png",
-            "alt": "Bandera de Reino Unido"
+            "alt": "Bandera de Reino Unido",
+            "text": "Ver esta página web en Inglés"
         },
         "es": {
             "src": "/assets/es-lang.png",
-            "alt": "Bandera de España"
+            "alt": "Bandera de España",
+            "text": "Ver esta página web en Español"
         }
     },
-    "rights": "Todos los derechos reservados",
+    "footer": {
+        "rights": "Todos los derechos reservados",
+        "links": {
+            "linkedin": "Perfil de Linkedin de Daniel Sepúlveda",
+            "email": "Enviar correo electrónico a Daniel Sepúlveda",
+            "github": "Perfil de Github de Daniel Sepúlveda"
+        }
+    },
     "social": {
-        "resume": "Descargar CV",
-        "github": "Perfil de Github",
-        "linkedin": "Perfil de Linkedin",
-        "email": "Enviar correo",
+        "resume": {
+            "title": "Descargar CV de Daniel Sepúlveda",
+            "text": "Descargar CV"
+        },
+        "github": {
+            "title": "Perfil de Github de Daniel Sepúlveda",
+            "text": "Perfil de Github"
+        },
+        "linkedin": {
+            "title": "Perfil de Linkedin de Daniel Sepúlveda",
+            "text": "Perfil de Linkedin"
+        },
+        "email": {
+            "title": "Enviar correo electrónico a Daniel Sepúlveda",
+            "text": "Enviar correo"
+        },
         "file": "/assets/Dansep-desarrollador-fullstack.pdf"
     }
 }

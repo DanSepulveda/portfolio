@@ -1,10 +1,12 @@
-import React from 'react'
+import H2 from './H2'
 
-const Projects = () => {
+const Projects = ({ trans }) => {
+    const { title, subtitle } = trans
+
     return (
-        <div>
-
-        </div>
+        <section>
+            <H2>{title}</H2>
+        </section>
     )
 }
 

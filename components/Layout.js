@@ -9,7 +9,7 @@ const Layout = ({ children, trans, theme, setTheme }) => {
             <main data-theme={theme}>
                 {children}
             </main>
-            <Footer trans={trans.rights} theme={theme} />
+            <Footer trans={trans.footer} theme={theme} />
         </>
     )
 }

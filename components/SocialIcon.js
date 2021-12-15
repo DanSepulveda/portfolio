@@ -1,8 +1,9 @@
 import styles from '../styles/Social.module.css'
+import HideLink from './HideLink'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'
 import { SiGmail, SiDocusign } from 'react-icons/si'
 
-const SocialIcon = ({ icon, text, link }) => {
+const SocialIcon = ({ icon, text, link, title }) => {
     const icons = {
         linkedin: <BsLinkedin />,
         github: <BsGithub />,
@@ -18,6 +19,7 @@ const SocialIcon = ({ icon, text, link }) => {
                         {icons[icon]}
                     </div>
                 </div>
+                <HideLink>{title}</HideLink>
             </a>
             <span className={styles.text}>{text}</span>
         </div>

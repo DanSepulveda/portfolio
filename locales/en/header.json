@@ -6,24 +6,46 @@
             "projects": "Projects",
             "contact": "Contact"
         },
-        "alt": "Daniel Sepúlveda Logo"
+        "alt": "Daniel Sepúlveda Logo",
+        "text": "Homepage"
     },
     "languages": {
         "en": {
             "src": "/assets/en-lang.png",
-            "alt": "United Kingdom Flag"
+            "alt": "United Kingdom Flag",
+            "text": "View this website on English"
         },
         "es": {
             "src": "/assets/es.png",
-            "alt": "Spain Flag"
+            "alt": "Spain Flag",
+            "text": "View this website on Spanish"
         }
     },
-    "rights": "All Rights Reserved",
+    "footer": {
+        "rights": "All Rights Reserved",
+        "links": {
+            "linkedin": "Daniel Sepúlveda Linkedin Profile",
+            "email": "Send an email to Daniel Sepúlveda",
+            "github": "Daniel Sepúlveda Github Profile"
+        }
+    },
     "social": {
-        "resume": "Download CV",
-        "github": "Github Profile",
-        "linkedin": "Linkedin Profile",
-        "email": "Send email",
+        "resume": {
+            "title": "Download Daniel Sepúlveda's CV",
+            "text": "Download CV"
+        },
+        "github": {
+            "title": "Daniel Sepúlveda Github Profile",
+            "text": "Github Profile"
+        },
+        "linkedin": {
+            "title": "Daniel Sepúlveda Linkedin Profile",
+            "text": "Linkedin Profile"
+        },
+        "email": {
+            "title": "Send an email to Daniel Sepúlveda",
+            "text": "Send email"
+        },
         "file": "/assets/Dansep-fullstack-dev.pdf"
     }
 }

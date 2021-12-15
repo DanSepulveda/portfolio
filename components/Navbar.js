@@ -2,6 +2,7 @@ import styles from '../styles/Header.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
+import HideLink from './HideLink'
 
 const Navbar = ({ trans, theme, side }) => {
     const { home, about, projects, contact } = trans.links
@@ -19,6 +20,7 @@ const Navbar = ({ trans, theme, side }) => {
                         width={87}
                         height={25}
                     />
+                    <HideLink>{trans.text}</HideLink>
                 </a>
             </Link>
             <nav>
