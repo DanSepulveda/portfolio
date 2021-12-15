@@ -1,7 +1,7 @@
 const Comment = ({ children }) => {
     return (
         <p className="comment">
-            /* <span>{children}</span> */
+            &#47;&#42; <span>{children}</span> &#42;&#47;
         </p>
     )
 }

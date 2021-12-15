@@ -5,13 +5,13 @@ const Footer = ({ trans, theme }) => {
     return (
         <footer data-theme={theme}>
             <section className={styles.icons}>
-                <a href="https://www.linkedin.com/in/dansepulvedap/" target='_blank'>
+                <a href="https://www.linkedin.com/in/dansepulvedap/" target='_blank' rel='noreferrer'>
                     <BsLinkedin />
                 </a>
                 <a href="mailto:dansepdev@gmail.com">
                     <BsEnvelopeFill />
                 </a>
-                <a href="https://github.com/DanSepulveda" target='_blank'>
+                <a href="https://github.com/DanSepulveda" target='_blank' rel='noreferrer'>
                     <BsGithub />
                 </a>
             </section>

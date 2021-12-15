@@ -12,7 +12,7 @@ const SocialIcon = ({ icon, text, link }) => {
 
     return (
         <div>
-            <a href={link} target='_blank' download={text.includes('CV') ? true : false}>
+            <a href={link} target='_blank' download={text.includes('CV') ? true : false} rel='noreferrer'>
                 <div className={styles.icon}>
                     <div>
                         {icons[icon]}
