@@ -16,7 +16,7 @@ const ProjectCard = ({ project }) => {
             <p>{esDescription}</p>
             <h3>{locale === 'es' ? 'Tecnologías' : 'Technologies'}</h3>
             <div className={styles.techContainer}>
-                {techs.map(tech => <span key={tech} className={`${styles.tech} ${tech.toLowerCase().replaceAll(' ', '')}`}>{tech}</span>)}
+                {techs.map(tech => <span key={tech} className={`${styles.tech}`}>{tech}</span>)}
             </div>
             <h3>{locale === 'es' ? 'Enlaces' : 'Links'}</h3>
             <div className={styles.links}>
