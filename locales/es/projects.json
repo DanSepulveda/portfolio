@@ -1,10 +1,13 @@
 {
     "seo": {
         "title": "Proyectos | Daniel Sepúlveda | FullStack Developer",
-        "description": "Proyectos realizados como Desarrollador Full Stack usando el stack MERN (MongoDB, Express, React, Nodejs), y otras tecnologías como MySQL, Firebase, Nextjs, etc."
+        "description": "Proyectos realizados como Desarrollador Full Stack usando el stack MERN (MongoDB, Express, React, Nodejs), y otras tecnologías como MySQL, Firebase, Nextjs, etc.",
+        "ogTitle": "Daniel Sepúlveda | Desarrollador FullStack",
+        "ogDescription": "Portafolio de proyectos desarrollados.",
+        "ogUrl": "https://dansep.vercel.app"
     },
     "content": {
         "title": "Proyectos",
-        "text": "Estos son algunos de los proyectos."
+        "text": "Estos son los principales proyectos que he desarrollado utilizando tanto tecnologías de Frontend como de Backend. Algunas de las tecnologías utilizadas incluyen JavaScript, React, MongoDB, Express, MaterialUI, MySQL, Mongoose y Nodejs. Existen algunos proyectos desarrollados de manera grupal mientras cursaba el Bootcamp de programación Full Stack MERN de Mindhub, como otros desarrollados de manera individual (entregas del bootcamp, desarrollo de pruebas técnicas y proyectos personales)."
     }
 }

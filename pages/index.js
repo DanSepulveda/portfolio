@@ -44,6 +44,7 @@ export const getStaticProps = async ({ locale }) => {
   const transHeader = await import(`../locales/${locale}/header.json`)
   // const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
   // const homeProjects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
+
   return {
     props: {
       translations: translations.default,

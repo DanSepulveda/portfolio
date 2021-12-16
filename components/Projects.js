@@ -20,7 +20,9 @@ const Projects = ({ trans, projects, home }) => {
             }
             <Comment>{text}</Comment>
             {home && <MainProject />}
-            <ProjectGrid projects={projects} />
+            <div className={styles.gridContainer}>
+                <ProjectGrid projects={projects} />
+            </div>
             {home && <Link href="/projects" locale={locale}><a><Button>{button}</Button></a></Link>}
         </section>
     )

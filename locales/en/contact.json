@@ -1,7 +1,10 @@
 {
     "seo": {
         "title": "Contact | Daniel Sepúlveda | FullStack Developer",
-        "description": " Have any question or feedback? Please send me a message using contact form. I'll reply to you as soon as possible."
+        "description": " Have any question or feedback? Please send me a message using contact form. I'll reply to you as soon as possible.",
+        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
+        "ogDescription": "Developed projects Portfolio",
+        "ogUrl": "https://dansep.vercel.app/en/contact"
     },
     "content": {
         "title": "Contact",
@@ -9,7 +12,7 @@
         "inputs": {
             "name": {
                 "label": "Name",
-                "placeholder": "John"
+                "placeholder": "John Doe"
             },
             "email": {
                 "label": "Email",
@@ -24,18 +27,17 @@
             "required": "Required field.",
             "min3": "Must be 3 characters or more.",
             "min4": "Must be 4 characters or more.",
-            "max15": "Must be 15 characters or less.",
+            "max30": "Must be 30 characters or less.",
             "email": "Invalid email address."
         },
         "button": "Send message",
         "alertMessages": {
             "saving": {
-                "title": "Sending message",
-                "subtitle": "Please wait a moment"
+                "title": "Sending message"
             },
             "success": {
                 "title": "Message sent",
-                "subtitle": "A copy has been sent to your email"
+                "subtitle": "A copy will be sent to your email"
             },
             "error": {
                 "title": "An error ocurred",

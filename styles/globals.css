@@ -115,14 +115,9 @@ main {
   align-items: center;
 }
 
-main > section{
-  /* margin: 5vh 0; */
-  /* padding: 12vh 0; */
-}
-
-/* main > section:first-child{
-  margin-top: 0;
-  padding-top: 0;
+/* main > section{
+  margin: 5vh 0;
+  padding: 12vh 0;
 } */
 
 h1, h2{
@@ -130,7 +125,7 @@ h1, h2{
   margin-bottom: 1em;
   text-align: center;
   color: var(--vs-blue) ;
-  background-color: red;
+  /* background-color: red; */
 }
 
 h1 span,
@@ -172,7 +167,43 @@ footer {
 }
 
 @media (max-width: 550px){
-  h2, h1{
+  h1, h2{
     font-size: 3em;
   }
+}
+
+span.html{
+  background-color: #F16529;
+  color: white;
+}
+
+span.css,
+span.react,
+span.reactnative,
+span.materialui,
+span.mysql{
+  background-color: #14A0DB;
+}
+
+span.javascript,
+span.firebase{
+  background-color: #F7E018;
+  color: #444 !important;
+}
+
+span.bootstrap,
+span.heroku,
+span.redux{
+  background-color: #8712FB;
+}
+
+span.nodejs,
+span.mongodb{
+  background-color: #689F63;
+}
+
+span.express,
+span.next,
+span.netlify{
+  background-color: #202020;
 }

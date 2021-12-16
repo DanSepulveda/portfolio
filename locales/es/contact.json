@@ -1,7 +1,10 @@
 {
     "seo": {
         "title": "Contacto | Daniel Sepúlveda | Desarrollador FullStack",
-        "description": "Si tienes cualquier duda o comentario, no dudes en enviarme un mensaje a través del formulario de contacto. Te responderé lo más rápido posible."
+        "description": "Si tienes cualquier duda o comentario, no dudes en enviarme un mensaje a través del formulario de contacto. Te responderé lo más rápido posible.",
+        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
+        "ogDescription": "Developed projects Portfolio",
+        "ogUrl": "https://dansep.vercel.app/contact"
     },
     "content": {
         "title": "Contacto",
@@ -9,7 +12,7 @@
         "inputs": {
             "name": {
                 "label": "Nombre",
-                "placeholder": "Juan"
+                "placeholder": "Juan Pérez"
             },
             "email": {
                 "label": "Correo electrónico",
@@ -21,17 +24,16 @@
             }
         },
         "errors": {
-            "required": "Campo requerido.",
+            "required": "Campo obligatorio.",
             "min3": "Debe tener 3 caracteres o más.",
             "min4": "Debe tener 4 caracteres o más.",
-            "max15": "Debe tener 15 caracteres o menos.",
+            "max30": "Debe tener 30 caracteres o menos.",
             "email": "Correo inválido."
         },
         "button": "Enviar mensaje",
         "alertMessages": {
             "saving": {
-                "title": "Enviando mensaje",
-                "subtitle": "Por favor espere un momento"
+                "title": "Enviando mensaje"
             },
             "success": {
                 "title": "Mensaje enviado",

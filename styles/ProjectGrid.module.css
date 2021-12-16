@@ -6,8 +6,21 @@ section.gridContainer{
     row-gap: 2em;
 }
 
-section.gridContainer div{
-    width: 100%;
-    height: 40vh;
-    background-color: blue;
+
+@media (max-width: 1200px) {
+
+}
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+    section.gridContainer{
+        grid-template-columns: repeat(auto-fill, 48%);
+    }
+}
+@media (max-width: 570px) {
+    section.gridContainer{
+        grid-template-columns: 1fr;
+        row-gap: 2em;
+    }
 }

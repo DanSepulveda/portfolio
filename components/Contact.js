@@ -1,37 +1,40 @@
 import styles from '../styles/Contact.module.css'
 import axios from 'axios'
+import { FaEnvelopeOpenText } from 'react-icons/fa'
+import toast, { Toaster } from 'react-hot-toast'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import H1 from './H1'
+import Alert from './Alert'
 import Comment from './Comment'
 import InputText from './InputText'
 import InputArea from './InputArea'
 import Button from './Button'
-import Alert from './Alert'
-import { FaEnvelopeOpenText } from 'react-icons/fa'
-import toast, { Toaster } from 'react-hot-toast'
 
 const Contact = ({ trans }) => {
     const { title, subtitle, inputs, errors, button, alertMessages } = trans
 
     const sendMail = async (values) => {
         const boton = document.getElementById('send')
+        boton.innerText = alertMessages.saving.title
         try {
             boton.setAttribute('disabled', true)
             const response = await axios.post('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/sendMail', values)
             if (!response.data.success) throw new Error()
             toast(() => <Alert message={alertMessages.success} type='success' />)
             boton.removeAttribute('disabled')
+            boton.innerText = button
             return true
         } catch (error) {
             toast(() => <Alert message={alertMessages.error} type='error' />)
             boton.removeAttribute('disabled')
+            boton.innerText = button
             return false
         }
     }
 
     return (
-        <section id="contact" className={styles.contact}>
+        <section className={styles.contact}>
             <Toaster position='bottom-left' />
             <H1>{title}</H1>
             <Formik
@@ -39,7 +42,7 @@ const Contact = ({ trans }) => {
                 validationSchema={Yup.object({
                     name: Yup.string()
                         .min(3, errors.min3)
-                        .max(15, errors.max15)
+                        .max(30, errors.max30)
                         .required(errors.required),
                     email: Yup.string()
                         .email(errors.email)

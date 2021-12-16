@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import Layout from "../../components/Layout"
+import Seo from "../../components/Seo"
 import Contact from "../../components/Contact"
 import Social from "../../components/Social"
-import Seo from "../../components/Seo"
 
 const index = ({ header, contact }) => {
     const { seo, content } = contact

@@ -1,13 +1,16 @@
 {
     "seo": {
         "title": "Portafolio Daniel Sepúlveda",
-        "description": "Descripción de la página"
+        "description": "Descripción de la página",
+        "ogTitle": "Daniel Sepúlveda | Desarrollador FullStack",
+        "ogDescription": "Portafolio de proyectos desarrollados.",
+        "ogUrl": "https://dansep.vercel.app"
     },
     "hero": {
         "title": "Desarrollador Full Stack",
         "description": "Hola a todos! Soy Daniel, un Desarrollador Web de Santiago, Chile. Apasionado por la tecnología y siempre buscando cosas nuevas para aprender.",
         "button": "Contáctame",
-        "alt": ""
+        "alt": "Imagen Daniel Sepúlveda"
     },
     "about": {
         "title": "Sobre mí",

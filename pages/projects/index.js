@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { useState, useEffect } from "react"
 import Layout from "../../components/Layout"
 import Seo from "../../components/Seo"
@@ -36,7 +37,7 @@ export const getStaticProps = async ({ locale }) => {
         props: {
             header: header.default,
             translations: translations.default,
-            // projects: projects.default
+            // projects: projects.data.response
         }
     }
 }

@@ -1,13 +1,16 @@
 {
     "seo": {
         "title": "Daniel Sepúlveda Portfolio",
-        "description": "Page description"
+        "description": "Page description",
+        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
+        "ogDescription": "Developed projects Portfolio",
+        "ogUrl": "https://dansep.vercel.app/en"
     },
     "hero": {
         "title": "Full Stack Developer",
         "description": "Hi everyone! I'm Daniel, a FullStack Web Developer who lives in Santiago, Chile. Passionate about technology and always looking for new things to learn.",
         "button": "Contact me",
-        "alt": ""
+        "alt": "Daniel Sepúlveda Picture"
     },
     "about": {
         "title": "About me",
