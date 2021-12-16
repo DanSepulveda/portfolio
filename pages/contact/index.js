@@ -4,7 +4,7 @@ import Seo from "../../components/Seo"
 import Contact from "../../components/Contact"
 import Social from "../../components/Social"
 
-const Contact = ({ header, contact }) => {
+const ContactPage = ({ header, contact }) => {
     const { seo, content } = contact
     const [theme, setTheme] = useState('light')
 
@@ -26,7 +26,7 @@ const Contact = ({ header, contact }) => {
     )
 }
 
-export default Contact
+export default ContactPage
 
 export const getStaticProps = async ({ locale }) => {
     const contact = await import(`../../locales/${locale}/contact.json`)
