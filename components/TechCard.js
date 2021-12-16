@@ -9,7 +9,7 @@ const TechCard = ({ tech }) => {
     return (
         <div className={styles.container}>
             <div className={styles.tech}>
-                <a href={route} target='_blank' rel='nofollow'>
+                <a href={route} target='_blank' rel='nofollow noreferrer'>
                     <Image
                         src={`/assets/technologies/${image}`}
                         width={70}
