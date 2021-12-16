@@ -1,14 +1,14 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import Seo from '../components/Seo'
 import Layout from '../components/Layout'
+import Social from '../components/Social'
+import Seo from '../components/Seo'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
-import Social from '../components/Social'
 
-const Home = ({ translations, header }) => {
+const Home = ({ translations, transHeader, technologies, homeProjects }) => {
   const { seo, hero, about, skills, projects } = translations
   const [theme, setTheme] = useState('light')
   const [show, setShow] = useState(null)
@@ -26,13 +26,13 @@ const Home = ({ translations, header }) => {
   }, [])
 
   return (
-    <Layout trans={header} theme={theme} setTheme={setTheme}>
+    <Layout trans={transHeader} theme={theme} setTheme={setTheme}>
       <Seo seo={seo} />
-      {show && <Social trans={header.social} />}
+      {show && <Social trans={transHeader.social} />}
       <Hero trans={hero} />
       <About trans={about} />
-      <Skills trans={skills} />
-      <Projects trans={projects} />
+      {/*<Skills trans={skills} techs={technologies} />*/}
+      <Projects trans={projects} projects={homeProjects} home={true} />
     </Layout>
   )
 }
@@ -41,15 +41,15 @@ export default Home
 
 export const getStaticProps = async ({ locale }) => {
   const translations = await import(`../locales/${locale}/home.json`)
-  const header = await import(`../locales/${locale}/header.json`)
+  const transHeader = await import(`../locales/${locale}/header.json`)
   // const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
-  // const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
+  // const homeProjects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
   return {
     props: {
       translations: translations.default,
-      header: header.default,
+      transHeader: transHeader.default,
       // technologies: technologies.data.response,
-      // projects: projects.data.response
+      // homeProjects: homeProjects.data.response
     }
   }
 }

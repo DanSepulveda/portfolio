@@ -125,20 +125,24 @@ main > section{
   padding-top: 0;
 } */
 
-h2{
+h1, h2{
   font-size: 4em;
   margin-bottom: 1em;
   text-align: center;
   color: var(--vs-blue) ;
+  background-color: red;
 }
 
+h1 span,
 h2 span{
   color: var(--vs-red);
 }
 
 p.comment{
+  width: 100%;
   font-size: 18px;
   text-align: center;
+  margin-bottom: 3.5em;
   color: var(--vs-comment);
 }
 
@@ -168,7 +172,7 @@ footer {
 }
 
 @media (max-width: 550px){
-  h2{
+  h2, h1{
     font-size: 3em;
   }
 }

@@ -1,7 +1,104 @@
 section.hero {
-  min-height: 85vh;
+  width: 100%;
+  min-height: 90vh;
+  margin-bottom: 6em;
+  padding: 0 15%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  gap: 3em;
+}
+
+div.info{
+  width: 70%;
+}
+
+div.image{
+  width: 30%;
+}
+
+section.hero h1{
+  font-size: 37px;
+  text-align: left;
+  margin-bottom: 7px;
+}
+
+section.hero h1 span{
+  display: block;
+  font-size: 1.7em;
+}
+
+section.hero div p{
+  width: 50%;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 1400px) {
+  section.hero h1{
+    font-size: 33px;
+  }
+}
+
+@media (max-width: 1200px) {
+  section.hero {
+    padding: 0 10%;
+  }
+  section.hero h1{
+    font-size: 31px;
+  }
+}
+
+@media (max-width: 992px) {
+  section.hero div p{
+    font-size: 14px;
+    width: 65%;
+  }
+  div.info{
+    width: 65%;
+  }
+  div.image{
+    width: 35%;
+  }
+}
+
+@media (max-width: 768px) {
+  section.hero{
+    padding: 0 5%;
+    gap: 1em;
+  }
+  section.hero div p{
+    width: 85%;
+  }
+  section.hero h1{
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  section.hero {
+    min-height: 80vh;
+    padding: 0 1em;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  div.info{
+    width: 100%;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  div.image{
+    width: 50%;
+    order: 1;
+  }
+  section.hero h1{
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  section.hero div p{
+    font-size: 16px;
+    text-align: center;
+  }
 }

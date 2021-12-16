@@ -3,22 +3,23 @@ import Image from "next/image"
 import HideLink from './HideLink'
 
 const TechCard = ({ tech }) => {
-    const { name, image, link } = tech
+    const { name, image, languages } = tech
+    const route = languages[1].link
 
     return (
         <div className={styles.container}>
             <div className={styles.tech}>
-                <a href="" rel='nofollow'>
+                <a href={route} target='_blank' rel='nofollow'>
                     <Image
-                        src={`/assets/technologies/${tech}`}
+                        src={`/assets/technologies/${image}`}
                         width={70}
                         height={70}
-                        alt='cambiar'
+                        alt={`${name} Icon`}
                     />
+                    <HideLink>{`${name} WebPage`}</HideLink>
                 </a>
-                <HideLink>{tech}</HideLink>
             </div>
-            <span className={styles.name}>{tech}</span>
+            <span className={styles.name}>{name}</span>
         </div>
     )
 }

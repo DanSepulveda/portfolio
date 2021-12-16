@@ -1,0 +1,12 @@
+section.container{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4em;
+    padding-bottom: 8em;
+}
+
+section.container > a{
+    margin-top: 3em;
+}

@@ -5,7 +5,7 @@
     },
     "hero": {
         "title": "Desarrollador Full Stack",
-        "description": "",
+        "description": "Hola a todos! Soy Daniel, un Desarrollador Web de Santiago, Chile. Apasionado por la tecnología y siempre buscando cosas nuevas para aprender.",
         "button": "Contáctame",
         "alt": ""
     },
@@ -18,6 +18,8 @@
         "subtitle": "Estas son algunas de las herramientas y tecnologías que he utilizado recientemente"
     },
     "projects": {
-        "title": "Proyectos"
+        "title": "Proyectos",
+        "text": "Estos son algunos de los proyectos que he desarrollado, utilizando tecnologías y herramientas como React, Nextjs, Node.js, Express, MongoDB, MySQL, Heroku, Vercel, Firebase, Bootstrap, entre otras.",
+        "button": "Ver más proyectos"
     }
 }

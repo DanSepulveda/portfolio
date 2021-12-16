@@ -1,0 +1,12 @@
+section.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+section.container article{
+    height: 60vh;
+    background-color: #444;
+}

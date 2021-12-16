@@ -5,7 +5,7 @@
     },
     "hero": {
         "title": "Full Stack Developer",
-        "desciption": "",
+        "description": "Hi everyone! I'm Daniel, a FullStack Web Developer who lives in Santiago, Chile. Passionate about technology and always looking for new things to learn.",
         "button": "Contact me",
         "alt": ""
     },
@@ -18,6 +18,8 @@
         "subtitle": "These are some of the tools and technologies that I've used recently"
     },
     "projects": {
-        "title": "Projects"
+        "title": "Projects",
+        "text": "These are some of the projects I've developed using technologies and tools like React, Nextjs, Node.js, Express, MongoDB, MySQL, Heroku, Vercel, Firebase, Bootstrap, among others.",
+        "button": "View more projects"
     }
 }

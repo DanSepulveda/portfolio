@@ -1,0 +1,10 @@
+{
+    "seo": {
+        "title": "Proyectos | Daniel Sepúlveda | FullStack Developer",
+        "description": "Proyectos realizados como Desarrollador Full Stack usando el stack MERN (MongoDB, Express, React, Nodejs), y otras tecnologías como MySQL, Firebase, Nextjs, etc."
+    },
+    "content": {
+        "title": "Proyectos",
+        "text": "Estos son algunos de los proyectos."
+    }
+}

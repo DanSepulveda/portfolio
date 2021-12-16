@@ -2,7 +2,7 @@ import styles from '../styles/Contact.module.css'
 import axios from 'axios'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
-import H2 from './H2'
+import H1 from './H1'
 import Comment from './Comment'
 import InputText from './InputText'
 import InputArea from './InputArea'
@@ -33,7 +33,7 @@ const Contact = ({ trans }) => {
     return (
         <section id="contact" className={styles.contact}>
             <Toaster position='bottom-left' />
-            <H2>{title}</H2>
+            <H1>{title}</H1>
             <Formik
                 initialValues={{ name: '', email: '', message: '' }}
                 validationSchema={Yup.object({

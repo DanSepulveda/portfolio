@@ -1,5 +1,7 @@
 section.skills{
     width: 60%;
+    padding-bottom: 3em;
+    padding-top: 6em;
 }
 
 section.skills > div {
@@ -8,7 +10,6 @@ section.skills > div {
     justify-content: space-between;
     column-gap: 5em;
     row-gap: 4em;
-    margin-top: 3.5em;
 }
 
 @media (max-width: 992px) {
