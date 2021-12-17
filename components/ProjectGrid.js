@@ -9,7 +9,8 @@ const ProjectGrid = ({ projects }) => {
             esDescription: "Mytinerary is a web application where people can publish itineraries (set of activities) of the cities where they live. It is developed using MERN Stack.",
             techs: ['Bootstrap', 'React Native', 'Material UI', "Nodejs", "Mongo DB", "Express", "MySQL"],
             github: 'lala',
-            youtube: 'lala'
+            youtube: 'lala',
+            webpage: 'akaka'
         },
         {
             _id: 2,

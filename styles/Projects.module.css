@@ -11,10 +11,6 @@ section.container > p{
     padding: 0 15%;
 }
 
-section.container div.gridContainer{
-    width: 75%;
-}
-
 /* BUTTON (ONLY HOME) */
 section.container > a{
     margin-top: 3em;
@@ -24,20 +20,14 @@ section.container > a{
     section.container > p{
         padding: 0 10%;
     }
-    section.container div.gridContainer{
-        width: 80%;
-    }
 }
-@media (max-width: 992px) {
-    section.container div.gridContainer{
-        width: 90%;
-    }
-}
+
 @media (max-width: 768px) {
     section.container > p{
         padding: 0 6%;
     }
 }
+
 @media (max-width: 570px) {
     section.container > p{
         padding: 0 15px;

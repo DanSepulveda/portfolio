@@ -11,7 +11,6 @@ const Theme = ({ theme, setTheme, side }) => {
                 <input
                     type="checkbox"
                     name="theme"
-                    id="theme"
                     checked={theme === 'dark' && true}
                     onChange={(e) => e.target.checked = false}
                 />
