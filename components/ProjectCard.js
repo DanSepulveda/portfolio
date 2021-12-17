@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import Image from 'next/image'
 import setHeight from '../utils/setHeight'
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, home }) => {
     const { name, esDescription, enDescription, images, techs, webpage, github, youtube } = project
     const { locale } = useRouter()
 
@@ -18,15 +18,17 @@ const ProjectCard = ({ project }) => {
 
     return (
         <article className={styles.container}>
-            <div style={{ width: '100%' }}>
-                <Image
-                    src='/assets/projects/tgif/tgif.png'
-                    alt=''
-                    width={1.8}
-                    height={1}
-                    layout='responsive'
-                />
-            </div>
+            {!home &&
+                <div style={{ width: '100%' }}>
+                    <Image
+                        src='/assets/projects/tgif/tgif.png'
+                        alt=''
+                        width={1.8}
+                        height={1}
+                        layout='responsive'
+                    />
+                </div>
+            }
             <h2 className='title'>{name}</h2>
             <p className='description'>
                 {locale === 'es' ? esDescription : enDescription}

@@ -1,7 +1,7 @@
 import styles from '../styles/ProjectGrid.module.css'
 import ProjectCard from './ProjectCard'
 
-const ProjectGrid = ({ projects }) => {
+const ProjectGrid = ({ projects, home }) => {
     const fakeProjects = [
         {
             _id: 1,
@@ -28,7 +28,7 @@ const ProjectGrid = ({ projects }) => {
 
     return (
         <section className={styles.gridContainer}>
-            {fakeProjects.map(project => <ProjectCard project={project} key={project._id} />)}
+            {fakeProjects.map(project => <ProjectCard project={project} home={home} key={project._id} />)}
         </section>
     )
 }

@@ -124,7 +124,7 @@ h1, h2{
   font-size: 4em;
   margin-bottom: 1em;
   text-align: center;
-  color: var(--vs-blue) ;
+  color: var(--vs-blue);
   /* background-color: red; */
 }
 

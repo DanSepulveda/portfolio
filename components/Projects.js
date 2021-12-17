@@ -8,7 +8,7 @@ import MainProject from './MainProject'
 import ProjectGrid from './ProjectGrid'
 import Button from './Button'
 
-const Projects = ({ trans, projects, home }) => {
+const Projects = ({ trans, projects, home, mainProjects }) => {
     const { title, text, button } = trans
     const { locale } = useRouter()
 
@@ -19,8 +19,8 @@ const Projects = ({ trans, projects, home }) => {
                 : <H1>{title}</H1>
             }
             <Comment>{text}</Comment>
-            {home && <MainProject />}
-            <ProjectGrid projects={projects} />
+            {home && <MainProject projects={mainProjects} />}
+            <ProjectGrid projects={projects} home={home} />
             {home && <Link href="/projects" locale={locale}><a><Button>{button}</Button></a></Link>}
         </section>
     )
