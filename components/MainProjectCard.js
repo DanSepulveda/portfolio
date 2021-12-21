@@ -2,8 +2,7 @@ import styles from '../styles/MainProject.module.css'
 import styles2 from '../styles/ProjectCard.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { BsGithub, BsYoutube } from 'react-icons/bs'
-import { FiExternalLink } from 'react-icons/fi'
+import LinkIcon from './LinkIcon'
 
 const MainProjectCard = ({ project }) => {
     const { name, esDescription, enDescription, images, techs, webpage, github, youtube } = project
@@ -17,8 +16,8 @@ const MainProjectCard = ({ project }) => {
             <div className={styles.data}>
                 <div className={styles.imageContainer}>
                     <Image
-                        src='/assets/projects/tgif/tgif.png'
-                        alt=''
+                        src={`/assets/projects${images[0]}`}
+                        alt={name}
                         width={1.8}
                         height={1}
                         layout='responsive'
@@ -32,18 +31,20 @@ const MainProjectCard = ({ project }) => {
                         {locale === 'es' ? 'Tecnologías' : 'Technologies'}
                     </h4>
                     <div className={`${styles2.techContainer} techDiv`}>
-                        {techs.map(tech => {
-                            const techClass = tech.toLowerCase().replace(' ', '')
-                            return <span key={tech} className={`${styles2.tech} ${techClass}`}>{tech}</span>
-                        })}
+                        <ul>
+                            {techs.map(tech => {
+                                const techClass = tech.toLowerCase().replace(' ', '')
+                                return <li key={tech}><span className={`${styles2.tech} ${techClass}`}>{tech}</span></li>
+                            })}
+                        </ul>
                     </div>
                     <h4>
                         {locale === 'es' ? 'Enlaces' : 'Links'}
                     </h4>
                     <div className={styles2.links}>
-                        {webpage && <FiExternalLink />}
-                        {github && <BsGithub />}
-                        {youtube && <BsYoutube />}
+                        {webpage && <LinkIcon icon='webpage' link={webpage} />}
+                        {github && <LinkIcon icon='github' link={github} />}
+                        {youtube && <LinkIcon icon='youtube' link={youtube} />}
                     </div>
                 </div>
             </div>

@@ -13,6 +13,9 @@ const Home = ({ translations, transHeader, technologies, homeProjects }) => {
   const [theme, setTheme] = useState('light')
   const [show, setShow] = useState(null)
 
+  const normalProjects = homeProjects.filter(project => project.main !== true)
+  const mainProjects = homeProjects.filter(project => project.main === true)
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
     if (!savedTheme) {
@@ -31,8 +34,8 @@ const Home = ({ translations, transHeader, technologies, homeProjects }) => {
       {show && <Social trans={transHeader.social} />}
       <Hero trans={hero} />
       <About trans={about} />
-      {/*<Skills trans={skills} techs={technologies} />*/}
-      <Projects trans={projects} projects={homeProjects} home={true} />
+      <Skills trans={skills} techs={technologies} />
+      <Projects trans={projects} projects={normalProjects} mainProjects={mainProjects} home={true} />
     </Layout>
   )
 }
@@ -42,15 +45,15 @@ export default Home
 export const getStaticProps = async ({ locale }) => {
   const translations = await import(`../locales/${locale}/home.json`)
   const transHeader = await import(`../locales/${locale}/header.json`)
-  // const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
-  // const homeProjects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
+  const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
+  const homeProjects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects/home')
 
   return {
     props: {
       translations: translations.default,
       transHeader: transHeader.default,
-      // technologies: technologies.data.response,
-      // homeProjects: homeProjects.data.response
+      technologies: technologies.data.response,
+      homeProjects: homeProjects.data.response
     }
   }
 }

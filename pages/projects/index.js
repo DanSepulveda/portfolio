@@ -32,12 +32,12 @@ export default Project
 export const getStaticProps = async ({ locale }) => {
     const header = await import(`../../locales/${locale}/header.json`)
     const translations = await import(`../../locales/${locale}/projects.json`)
-    // const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
+    const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
     return {
         props: {
             header: header.default,
             translations: translations.default,
-            // projects: projects.data.response
+            projects: projects.data.response
         }
     }
 }

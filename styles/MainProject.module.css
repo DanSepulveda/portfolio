@@ -28,7 +28,7 @@ article.container h3{
     font-size: 3em;
     margin-bottom: 1em;
     text-align: center;
-    color: var(--vs-orange);
+    color: var(--card-title);
 }
 
 div.data{
@@ -58,7 +58,7 @@ article.container h4{
     margin-top: 1.2em;
     margin-bottom: .3em;
     font-size: 25px;
-    color: rgb(114, 212, 218);
+    color: var(--card-sub);
 }
 
 @media (max-width: 992px) {
