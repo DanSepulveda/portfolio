@@ -1,5 +1,5 @@
 import styles from '../styles/About.module.css'
-import H1 from './H1'
+import { H1 } from './Headings'
 import Box from './Box'
 
 const About = ({ trans }) => {

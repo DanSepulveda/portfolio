@@ -1,5 +1,5 @@
 import styles from '../styles/Skills.module.css'
-import H2 from './H2'
+import { H2 } from './Headings'
 import Comment from './Comment'
 import TechCard from './TechCard'
 
