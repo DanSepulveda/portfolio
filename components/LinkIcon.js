@@ -1,28 +1,21 @@
 import HideLink from "./HideLink"
 import Link from "next/link"
-import { BsGithub, BsYoutube, BsFillFolderSymlinkFill } from 'react-icons/bs'
-import { useRouter } from "next/router"
+import { BsGithub, BsYoutube, BsFillFolderSymlinkFill, BsLinkedin, BsEnvelopeFill } from 'react-icons/bs'
 
-const LinkIcon = ({ icon, link }) => {
-    const { locale } = useRouter()
-
+const LinkIcon = ({ icon, link, text }) => {
     const svg = {
         webpage: <BsFillFolderSymlinkFill />,
         youtube: <BsYoutube />,
-        github: <BsGithub />
-    }
-
-    const text = {
-        webpage: locale === 'es' ? 'Demo' : 'Demostración',
-        youtube: locale === 'es' ? 'Video Youtube' : 'Youtube Video',
-        github: locale === 'es' ? 'Repositorio' : 'Repository'
+        github: <BsGithub />,
+        linkedin: <BsLinkedin />,
+        email: <BsEnvelopeFill />
     }
 
     return (
         <Link href={link}>
-            <a>
+            <a target='_blank' rel='noreferrer'>
                 {svg[icon]}
-                <HideLink>{text[icon]}</HideLink>
+                <HideLink>{text}</HideLink>
             </a>
         </Link>
     )

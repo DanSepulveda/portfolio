@@ -6,7 +6,7 @@ import HideLink from './HideLink'
 
 const Navbar = ({ trans, theme, side }) => {
     const { home, about, projects, contact } = trans.links
-    const logo = theme === 'dark' ? 'logo-ligth.png' : 'logo-dark.png'
+    const logo = theme === 'dark' ? 'logo-light.png' : 'logo-dark.png'
     const { locale } = useRouter()
     const classType = side ? `${styles.sidelinks}` : `${styles.links}`
 
@@ -17,7 +17,7 @@ const Navbar = ({ trans, theme, side }) => {
                     <Image
                         src={`/assets/${logo}`}
                         alt={trans.alt}
-                        width={87}
+                        width={58}
                         height={25}
                     />
                     <HideLink>{trans.text}</HideLink>

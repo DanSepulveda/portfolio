@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 const Seo = ({ seo }) => {
     const { title, description, ogTitle, ogDescription, ogUrl } = seo
+
     return (
         <Head>
             <title>{title}</title>

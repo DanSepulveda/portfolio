@@ -1,21 +1,20 @@
 import styles from '../styles/About.module.css'
-import H2 from './H2'
-import Comment from './Comment'
+import H1 from './H1'
+import Box from './Box'
 
 const About = ({ trans }) => {
-    const { title, subtitle } = trans
+    const { title, boxes } = trans
 
     return (
         <section className={styles.about}>
-            <H2>{title}</H2>
-            <Comment>{subtitle}</Comment>
+            <H1>{title}</H1>
             <div className={styles.container}>
-                <article className={styles.image}>
+                <div className={styles.image}>
                     fsdafas
-                </article>
-                <article className={styles.resume}>
-                    fdsafds
-                </article>
+                </div>
+                <div className={styles.resume}>
+                    {boxes.map(box => <Box title={box.title} key={box.title}>{box.text}</Box>)}
+                </div>
             </div>
         </section>
     )

@@ -1,4 +1,5 @@
 import styles from '../styles/Social.module.css'
+import Link from 'next/link'
 import HideLink from './HideLink'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'
 import { SiGmail, SiDocusign } from 'react-icons/si'
@@ -13,14 +14,16 @@ const SocialIcon = ({ icon, text, link, title }) => {
 
     return (
         <div>
-            <a href={link} target='_blank' download={text.includes('CV') ? true : false} rel='noreferrer'>
-                <div className={styles.icon}>
-                    <div>
-                        {icons[icon]}
+            <Link href={link}>
+                <a target='_blank' download={text.includes('CV') ? true : false} rel='noreferrer'>
+                    <div className={styles.icon}>
+                        <div>
+                            {icons[icon]}
+                        </div>
                     </div>
-                </div>
-                <HideLink>{title}</HideLink>
-            </a>
+                    <HideLink>{title}</HideLink>
+                </a>
+            </Link>
             <span className={styles.text}>{text}</span>
         </div>
     )

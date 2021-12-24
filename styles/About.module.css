@@ -1,23 +1,26 @@
 section.about{
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 4em;
+    padding-bottom: 8em;
 }
 
 div.container{
     width: 100%;
     display: flex;
+    gap: 1em;
 }
 
-article.image{
+div.image{
     width: 50%;
-    height: 50vh;
     background-color: red;
 }
 
-article.resume{
+div.resume{
     width: 50%;
-    height: 50vh;
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }

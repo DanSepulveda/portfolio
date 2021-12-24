@@ -116,22 +116,28 @@ main {
   align-items: center;
 }
 
-/* main > section{
-  margin: 5vh 0;
-  padding: 12vh 0;
-} */
-
 h1, h2{
   font-size: 4em;
   margin-bottom: 1em;
   text-align: center;
   color: var(--vs-blue);
-  /* background-color: red; */
 }
 
 h1 span,
 h2 span{
   color: var(--vs-red);
+}
+
+h3.title{
+  font-size: 35px !important;
+  color: var(--card-title) !important;
+}
+
+h4.subtitle{
+  margin-bottom: .5em;
+  margin-top: 1.5em;
+  font-size: 20px;
+  color: var(--card-sub) !important;
 }
 
 p.comment{
@@ -187,37 +193,42 @@ footer {
 }
 
 span.html{
-  background-color: #F16529;
-  color: white;
+  background-color: #F16529 !important;
+}
+
+span.ejs{
+  background-color: #A91E50 !important;
 }
 
 span.css,
 span.react,
 span.reactnative,
 span.materialui,
-span.mysql{
-  background-color: #14A0DB;
+span.mysql,
+span.sql{
+  background-color: #14A0DB !important;
 }
 
 span.javascript,
 span.firebase{
-  background-color: #F7E018;
+  background-color: #F7E018 !important;
   color: #444 !important;
 }
 
 span.bootstrap,
 span.heroku,
 span.redux{
-  background-color: #8712FB;
+  background-color: #8712FB !important;
 }
 
 span.nodejs,
 span.mongodb{
-  background-color: #689F63;
+  background-color: #689F63 !important;
 }
 
 span.express,
-span.next,
+span.nextjs,
+span.vercel,
 span.netlify{
-  background-color: #202020;
+  background-color: #202020 !important;
 }

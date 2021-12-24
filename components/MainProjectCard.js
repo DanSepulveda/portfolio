@@ -11,7 +11,7 @@ const MainProjectCard = ({ project }) => {
     return (
         <article className={styles.container}>
             <div>
-                <h3 className='title'>{name}</h3>
+                <h3>{name}</h3>
             </div>
             <div className={styles.data}>
                 <div className={styles.imageContainer}>
@@ -42,9 +42,27 @@ const MainProjectCard = ({ project }) => {
                         {locale === 'es' ? 'Enlaces' : 'Links'}
                     </h4>
                     <div className={styles2.links}>
-                        {webpage && <LinkIcon icon='webpage' link={webpage} />}
-                        {github && <LinkIcon icon='github' link={github} />}
-                        {youtube && <LinkIcon icon='youtube' link={youtube} />}
+                        {webpage &&
+                            <LinkIcon
+                                icon='webpage'
+                                link={webpage}
+                                text={locale === 'es' ? 'Demostración' : 'Demo'}
+                            />
+                        }
+                        {github &&
+                            <LinkIcon
+                                icon='github'
+                                link={github}
+                                text={locale === 'es' ? 'Repositorio' : 'Repository'}
+                            />
+                        }
+                        {youtube &&
+                            <LinkIcon
+                                icon='youtube'
+                                link={youtube}
+                                text={locale === 'es' ? 'Video Youtube' : 'Youtube video'}
+                            />
+                        }
                     </div>
                 </div>
             </div>

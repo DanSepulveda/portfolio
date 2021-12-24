@@ -1,6 +1,5 @@
 import styles from '../styles/Footer.module.css'
-import HideLink from './HideLink'
-import { BsLinkedin, BsGithub, BsEnvelopeFill } from 'react-icons/bs'
+import LinkIcon from './LinkIcon'
 
 const Footer = ({ trans, theme }) => {
     const { rights, links } = trans
@@ -8,18 +7,21 @@ const Footer = ({ trans, theme }) => {
     return (
         <footer data-theme={theme}>
             <section className={styles.icons}>
-                <a href="https://www.linkedin.com/in/dansepulvedap/" target='_blank' rel='noreferrer'>
-                    <BsLinkedin />
-                    <HideLink>{links.linkedin}</HideLink>
-                </a>
-                <a href="mailto:dansepdev@gmail.com">
-                    <BsEnvelopeFill />
-                    <HideLink>{links.email}</HideLink>
-                </a>
-                <a href="https://github.com/DanSepulveda" target='_blank' rel='noreferrer'>
-                    <BsGithub />
-                    <HideLink>{links.github}</HideLink>
-                </a>
+                <LinkIcon
+                    icon='linkedin'
+                    link='https://www.linkedin.com/in/dansepulvedap/'
+                    text={links.linkedin}
+                />
+                <LinkIcon
+                    icon='email'
+                    link='mailto:dansepdev@gmail.com'
+                    text={links.email}
+                />
+                <LinkIcon
+                    icon='github'
+                    link='https://github.com/DanSepulveda'
+                    text={links.github}
+                />
             </section>
             <div className={styles.spanContainer}>
                 <span>Daniel Sepúlveda</span>

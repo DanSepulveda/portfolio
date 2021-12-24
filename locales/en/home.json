@@ -12,10 +12,6 @@
         "button": "Contact me",
         "alt": "Daniel Sepúlveda Picture"
     },
-    "about": {
-        "title": "About me",
-        "subtitle": ""
-    },
     "skills": {
         "title": "Skills",
         "subtitle": "These are some of the tools and technologies that I've used recently"
@@ -23,6 +19,6 @@
     "projects": {
         "title": "Projects",
         "text": "These are some of the projects I've developed using technologies and tools like React, Nextjs, Node.js, Express, MongoDB, MySQL, Heroku, Vercel, Firebase, Bootstrap, among others.",
-        "button": "View more projects"
+        "button": "View all"
     }
 }

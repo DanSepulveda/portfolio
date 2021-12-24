@@ -1,27 +1,12 @@
 import axios from 'axios'
-import { useState, useEffect } from "react"
 import Layout from "../../components/Layout"
-import Seo from "../../components/Seo"
-import Social from "../../components/Social"
 import Projects from "../../components/Projects"
 
 const Project = ({ header, translations, projects }) => {
     const { seo, content } = translations
-    const [theme, setTheme] = useState('light')
-
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme')
-        if (!savedTheme) {
-            localStorage.setItem('theme', 'light')
-        } else {
-            setTheme(savedTheme)
-        }
-    }, [])
 
     return (
-        <Layout trans={header} theme={theme} setTheme={setTheme}>
-            <Seo seo={seo} />
-            <Social trans={header.social} />
+        <Layout trans={header} seo={seo}>
             <Projects trans={content} projects={projects} home={false} />
         </Layout>
     )

@@ -24,9 +24,9 @@
     "footer": {
         "rights": "All Rights Reserved",
         "links": {
-            "linkedin": "Daniel Sepúlveda Linkedin Profile",
+            "linkedin": "Daniel Sepúlveda's Linkedin Profile",
             "email": "Send an email to Daniel Sepúlveda",
-            "github": "Daniel Sepúlveda Github Profile"
+            "github": "Daniel Sepúlveda's Github Profile"
         }
     },
     "social": {
@@ -35,17 +35,17 @@
             "text": "Download CV"
         },
         "github": {
-            "title": "Daniel Sepúlveda Github Profile",
+            "title": "Daniel Sepúlveda's Github Profile",
             "text": "Github Profile"
         },
         "linkedin": {
-            "title": "Daniel Sepúlveda Linkedin Profile",
+            "title": "Daniel Sepúlveda's Linkedin Profile",
             "text": "Linkedin Profile"
         },
         "email": {
             "title": "Send an email to Daniel Sepúlveda",
             "text": "Send email"
         },
-        "file": "/assets/Dansep-fullstack-dev.pdf"
+        "file": "/assets/Daniel-sepulveda-fullstack-dev.pdf"
     }
 }

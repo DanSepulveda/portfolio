@@ -1,0 +1,26 @@
+{
+    "seo": {
+        "title": "About Me | Daniel Sepúlveda | FullStack Developer",
+        "description": "Page description",
+        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
+        "ogDescription": "Developed projects Portfolio",
+        "ogUrl": "https://dansep.vercel.app/en"
+    },
+    "about": {
+        "title": "About me",
+        "boxes": [
+            {
+                "title": "Education",
+                "text": ""
+            },
+            {
+                "title": "Soft Skills",
+                "text": ""
+            },
+            {
+                "title": "Hobbies",
+                "text": ""
+            }
+        ]
+    }
+}

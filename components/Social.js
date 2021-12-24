@@ -3,6 +3,7 @@ import SocialIcon from './SocialIcon'
 
 const Social = ({ trans }) => {
     const { resume, github, linkedin, email, file } = trans
+
     return (
         <div className={styles.socialContainer}>
             <SocialIcon

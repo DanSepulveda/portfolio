@@ -28,13 +28,17 @@ const ProjectCard = ({ project, home }) => {
                     />
                 </div>
             }
-            <h2 className='title'>{name}</h2>
+            {home
+                ? <h3 className='title'>{name}</h3>
+                : <h2>{name}</h2>
+            }
             <p className='description'>
                 {locale === 'es' ? esDescription : enDescription}
             </p>
-            <h3>
-                {locale === 'es' ? 'Tecnologías' : 'Technologies'}
-            </h3>
+            {home
+                ? <h4 className='subtitle'>{locale === 'es' ? 'Tecnologías' : 'Technologies'}</h4>
+                : <h3>{locale === 'es' ? 'Tecnologías' : 'Technologies'}</h3>
+            }
             <div className={`${styles.techContainer} techDiv`}>
                 <ul>
                     {techs.map(tech => {
@@ -43,13 +47,32 @@ const ProjectCard = ({ project, home }) => {
                     })}
                 </ul>
             </div>
-            <h3>
-                {locale === 'es' ? 'Enlaces' : 'Links'}
-            </h3>
+            {home
+                ? <h4 className='subtitle'>{locale === 'es' ? 'Enlaces' : 'Links'}</h4>
+                : <h3>{locale === 'es' ? 'Enlaces' : 'Links'}</h3>
+            }
             <div className={styles.links}>
-                {webpage && <LinkIcon icon='webpage' link={webpage} />}
-                {github && <LinkIcon icon='github' link={github} />}
-                {youtube && <LinkIcon icon='youtube' link={youtube} />}
+                {webpage &&
+                    <LinkIcon
+                        icon='webpage'
+                        link={webpage}
+                        text={locale === 'es' ? 'Demostración' : 'Demo'}
+                    />
+                }
+                {github &&
+                    <LinkIcon
+                        icon='github'
+                        link={github}
+                        text={locale === 'es' ? 'Repositorio' : 'Repository'}
+                    />
+                }
+                {youtube &&
+                    <LinkIcon
+                        icon='youtube'
+                        link={youtube}
+                        text={locale === 'es' ? 'Video Youtube' : 'Youtube video'}
+                    />
+                }
             </div>
         </article>
     )

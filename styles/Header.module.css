@@ -18,6 +18,7 @@ section.links nav a {
   font-weight: 500;
   font-size: 18px;
   margin-right: 1em;
+  transition: all .3s;
 }
 
 section.links nav a:hover{
