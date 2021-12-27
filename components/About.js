@@ -1,5 +1,6 @@
 import styles from '../styles/About.module.css'
 import { H1 } from './Headings'
+import Image from 'next/image'
 import Box from './Box'
 
 const About = ({ trans }) => {
@@ -10,10 +11,10 @@ const About = ({ trans }) => {
             <H1>{title}</H1>
             <div className={styles.container}>
                 <div className={styles.image}>
-                    fsdafas
+                    <Image src='/assets/avatar.png' width={.6} height={.6} layout='responsive' />
                 </div>
                 <div className={styles.resume}>
-                    {boxes.map(box => <Box title={box.title} key={box.title}>{box.text}</Box>)}
+                    {boxes.map(box => <Box data={box} key={box.title} />)}
                 </div>
             </div>
         </section>

@@ -10,17 +10,20 @@ section.about{
 div.container{
     width: 100%;
     display: flex;
-    gap: 1em;
+    gap: 4em;
 }
 
 div.image{
-    width: 50%;
-    background-color: red;
+    width: 40%;
+    align-self: flex-start;
 }
 
 div.resume{
-    width: 50%;
+    width: 60%;
+    padding: 1em;
     display: flex;
     flex-direction: column;
     gap: 1em;
+    /* height: 60vh; */
+    /* overflow-y: scroll; */
 }

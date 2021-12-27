@@ -10,16 +10,35 @@
         "title": "About me",
         "boxes": [
             {
+                "title": "Introduction",
+                "points": [
+                    "My name is Daniel Sepúlveda, and I am a Full Stack web developer with knowledge of MERN Stack. My interest in constantly learning new things, together with the search for a change in my work life, led me to this programming world and I found a passion in it. Fortunately, I can say that it was one of the best decisions I have ever made, since programming and being able to develop a product that solves a problem is something that makes me happy. I am currently looking for my first job in the IT world while I keep learning in a self-taught way."
+                ]
+            },
+            {
                 "title": "Education",
-                "text": ""
+                "points": [
+                    "I did the Full Stack MERN and Mobile Apps programming Bootcamp at Mindhub, where we worked using Agile / Scrum methodology. I was able to develope several projects both in a group and individually, always meeting deadlines and holding feedback meetings. I also had the opportunity to work as a Team Leader in the two group projects that we had to develop."
+                ]
             },
             {
                 "title": "Soft Skills",
-                "text": ""
+                "points": [
+                    "Good comunication",
+                    "Teamwork",
+                    "Creativity",
+                    "Organization",
+                    "Adaptability"
+                ]
             },
             {
                 "title": "Hobbies",
-                "text": ""
+                "points": [
+                    "Learning new topics",
+                    "Technology",
+                    "Travel around the world",
+                    "Japan / Japanese"
+                ]
             }
         ]
     }

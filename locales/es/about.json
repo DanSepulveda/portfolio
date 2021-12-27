@@ -10,16 +10,35 @@
         "title": "Sobre Mí",
         "boxes": [
             {
+                "title": "Introducción",
+                "points": [
+                    "Mi nombre es Daniel Sepúlveda, y soy un desarrollador web Full Stack con conocimientos en el Stack MERN. Mi interés por estar constantemente aprendiendo nuevas cosas, junto con la búsqueda de un cambio en mi vida laboral, me condujeron a este mundo de la programación y encontré en él una pasión. Afortunadamente, puedo decir que fue una de las mejores decisiones que he tomado, ya que programar y ser capaz de desarrollar un producto que resuelva un problema, es algo que me llena de felicidad. Actualmente me encuentro en la búsqueda de mi primer trabajo dentro del mundo IT mientras sigo desarrollando mis conocimientos de manera autodidacta."
+                ]
+            },
+            {
                 "title": "Formación",
-                "text": ""
+                "points": [
+                    "Realicé el Bootcamp de programación de Mindhub, Full Stack MERN and Mobile Apps, en donde trabajamos utilizando metodología Agile/Scrum. Pude realizar varios proyectos tanto de manera grupal como individual, respetando siempre los plazos de entrega y realizando reuniones de retroalimentación. Además tuve la oportunidad de desempeñarme como Team Leader en los dos proyectos grupales que tuvimos que realizar."
+                ]
             },
             {
                 "title": "Habilidades blandas",
-                "text": ""
+                "points": [
+                    "Buena comunicación",
+                    "Trabajo en equipo",
+                    "Creatividad",
+                    "Organización",
+                    "Adaptabilidad"
+                ]
             },
             {
                 "title": "Hobbies",
-                "text": ""
+                "points": [
+                    "Aprender nuevas cosas",
+                    "Tecnología",
+                    "Viajar por el mundo",
+                    "Japón / Japonés"
+                ]
             }
         ]
     }
