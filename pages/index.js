@@ -20,7 +20,7 @@ const Home = ({ translations, transHeader, technologies, homeProjects }) => {
 
 export default Home
 
-export const getStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
   const translations = await import(`../locales/${locale}/home.json`)
   const transHeader = await import(`../locales/${locale}/header.json`)
   const technologies = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/technologies')
