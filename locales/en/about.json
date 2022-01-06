@@ -1,10 +1,10 @@
 {
     "seo": {
         "title": "About Me | Daniel Sepúlveda | FullStack Developer",
-        "description": "Page description",
+        "description": "In this page you will find some information about me. If you want to know something not mentioned in this page, don't hesitate in send me a message.",
         "ogTitle": "Daniel Sepúlveda | FullStack Developer",
         "ogDescription": "Developed projects Portfolio",
-        "ogUrl": "https://dansep.vercel.app/en"
+        "ogUrl": "https://dansep.vercel.app/en/about"
     },
     "about": {
         "title": "About me",

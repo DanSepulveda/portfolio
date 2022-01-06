@@ -7,8 +7,8 @@ const Seo = ({ seo }) => {
         <Head>
             <title>{title}</title>
             <meta name="description" content={description} />
-            <meta property='og:title' content={ogTitle} />
-            <meta property='og:description' content={ogDescription} />
+            <meta property='og:title' content={title} />
+            <meta property='og:description' content={description} />
             <meta property='og:image' />
             <meta property='og:url' content={ogUrl} />
             <meta property='og:type' content='website' />
