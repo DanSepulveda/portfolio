@@ -23,7 +23,5 @@ div.resume{
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    /* height: 60vh; */
-    /* overflow-y: scroll; */
+    gap: 2em;
 }

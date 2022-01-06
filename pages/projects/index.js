@@ -14,7 +14,7 @@ const Project = ({ header, translations, projects }) => {
 
 export default Project
 
-export const getStaticProps = async ({ locale }) => {
+export const getServerSideProps = async ({ locale }) => {
     const header = await import(`../../locales/${locale}/header.json`)
     const translations = await import(`../../locales/${locale}/projects.json`)
     const projects = await axios.get('https://us-central1-portfolio-api-dansep.cloudfunctions.net/app/api/projects')
