@@ -1,6 +1,6 @@
 # Portfolio
 
-This is my personal portfolio, a webapp built to show all the projects I've developed using different technologies. It was developed using Nextjs to improve SEO through Server Side Rendering.
+This is my personal portfolio, a webapp built to show all the projects I've developed using different technologies. It was developed using Nextjs to improve SEO through Server Side Rendering. It fetches data from an API developed with Node and Express. This is the [API Repository](https://github.com/DanSepulveda/portfolio-api).
 
 ![image](https://i.ibb.co/TB3gpNk/demo.gif)
 
