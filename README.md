@@ -1,6 +1,8 @@
 # Portfolio
 
-This is my personal portfolio, a webapp built to show all the projects I've developed using different technologies. It was developed using Nextjs to improve SEO through Static Generation.
+This is my personal portfolio, a webapp built to show all the projects I've developed using different technologies. It was developed using Nextjs to improve SEO through Server Side Rendering.
+
+![image](https://i.ibb.co/r3w44MT/demo.gif)
 
 ## 🚀 Getting Started
 
