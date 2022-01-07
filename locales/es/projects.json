@@ -1,10 +1,8 @@
 {
     "seo": {
-        "title": "Proyectos | Daniel Sepúlveda | FullStack Developer",
+        "title": "Proyectos | Daniel Sepúlveda | Desarrollador FullStack",
         "description": "Proyectos realizados como Desarrollador Full Stack usando el stack MERN (MongoDB, Express, React, Nodejs), y otras tecnologías como MySQL, Firebase, Nextjs, etc.",
-        "ogTitle": "Daniel Sepúlveda | Desarrollador FullStack",
-        "ogDescription": "Portafolio de proyectos desarrollados.",
-        "ogUrl": "https://dansep.vercel.app"
+        "ogUrl": "https://dansep.vercel.app/projects"
     },
     "content": {
         "title": "Proyectos",

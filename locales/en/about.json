@@ -1,9 +1,7 @@
 {
     "seo": {
         "title": "About Me | Daniel Sepúlveda | FullStack Developer",
-        "description": "In this page you will find some information about me. If you want to know something not mentioned in this page, don't hesitate in send me a message.",
-        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
-        "ogDescription": "Developed projects Portfolio",
+        "description": "In this page you will find some information about me. If you want to know something not mentioned, don't hesitate in send me a message.",
         "ogUrl": "https://dansep.vercel.app/en/about"
     },
     "about": {
@@ -18,7 +16,7 @@
             {
                 "title": "Education",
                 "points": [
-                    "I did the Full Stack MERN and Mobile Apps programming Bootcamp at Mindhub, where we worked using Agile / Scrum methodology. I was able to develope several projects both in a group and individually, always meeting deadlines and holding feedback meetings. I also had the opportunity to work as a Team Leader in the two group projects that we had to develop."
+                    "I did the Full Stack MERN and Mobile Apps programming Bootcamp at Mindhub, where we worked using Agile / Scrum methodology. I was able to develop several projects both in a group and individually, always meeting deadlines and holding feedback meetings. I also had the opportunity to work as a Team Leader in the two group projects that we had to develop."
                 ]
             },
             {

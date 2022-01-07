@@ -2,12 +2,10 @@
     "seo": {
         "title": "Projects | Daniel Sepúlveda | FullStack Developer",
         "description": "Projects developed as a Full Stack developer using MERN Stack (MongoDB, Express, React, Nodejs), and other technologies like MySQL, Firebase, Nextjs, etc.",
-        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
-        "ogDescription": "Developed projects Portfolio",
         "ogUrl": "https://dansep.vercel.app/en/projects"
     },
     "content": {
         "title": "Projects",
-        "text": "These are the main projects I've developed using both Frontend and Backend technologies. Some of the technologies used includes JavaScript, React, MongoDB, Express, MaterialUI, MySQL, Mongoose y Nodejs.There are some projects developed in groups while I was doing the FullStack MERN Mindhub's Bootcamp and others developed individually (bootcamp's tasks, technical test developments and personal projects)."
+        "text": "These are the main projects I've developed using both Frontend and Backend technologies. Some of the technologies used includes JavaScript, React, MongoDB, Express, MaterialUI, MySQL, Mongoose y Nodejs. There are some projects developed in groups while I was doing the FullStack MERN Mindhub's Bootcamp and others developed individually (bootcamp's tasks, technical test developments and personal projects)."
     }
 }

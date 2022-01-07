@@ -1,9 +1,7 @@
 {
     "seo": {
         "title": "Daniel Sepúlveda Portfolio",
-        "description": "Page description",
-        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
-        "ogDescription": "Developed projects Portfolio",
+        "description": "Daniel Sepúlveda's portfolio showing the projects developed as a Full Stack developer using several technologies.",
         "ogUrl": "https://dansep.vercel.app/en"
     },
     "hero": {

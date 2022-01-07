@@ -2,8 +2,6 @@
     "seo": {
         "title": "Contacto | Daniel Sepúlveda | Desarrollador FullStack",
         "description": "Si tienes cualquier duda o comentario, no dudes en enviarme un mensaje a través del formulario de contacto. Te responderé lo más rápido posible.",
-        "ogTitle": "Daniel Sepúlveda | FullStack Developer",
-        "ogDescription": "Developed projects Portfolio",
         "ogUrl": "https://dansep.vercel.app/contact"
     },
     "content": {
