@@ -10,9 +10,11 @@ import Comment from './Comment'
 import InputText from './InputText'
 import InputArea from './InputArea'
 import Button from './Button'
+import { useRouter } from 'next/router'
 
 const Contact = ({ trans }) => {
     const { title, subtitle, inputs, errors, button, alertMessages } = trans
+    const { locale } = useRouter()
 
     const sendMail = async (values) => {
         const boton = document.getElementById('send')
@@ -38,7 +40,7 @@ const Contact = ({ trans }) => {
             <Toaster position='bottom-left' />
             <H1>{title}</H1>
             <Formik
-                initialValues={{ name: '', email: '', message: '' }}
+                initialValues={{ name: '', email: '', message: '', language: locale }}
                 validationSchema={Yup.object({
                     name: Yup.string()
                         .min(3, errors.min3)
@@ -54,7 +56,7 @@ const Contact = ({ trans }) => {
                 onSubmit={async (values, { resetForm }) => {
                     const response = await sendMail(values)
                     if (response) {
-                        resetForm({ name: '', email: '', message: '' })
+                        resetForm({ name: '', email: '', message: '', language: locale })
                     }
                 }}
             >
@@ -77,6 +79,7 @@ const Contact = ({ trans }) => {
                         label={inputs.message.label}
                         placeholder={inputs.message.placeholder}
                     />
+                    <input type="hidden" name="language" />
                     <Button type="submit" id='send'>{button}</Button>
                 </Form>
             </Formik>
