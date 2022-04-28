@@ -1,9 +1,9 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import Seo from './Seo'
-import Header from './Header'
-import Social from './Social'
-import Footer from './Footer'
+import Header from '../organisms/Header'
+import Social from '../molecules/Social'
+import Footer from '../organisms/Footer'
 
 const Layout = ({ children, trans, seo }) => {
     const [show, setShow] = useState(false)

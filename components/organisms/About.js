@@ -1,7 +1,7 @@
-import styles from '../styles/About.module.css'
-import { H1 } from './Headings'
+import styles from '../../styles/About.module.css'
+import { H1 } from '../atoms/Headings'
 import Image from 'next/image'
-import Box from './Box'
+import Box from '../molecules/Box'
 
 const About = ({ trans }) => {
     const { title, boxes } = trans

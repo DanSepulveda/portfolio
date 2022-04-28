@@ -1,5 +1,5 @@
-import styles from '../styles/MainProject.module.css'
-import MainProjectCard from './MainProjectCard'
+import styles from '../../styles/MainProject.module.css'
+import MainProjectCard from '../molecules/MainProjectCard'
 
 const MainProject = ({ projects }) => {
     return (

@@ -1,8 +1,8 @@
-import styles from '../styles/ProjectCard.module.css'
+import styles from '../../styles/ProjectCard.module.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import setHeight from '../utils/setHeight'
+import setHeight from '../../utils/setHeight'
 import LinkIcon from './LinkIcon'
 
 const ProjectCard = ({ project, home }) => {

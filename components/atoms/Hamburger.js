@@ -1,4 +1,4 @@
-import styles from '../styles/Header.module.css'
+import styles from '../../styles/Header.module.css'
 import { RiMenuFill } from 'react-icons/ri'
 
 const Hamburger = ({ open, setOpen }) => {

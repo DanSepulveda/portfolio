@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout"
-import Contact from "../../components/Contact"
+import Layout from "../../components/templates/Layout"
+import Contact from "../../components/organisms/Contact"
 
 const ContactPage = ({ header, contact }) => {
     const { seo, content } = contact

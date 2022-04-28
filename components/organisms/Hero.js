@@ -1,5 +1,5 @@
-import styles from '../styles/Hero.module.css'
-import Button from './Button'
+import styles from '../../styles/Hero.module.css'
+import Button from '../atoms/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'

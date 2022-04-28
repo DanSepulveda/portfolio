@@ -1,5 +1,5 @@
-import styles from '../styles/MainProject.module.css'
-import styles2 from '../styles/ProjectCard.module.css'
+import styles from '../../styles/MainProject.module.css'
+import styles2 from '../../styles/ProjectCard.module.css'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import LinkIcon from './LinkIcon'

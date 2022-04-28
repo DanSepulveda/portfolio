@@ -1,7 +1,7 @@
-import styles from '../styles/TechCard.module.css'
+import styles from '../../styles/TechCard.module.css'
 import Image from "next/image"
 import Link from 'next/link'
-import HideLink from './HideLink'
+import HideLink from '../atoms/HideLink'
 
 const TechCard = ({ tech }) => {
     const { name, image, languages } = tech

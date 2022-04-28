@@ -1,11 +1,11 @@
-import styles from '../styles/Projects.module.css'
+import styles from '../../styles/Projects.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { H1, H2 } from './Headings'
-import Comment from './Comment'
+import { H1, H2 } from '../atoms/Headings'
+import Comment from '../atoms/Comment'
 import MainProject from './MainProject'
 import ProjectGrid from './ProjectGrid'
-import Button from './Button'
+import Button from '../atoms/Button'
 
 const Projects = ({ trans, projects, home, mainProjects }) => {
     const { title, text, button } = trans

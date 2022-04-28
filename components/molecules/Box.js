@@ -1,4 +1,4 @@
-import styles from '../styles/Box.module.css'
+import styles from '../../styles/Box.module.css'
 
 const Box = ({ data }) => {
     const { title, points } = data
