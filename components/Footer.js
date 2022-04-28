@@ -1,5 +1,5 @@
-import styles from '../../styles/Footer.module.css'
-import LinkIcon from '../molecules/LinkIcon'
+import styles from '../styles/Footer.module.css'
+import LinkIcon from './LinkIcon'
 
 const Footer = ({ trans, theme }) => {
     const { rights, links } = trans

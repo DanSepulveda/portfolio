@@ -1,4 +1,4 @@
-import HideLink from "../atoms/HideLink"
+import HideLink from "./HideLink"
 import Link from "next/link"
 import { BsGithub, BsYoutube, BsFillFolderSymlinkFill, BsLinkedin, BsEnvelopeFill } from 'react-icons/bs'
 

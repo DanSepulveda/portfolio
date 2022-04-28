@@ -1,7 +1,7 @@
-import styles from '../../styles/SideMenu.module.css'
-import NavBar from '../molecules/Navbar'
-import Theme from "../molecules/Theme"
-import Language from "../molecules/Language"
+import styles from '../styles/SideMenu.module.css'
+import NavBar from './Navbar'
+import Theme from "./Theme"
+import Language from "./Language"
 
 const SideMenu = ({ navbar, languages, theme, setTheme, open }) => {
     const openStyles = open ? `${styles.canvas}` : `${styles.closed}`

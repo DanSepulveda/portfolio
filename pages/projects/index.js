@@ -1,6 +1,6 @@
 import axios from 'axios'
-import Layout from "../../components/templates/Layout"
-import Projects from "../../components/organisms/Projects"
+import Layout from "../../components/Layout"
+import Projects from "../../components/Projects"
 
 const Project = ({ header, translations, projects }) => {
     const { seo, content } = translations

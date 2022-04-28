@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import NavBar from '../molecules/Navbar'
-import Theme from "../molecules/Theme"
-import Language from "../molecules/Language"
-import Hamburger from '../atoms/Hamburger'
+import NavBar from './Navbar'
+import Theme from "./Theme"
+import Language from "./Language"
+import Hamburger from './Hamburger'
 import SideMenu from './SideMenu'
 
 const Header = ({ trans, theme, setTheme }) => {

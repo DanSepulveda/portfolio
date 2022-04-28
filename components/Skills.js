@@ -1,7 +1,7 @@
-import styles from '../../styles/Skills.module.css'
-import { H2 } from '../atoms/Headings'
-import Comment from '../atoms/Comment'
-import TechCard from '../molecules/TechCard'
+import styles from '../styles/Skills.module.css'
+import { H2 } from './Headings'
+import Comment from './Comment'
+import TechCard from './TechCard'
 
 const Skills = ({ trans, techs }) => {
     const { title, subtitle } = trans

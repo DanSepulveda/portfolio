@@ -1,5 +1,5 @@
-import styles from '../../styles/Social.module.css'
-import SocialIcon from '../atoms/SocialIcon'
+import styles from '../styles/Social.module.css'
+import SocialIcon from './SocialIcon'
 
 const Social = ({ trans }) => {
     const { resume, github, linkedin, email, file } = trans

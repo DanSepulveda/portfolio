@@ -1,8 +1,8 @@
 import axios from 'axios'
-import Layout from '../components/templates/Layout'
-import Hero from '../components/organisms/Hero'
-import Skills from '../components/organisms/Skills'
-import Projects from '../components/organisms/Projects'
+import Layout from '../components/Layout'
+import Hero from '../components/Hero'
+import Skills from '../components/Skills'
+import Projects from '../components/Projects'
 
 const Home = ({ translations, transHeader, technologies, homeProjects }) => {
   const { seo, hero, skills, projects } = translations

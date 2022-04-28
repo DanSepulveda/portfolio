@@ -1,5 +1,5 @@
-import styles from '../../styles/ProjectGrid.module.css'
-import ProjectCard from '../molecules/ProjectCard'
+import styles from '../styles/ProjectGrid.module.css'
+import ProjectCard from './ProjectCard'
 
 const ProjectGrid = ({ projects, home }) => {
     return (

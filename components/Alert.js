@@ -1,4 +1,4 @@
-import styles from '../../styles/Alert.module.css'
+import styles from '../styles/Alert.module.css'
 import { MdCheckCircleOutline } from 'react-icons/md'
 import { IoMdCloseCircleOutline } from 'react-icons/io'
 

@@ -1,4 +1,4 @@
-import styles from '../../styles/Social.module.css'
+import styles from '../styles/Social.module.css'
 import Link from 'next/link'
 import HideLink from './HideLink'
 import { BsLinkedin, BsGithub } from 'react-icons/bs'

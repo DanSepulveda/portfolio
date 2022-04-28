@@ -1,8 +1,8 @@
-import styles from '../../styles/Header.module.css'
+import styles from '../styles/Header.module.css'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
-import HideLink from '../atoms/HideLink'
+import HideLink from './HideLink'
 
 const Navbar = ({ trans, theme, side }) => {
     const { home, about, projects, contact } = trans.links
