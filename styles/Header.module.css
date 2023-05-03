@@ -106,13 +106,13 @@ section.sidetoggle{
 }
 
 /* FLAGS */
-section.flags a,
-section.sideflags a{
+section.flags article,
+section.sideflags article{
   height: 26px !important;
 }
 
-section.flags > a:last-child,
-section.sideflags > a:last-child{
+section.flags > article:last-child,
+section.sideflags > article:last-child{
   margin-left: 0.7em;
 }
 
