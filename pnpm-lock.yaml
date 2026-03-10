@@ -8,12 +8,18 @@ importers:
 
   .:
     dependencies:
+      '@lucide/astro':
+        specifier: ^0.577.0
+        version: 0.577.0(astro@5.18.0(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(typescript@5.9.3))
       '@tailwindcss/vite':
         specifier: ^4.2.1
         version: 4.2.1(vite@6.4.1(jiti@2.6.1)(lightningcss@1.31.1))
       astro:
         specifier: ^5.17.1
         version: 5.18.0(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(typescript@5.9.3)
+      tailwind-animations:
+        specifier: ^1.0.1
+        version: 1.0.1(tailwindcss@4.2.1)
       tailwindcss:
         specifier: ^4.2.1
         version: 4.2.1
@@ -548,6 +554,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/astro@0.577.0':
+    resolution: {integrity: sha512-xZcdx+MyYXY74cBzFxr9N49SlofbGjCVD9GxJZcJA40PJvJSLWSeJpD9bgKFcZfFxf1QXkEYaR6BnCS+0lek8Q==}
+    peerDependencies:
+      astro: ^4 || ^5
 
   '@oslojs/encoding@1.1.0':
     resolution: {integrity: sha512-70wQhgYmndg4GCPxPPxPGevRKqTIJ2Nh4OkiMWmDAVYsTQ+Ta7Sq+rPevXyXGdzr30/qZBnyOalCszoMxlyldQ==}
@@ -1644,6 +1655,11 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  tailwind-animations@1.0.1:
+    resolution: {integrity: sha512-5ouCdgfGS4kcyuzRSb/1O3o9f5Akssi7ue46PHfKjvPLMWjtnzmqM8i6ElES3tKVTyhjSaTPfLti7aB7WSxhZg==}
+    peerDependencies:
+      tailwindcss: ^4.0.0
+
   tailwindcss@4.2.1:
     resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
 
@@ -2243,6 +2259,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/astro@0.577.0(astro@5.18.0(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(typescript@5.9.3))':
+    dependencies:
+      astro: 5.18.0(jiti@2.6.1)(lightningcss@1.31.1)(rollup@4.59.0)(typescript@5.9.3)
 
   '@oslojs/encoding@1.1.0': {}
 
@@ -3659,6 +3679,10 @@ snapshots:
       csso: 5.0.5
       picocolors: 1.1.1
       sax: 1.5.0
+
+  tailwind-animations@1.0.1(tailwindcss@4.2.1):
+    dependencies:
+      tailwindcss: 4.2.1
 
   tailwindcss@4.2.1: {}
 
