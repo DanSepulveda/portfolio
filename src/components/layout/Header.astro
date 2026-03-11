@@ -1,0 +1,124 @@
+---
+import Menu from "@lucide/astro/icons/menu";
+
+import ThemeToggle from "@src/components/layout/ThemeToggle.astro";
+import AppLogo from "@src/components/ui/AppLogo.astro";
+import Link from "@src/components/ui/Link.astro";
+
+import { SITE } from "@src/config/common";
+import { NAV_LINKS, EXTERNAL_URLS } from "@src/config/navigation";
+
+import Github from "@src/assets/images/social/github.svg";
+import Linkedin from "@src/assets/images/social/linkedin.svg";
+
+const { pathname } = Astro.url;
+---
+
+<header
+  id="navbar"
+  class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent bg-background md:backdrop-blur-md"
+>
+  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+    <AppLogo />
+
+    <nav class="hidden md:flex">
+      <ul class="flex items-center gap-2">
+        {
+          NAV_LINKS.map((link) => (
+            <li>
+              <Link
+                href={link.url}
+                variant="navbar"
+                active={link.url == pathname}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div>
+      <Link
+        href={EXTERNAL_URLS.github}
+        variant="icon"
+        aria-label=`Perfil de Github ${SITE.author}`
+      >
+        <Github class="size-4.5 [&>path]:fill-muted" />
+      </Link>
+      <Link
+        href={EXTERNAL_URLS.linkedin}
+        variant="icon"
+        aria-label=`Perfil de Linkedin ${SITE.author}`
+      >
+        <Linkedin class="size-5 [&>path]:fill-muted" />
+      </Link>
+      <ThemeToggle />
+    </div>
+
+    <button
+      id="menu-btn"
+      class="text-muted p-2 md:hidden focus:outline-none"
+      aria-label="Abrir menú"
+    >
+      <Menu />
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="absolute hidden top-full left-0 w-full bg-background border-b border-zinc-200 dark:border-zinc-800 p-6 flex-col gap-4 md:hidden"
+  >
+    {
+      NAV_LINKS.map((link) => (
+        <Link
+          href={link.url}
+          variant="navbar"
+          class="text-lg! text-left! justify-start! text-foreground/90!"
+        >
+          {link.name}
+        </Link>
+      ))
+    }
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navbar = document.getElementById("navbar");
+
+  // Toggle mobile menu
+  menuBtn?.addEventListener("click", () => {
+    mobileMenu?.classList.toggle("hidden");
+    mobileMenu?.classList.toggle("flex");
+  });
+
+  // Close menu when click a link
+  const links = mobileMenu?.querySelectorAll("a");
+  links?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+    });
+  });
+
+  // Scroll effect
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 40) {
+      navbar?.classList.add(
+        "border-zinc-200",
+        "dark:border-slate-800",
+        "md:bg-background/70",
+        "shadow-sm",
+      );
+    } else {
+      navbar?.classList.remove(
+        "border-zinc-200",
+        "dark:border-slate-800",
+        "md:bg-background/70",
+        "shadow-sm",
+      );
+    }
+  });
+</script>

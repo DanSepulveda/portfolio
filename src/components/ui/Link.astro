@@ -1,0 +1,44 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string;
+  variant?: "primary" | "outline" | "navbar" | "icon";
+  active?: boolean;
+  class?: string;
+}
+
+const {
+  href,
+  variant = "primary",
+  active = false,
+  class: className,
+  ...props
+} = Astro.props;
+
+const variants = {
+  primary:
+    "px-6 h-11 text-base text-primary-foreground bg-primary hover:bg-primary-darker hover:dark:bg-primary-lighter hover:scale-101 hover:shadow-lg hover:shadow-shadow/30",
+  outline:
+    "px-6 h-11 text-base border border-primary text-primary hover:bg-primary/5 dark:border-muted dark:text-muted hover:dark:border-white hover:dark:text-white hover:scale-101 hover:shadow-lg hover:shadow-shadow/30",
+  navbar: active
+    ? "px-2.5 h-9 text-sm text-foreground underline underline-offset-3"
+    : "px-2.5 h-9 text-sm text-muted hover:text-primary-darker hover:bg-primary-darker/10 dark:hover:text-foreground dark:hover:bg-foreground/15",
+  icon: "size-9 [&>svg]:size-4.5 [&_path]:transition-colors [&_path]:duration-250 [&_path]:fill-muted hover:[&_path]:fill-foreground hover:bg-foreground/5 dark:hover:bg-foreground/15",
+};
+
+const baseClasses =
+  "inline-flex items-center justify-center text-center font-semibold rounded-lg transition-all duration-250";
+
+const external = href.startsWith("https");
+---
+
+<a
+  href={href}
+  class:list={[baseClasses, variants[variant], className]}
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noopener noreferrer" : undefined}
+  {...props}
+>
+  <slot />
+</a>

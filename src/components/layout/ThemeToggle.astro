@@ -1,0 +1,46 @@
+---
+import Moon from "@lucide/astro/icons/moon";
+import Sun from "@lucide/astro/icons/sun";
+---
+
+<button
+  id="theme-toggle"
+  aria-label="Cambiar modo claro/oscuro"
+  class="inline-flex items-center justify-center text-center font-semibold rounded-lg transition-all duration-250 size-9 [&>svg]:size-4.5 [&_svg]:transition-colors [&_svg]:duration-250 [&_svg]:stroke-muted hover:[&_svg]:stroke-foreground hover:bg-foreground/5 dark:hover:bg-foreground/15 cursor-pointer"
+>
+  <Sun
+    id="icon-light"
+    stroke-width={2}
+    class="hidden"
+  />
+  <Moon
+    id="icon-dark"
+    stroke-width={2}
+  />
+</button>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const iconLight = document.getElementById("icon-light");
+  const iconDark = document.getElementById("icon-dark");
+  const html = document.documentElement;
+
+  // Get user's preference
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isDark = saved === "dark" || (!saved && prefersDark);
+
+  const applyTheme = (dark: boolean) => {
+    html.classList.toggle("dark", dark);
+    iconLight?.classList.toggle("hidden", !dark);
+    iconDark?.classList.toggle("hidden", dark);
+  };
+
+  applyTheme(isDark);
+
+  toggle?.addEventListener("click", () => {
+    const nowDark = !html.classList.contains("dark");
+    applyTheme(nowDark);
+    localStorage.setItem("theme", nowDark ? "dark" : "light");
+  });
+</script>
