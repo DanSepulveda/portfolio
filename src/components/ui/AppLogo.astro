@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
-import { URLS } from "@src/config/navigation";
+import { INTERNAL_URLS } from "@src/config/navigation";
 
 import darkLogo from "@src/assets/images/logo/logo-dark.png";
 import lightLogo from "@src/assets/images/logo/logo-light.png";
 ---
 
-<a href={URLS.home}>
+<a href={INTERNAL_URLS.home}>
   <div class="h-7 w-auto">
     <Image
       src={lightLogo}
