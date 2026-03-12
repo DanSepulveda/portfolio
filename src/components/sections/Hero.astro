@@ -1,0 +1,88 @@
+---
+import { Image } from "astro:assets";
+
+import Link from "@src/components/ui/Link.astro";
+import Status from "@src/components/ui/Status.astro";
+import Title from "@src/components/ui/Title.astro";
+
+import { INTERNAL_URLS } from "@src/config/navigation";
+
+const images = import.meta.glob("../../assets/images/techs/*.svg");
+const techs = ["JavaScript", "TypeScript", "Python"];
+---
+
+<section
+  class="relative isolate pt-32 pb-20 lg:pt-36 lg:pb-20 overflow-hidden bg-background"
+>
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
+    <div
+      class="absolute top-[30%] left-[10%] w-[25%] h-[25%] rounded-full bg-indigo-500/20 blur-[120px]"
+    >
+    </div>
+    <div
+      class="absolute bottom-[25%] right-[-5%] w-[30%] h-[25%] rounded-full bg-blue-500/20 blur-[100px]"
+    >
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6 relative">
+    <div class="flex flex-col items-center text-center">
+      <Status variant="badge">Disponible para nuevos retos</Status>
+
+      <Title
+        title="Transformando ideas"
+        subtitle="en soluciones."
+      />
+
+      <p class="max-w-2xl text-lg md:text-xl mb-10 leading-relaxed text-muted">
+        Soy un <span class="font-medium text-foreground"
+          >Desarrollador Full Stack</span
+        > ubicado en Chile, especializado en crear aplicaciones web modulares, escalables
+        y que resuelven problemas reales.
+      </p>
+
+      <div class="flex flex-row items-center gap-4">
+        <Link
+          href="#proyectos"
+          variant="outline"
+          >Ver proyectos</Link
+        >
+        <Link href={INTERNAL_URLS.contact}>Hablemos</Link>
+      </div>
+
+      <div class="mt-16 w-full">
+        <p
+          id="lista-tecnologias"
+          class="text-sm font-bold uppercase tracking-[0.2em] text-muted/85 mb-8"
+        >
+          Lenguajes que utilizo
+        </p>
+        <ul
+          aria-labelledby="lista-tecnologias"
+          class="flex flex-wrap justify-center gap-x-10 gap-y-6 md:gap-10 animate-blurred-fade-in"
+        >
+          {
+            techs.map(async (tech) => {
+              const rutaBusqueda = `../../assets/images/techs/${tech.toLowerCase()}.svg`;
+              const imagenConfig = (await images[rutaBusqueda]()) as any;
+              return (
+                <li class="opacity-75 hover:opacity-85 grayscale hover:grayscale-0 transition-all duration-400">
+                  <figure class="flex flex-col items-center justify-end gap-2  ">
+                    <Image
+                      src={imagenConfig.default}
+                      alt={"Logo " + tech}
+                      width={25}
+                    />
+                    <figcaption class="font-medium text-foreground">
+                      {tech}
+                    </figcaption>
+                  </figure>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
