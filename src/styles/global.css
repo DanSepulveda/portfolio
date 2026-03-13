@@ -9,6 +9,8 @@
   --color-primary-lighter: var(--primary-lighter);
   --color-primary-foreground: var(--primary-foreground);
 
+  --color-accent: var(--accent);
+
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
 
@@ -25,6 +27,8 @@
   --primary-lighter: var(--color-cyan-600);
   --primary-foreground: #fff;
 
+  --accent: var(--color-sky-700);
+
   --foreground: var(--color-zinc-800);
   --muted: var(--color-zinc-600);
 
@@ -36,6 +40,8 @@
 }
 
 .dark {
+  --accent: var(--color-sky-300);
+
   --foreground: var(--color-zinc-50);
   --muted: var(--color-zinc-400);
 
