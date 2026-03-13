@@ -5,6 +5,12 @@ import { INTERNAL_URLS } from "@src/config/navigation";
 
 import darkLogo from "@src/assets/images/logo/logo-dark.png";
 import lightLogo from "@src/assets/images/logo/logo-light.png";
+
+interface Props {
+  loading?: "eager" | "lazy";
+}
+
+const { loading = "lazy" } = Astro.props;
 ---
 
 <a href={INTERNAL_URLS.home}>
@@ -13,11 +19,13 @@ import lightLogo from "@src/assets/images/logo/logo-light.png";
       src={lightLogo}
       alt="Ir al inicio"
       class="h-full w-auto dark:hidden"
+      loading={loading}
     />
     <Image
       src={darkLogo}
       alt="Ir al inicio"
       class="hidden h-full w-auto dark:block"
+      loading={loading}
     />
   </div>
 </a>
