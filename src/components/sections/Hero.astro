@@ -1,6 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
 import Link from "@src/components/ui/Link.astro";
 import Status from "@src/components/ui/Status.astro";
 import Title from "@src/components/ui/Title.astro";
@@ -63,21 +61,14 @@ const techs = ["JavaScript", "TypeScript", "Python"];
         >
           {
             techs.map(async (tech) => {
-              const rutaBusqueda = `../../assets/images/techs/${tech.toLowerCase()}.svg`;
-              const imagenConfig = (await images[rutaBusqueda]()) as any;
+              const svgRoute = `../../assets/images/techs/${tech.toLowerCase()}.svg`;
+              const Icon = (await images[svgRoute]()) as any;
               return (
-                <li class="opacity-90 transition-all duration-400">
-                  <figure class="flex flex-col items-center justify-end gap-2  ">
-                    <Image
-                      src={imagenConfig.default}
-                      alt={"Logo " + tech}
-                      width={25}
-                      loading="eager"
-                    />
-                    <figcaption class="text-sm font-medium text-foreground">
-                      {tech}
-                    </figcaption>
-                  </figure>
+                <li class="opacity-90 transition-all duration-400 flex flex-col items-center justify-end gap-2 ">
+                  <Icon.default class="h-6 w-auto" />
+                  <span class="text-sm font-medium text-foreground">
+                    {tech}
+                  </span>
                 </li>
               );
             })
