@@ -10,7 +10,7 @@ export const INTERNAL_URLS = {
   contact: "/contacto",
 };
 
-export const EXTERNAL_URLS = {
+export const SOCIAL_LINKS = {
   github: "https://github.com/DanSepulveda",
   linkedin: "https://www.linkedin.com/in/dansepulvedap",
 };

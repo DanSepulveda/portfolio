@@ -6,7 +6,7 @@ import AppLogo from "@src/components/ui/AppLogo.astro";
 import Link from "@src/components/ui/Link.astro";
 
 import { SITE } from "@src/config/common";
-import { NAV_LINKS, EXTERNAL_URLS } from "@src/config/navigation";
+import { NAV_LINKS, SOCIAL_LINKS } from "@src/config/navigation";
 
 import Github from "@src/assets/images/social/github.svg";
 import Linkedin from "@src/assets/images/social/linkedin.svg";
@@ -41,14 +41,14 @@ const { pathname } = Astro.url;
 
     <div>
       <Link
-        href={EXTERNAL_URLS.github}
+        href={SOCIAL_LINKS.github}
         variant="icon"
         aria-label=`Perfil de Github ${SITE.author}`
       >
         <Github class="size-4.5 [&>path]:fill-muted" />
       </Link>
       <Link
-        href={EXTERNAL_URLS.linkedin}
+        href={SOCIAL_LINKS.linkedin}
         variant="icon"
         aria-label=`Perfil de Linkedin ${SITE.author}`
       >
