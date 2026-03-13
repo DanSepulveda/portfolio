@@ -1,0 +1,28 @@
+---
+import type { SvgComponent } from "astro/types";
+
+interface Props {
+  tag: string;
+  Light: SvgComponent;
+  Dark?: SvgComponent;
+}
+
+const { tag, Light, Dark } = Astro.props;
+---
+
+<span
+  class="text-xs font-medium tracking-wide px-2 py-1 rounded flex items-center gap-1.5 border border-accent text-muted dark:border-muted/50"
+>
+  {
+    Dark ? (
+      <div>
+        <Light class="h-3.5 w-auto dark:hidden" />
+        <Dark class="h-3.5 w-auto hidden dark:block" />
+      </div>
+    ) : (
+      <Light class="h-3.5 w-auto" />
+    )
+  }
+
+  {tag}
+</span>
