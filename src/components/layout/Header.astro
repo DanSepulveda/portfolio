@@ -68,7 +68,7 @@ const { pathname } = Astro.url;
 
   <div
     id="mobile-menu"
-    class="absolute hidden top-full left-0 w-full bg-background border-b border-zinc-200 dark:border-zinc-800 p-6 flex-col gap-4 md:hidden"
+    class="absolute hidden top-full left-0 w-full bg-background border-b border-border p-6 flex-col gap-4 md:hidden"
   >
     {
       NAV_LINKS.map((link) => (
@@ -107,15 +107,13 @@ const { pathname } = Astro.url;
   window.addEventListener("scroll", () => {
     if (window.scrollY > 40) {
       navbar?.classList.add(
-        "border-zinc-200",
-        "dark:border-slate-800",
+        "border-border!",
         "md:bg-background/70",
         "shadow-sm",
       );
     } else {
       navbar?.classList.remove(
-        "border-zinc-200",
-        "dark:border-slate-800",
+        "border-border!",
         "md:bg-background/70",
         "shadow-sm",
       );

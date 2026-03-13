@@ -15,6 +15,7 @@
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
 
+  --color-border: var(--border);
   --color-shadow: var(--shadow);
 }
 
@@ -30,6 +31,7 @@
   --background: var(--color-zinc-50);
   --background-secondary: var(--color-zinc-100);
 
+  --border: var(--color-zinc-200);
   --shadow: var(--color-zinc-500);
 }
 
@@ -40,6 +42,7 @@
   --background: var(--color-slate-950);
   --background-secondary: var(--color-gray-950);
 
+  --border: var(--color-slate-800);
   --shadow: var(--color-zinc-400);
 }
 
