@@ -9,23 +9,23 @@ const { variant = "default", class: className } = Astro.props;
 const variants = {
   default: "mt-2",
   badge:
-    "px-3 py-1 rounded-full bg-background-secondary border border-border mb-8 animate-fade-in-up",
+    "mb-8 px-4 py-1 rounded-full bg-background-secondary border border-border animate-fade-in-up",
 };
 ---
 
 <div
   class:list={["inline-flex items-center gap-2", variants[variant], className]}
 >
-  <span class="relative flex h-2 w-2">
+  <span class="relative flex size-2">
     <span
-      class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+      class="animate-ping absolute inline-flex size-full rounded-full bg-green-400 opacity-75"
     ></span>
-    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+    <span class="relative inline-flex rounded-full size-2 bg-green-500"></span>
   </span>
   <span
     class:list={[
-      "text-xs font-medium text-muted",
-      variant == "default" && "uppercase tracking-wider",
+      "text-sm font-medium text-muted",
+      variant == "default" && "uppercase tracking-wide",
     ]}
   >
     <slot />
