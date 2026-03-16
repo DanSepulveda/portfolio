@@ -1,5 +1,7 @@
 ---
-import Menu from "@lucide/astro/icons/menu";
+import MenuIcon from "@lucide/astro/icons/menu";
+import GithubIcon from "@src/assets/images/social/github.svg";
+import LinkedinIcon from "@src/assets/images/social/linkedin.svg";
 
 import ThemeToggle from "@src/components/layout/ThemeToggle.astro";
 import AppLogo from "@src/components/ui/AppLogo.astro";
@@ -8,20 +10,20 @@ import Link from "@src/components/ui/Link.astro";
 import { SITE } from "@src/config/common";
 import { NAV_LINKS, SOCIAL_LINKS } from "@src/config/navigation";
 
-import Github from "@src/assets/images/social/github.svg";
-import Linkedin from "@src/assets/images/social/linkedin.svg";
-
 const { pathname } = Astro.url;
 ---
 
 <header
   id="navbar"
-  class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent bg-background md:backdrop-blur-md"
+  class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent bg-background md:backdrop-blur-sm"
 >
-  <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+  <div class="page py-3 flex justify-between items-center">
     <AppLogo loading="eager" />
 
-    <nav class="hidden md:flex">
+    <nav
+      class="hidden md:flex"
+      aria-label="Navegación principal"
+    >
       <ul class="flex items-center gap-2">
         {
           NAV_LINKS.map((link) => (
@@ -39,49 +41,55 @@ const { pathname } = Astro.url;
       </ul>
     </nav>
 
-    <div>
-      <Link
-        href={SOCIAL_LINKS.github}
-        variant="icon"
-        aria-label=`Perfil de Github ${SITE.author}`
+    <div class="flex grow justify-end md:grow-0 gap-1 [&>nav]:gap-1">
+      <nav
+        aria-label="Redes sociales"
+        class="flex"
       >
-        <Github class="size-4.5 [&>path]:fill-muted" />
-      </Link>
-      <Link
-        href={SOCIAL_LINKS.linkedin}
-        variant="icon"
-        aria-label=`Perfil de Linkedin ${SITE.author}`
-      >
-        <Linkedin class="size-5 [&>path]:fill-muted" />
-      </Link>
+        <Link
+          href={SOCIAL_LINKS.github}
+          variant="icon"
+          aria-label=`Perfil de Github ${SITE.author}`
+        >
+          <GithubIcon />
+        </Link>
+        <Link
+          href={SOCIAL_LINKS.linkedin}
+          variant="icon"
+          aria-label=`Perfil de Linkedin ${SITE.author}`
+        >
+          <LinkedinIcon />
+        </Link>
+      </nav>
       <ThemeToggle />
     </div>
 
     <button
       id="menu-btn"
-      class="text-muted p-2 md:hidden focus:outline-none"
-      aria-label="Abrir menú"
+      aria-label="Abrir/cerrar menú"
+      class="text-muted p-2 md:hidden focus:outline-none [&>svg]:size-5.5"
     >
-      <Menu />
+      <MenuIcon />
     </button>
   </div>
 
-  <div
+  <nav
     id="mobile-menu"
-    class="absolute hidden top-full left-0 w-full bg-background border-b border-border p-6 flex-col gap-4 md:hidden"
+    aria-label="Navegación principal móvil"
+    class="absolute hidden top-full left-0 w-full bg-background border-b border-border p-6 flex-col gap-2 md:hidden animate-flip-in-y animate-duration-300"
   >
     {
       NAV_LINKS.map((link) => (
         <Link
           href={link.url}
           variant="navbar"
-          class="text-lg! text-left! justify-start! text-foreground/90!"
+          class="text-lg"
         >
           {link.name}
         </Link>
       ))
     }
-  </div>
+  </nav>
 </header>
 
 <script>
@@ -91,8 +99,18 @@ const { pathname } = Astro.url;
 
   // Toggle mobile menu
   menuBtn?.addEventListener("click", () => {
-    mobileMenu?.classList.toggle("hidden");
-    mobileMenu?.classList.toggle("flex");
+    const isOpen = mobileMenu?.classList.contains("flex");
+
+    if (isOpen) {
+      mobileMenu?.classList.replace("animate-flip-in-y", "animate-flip-out-y");
+
+      setTimeout(() => {
+        mobileMenu?.classList.replace("flex", "hidden");
+      }, 300);
+    } else {
+      mobileMenu?.classList.replace("hidden", "flex");
+      mobileMenu?.classList.replace("animate-flip-out-y", "animate-flip-in-y");
+    }
   });
 
   // Close menu when click a link

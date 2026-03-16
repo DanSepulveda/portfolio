@@ -6,16 +6,18 @@ import Sun from "@lucide/astro/icons/sun";
 <button
   id="theme-toggle"
   aria-label="Cambiar modo claro/oscuro"
-  class="inline-flex items-center justify-center text-center font-semibold rounded-lg transition-all duration-250 size-9 [&>svg]:size-4.5 [&_svg]:transition-colors [&_svg]:duration-250 [&_svg]:stroke-muted hover:[&_svg]:stroke-foreground hover:bg-foreground/5 dark:hover:bg-foreground/15 cursor-pointer"
+  class="inline-flex items-center justify-center rounded-lg transition-all duration-250 size-9 [&>svg]:size-4.5 [&_svg]:transition-colors [&_svg]:duration-250 [&_svg]:stroke-muted hover:[&_svg]:stroke-foreground hover:bg-foreground/5 dark:hover:bg-foreground/15 cursor-pointer"
 >
   <Sun
     id="icon-light"
-    stroke-width={2}
+    stroke-width={2.5}
     class="hidden"
   />
+
   <Moon
     id="icon-dark"
-    stroke-width={2}
+    stroke-width={2.5}
+    class="hidden"
   />
 </button>
 
