@@ -1,20 +1,19 @@
 ---
 interface Props {
-  variant?: "default" | "badge";
+  badge?: boolean;
   class?: string;
 }
 
-const { variant = "default", class: className } = Astro.props;
-
-const variants = {
-  default: "mt-2",
-  badge:
-    "mb-8 px-4 py-1 rounded-full bg-background-secondary border border-border animate-fade-in-up",
-};
+const { badge = false, class: className } = Astro.props;
 ---
 
 <div
-  class:list={["inline-flex items-center gap-2", variants[variant], className]}
+  class:list={[
+    "inline-flex items-center gap-2",
+    badge &&
+      "px-4 py-1 rounded-full bg-background-secondary border border-border",
+    className,
+  ]}
 >
   <span class="relative flex size-2">
     <span
@@ -22,12 +21,7 @@ const variants = {
     ></span>
     <span class="relative inline-flex rounded-full size-2 bg-green-500"></span>
   </span>
-  <span
-    class:list={[
-      "text-sm font-medium text-muted",
-      variant == "default" && "uppercase tracking-wide",
-    ]}
-  >
+  <span class="text-sm font-medium text-muted">
     <slot />
   </span>
 </div>
