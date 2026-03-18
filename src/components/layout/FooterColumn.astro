@@ -1,0 +1,31 @@
+---
+import Link from "@/components/ui/Link.astro";
+
+interface Props {
+  title: string;
+  items: {
+    name: string;
+    url: string;
+  }[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div>
+  <h3 class="text-sm font-semibold text-foreground mb-4">{title}</h3>
+  <ul class="space-y-2">
+    {
+      items.map((link) => (
+        <li>
+          <Link
+            href={link.url}
+            variant="footer"
+          >
+            {link.name}
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</div>

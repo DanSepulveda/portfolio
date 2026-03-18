@@ -1,17 +1,30 @@
 ---
-import AppLogo from "@src/components/ui/AppLogo.astro";
-import Link from "@src/components/ui/Link.astro";
-import Status from "@src/components/ui/Status.astro";
+import FooterColumn from "@/components/layout/FooterColumn.astro";
+import AppLogo from "@/components/ui/AppLogo.astro";
+import Status from "@/components/ui/Status.astro";
 
-import { NAV_LINKS, SOCIAL_LINKS } from "@src/config/navigation";
+import { SITE } from "@/consts/config";
+import { NAV_LINKS } from "@/consts/navigation";
+import { SOCIALS } from "@/consts/social";
+
+const columns = [
+  {
+    title: "Navegación",
+    items: NAV_LINKS,
+  },
+  {
+    title: "Redes",
+    items: SOCIALS,
+  },
+];
 
 const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-background-secondary border-t border-border">
-  <div class="max-w-6xl mx-auto px-6 py-12 space-y-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
-      <div class="flex flex-col gap-4">
+  <div class="page py-8 space-y-10">
+    <div class="flex flex-col sm:flex-row gap-10 sm:gap-20 md:gap-30">
+      <div class="flex-1 flex flex-col gap-4">
         <AppLogo />
 
         <p class="text-sm text-muted max-w-xs">
@@ -19,55 +32,26 @@ const currentYear = new Date().getFullYear();
           escalabilidad.
         </p>
 
-        <Status>Disponible para proyectos</Status>
+        <Status class="mt-2">Disponible para proyectos</Status>
       </div>
 
-      <div class="grid grid-cols-2 gap-8 md:justify-items-center md:col-span-1">
-        <div>
-          <h3 class="text-sm font-semibold text-foreground mb-4">Navegación</h3>
-          <ul class="space-y-2">
-            {
-              NAV_LINKS.map((link) => (
-                <li>
-                  <a
-                    href={link.url}
-                    class="text-sm text-muted hover:text-accent transition-colors"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-      </div>
-
-      <div class="flex flex-col md:items-end gap-4">
-        <h3 class="text-sm font-semibold text-foreground">Enlaces</h3>
-        <div class="flex gap-4">
-          <Link
-            href={SOCIAL_LINKS.github}
-            variant="navbar"
-            class="bg-muted/10 opacity-85"
-          >
-            Github
-          </Link>
-          <Link
-            href={SOCIAL_LINKS.linkedin}
-            variant="navbar"
-            class="bg-muted/10 opacity-85"
-          >
-            LinkedIn
-          </Link>
-        </div>
+      <div class="grid grid-cols-2 gap-10 sm:gap-20 md:gap-30">
+        {
+          columns.map((col) => (
+            <FooterColumn
+              title={col.title}
+              items={col.items}
+            />
+          ))
+        }
       </div>
     </div>
 
     <div
       class="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted"
     >
-      <p>{currentYear} — Desarrollado por Daniel Sepúlveda</p>
-      <p>Ubicado en Santiago, Chile 🇨🇱</p>
+      <p>{currentYear} — Desarrollado por {SITE.author}</p>
+      <p>Santiago, Chile 🇨🇱</p>
     </div>
   </div>
 </footer>
