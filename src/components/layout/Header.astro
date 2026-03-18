@@ -1,14 +1,12 @@
 ---
 import MenuIcon from "@lucide/astro/icons/menu";
-import GithubIcon from "@src/assets/images/social/github.svg";
-import LinkedinIcon from "@src/assets/images/social/linkedin.svg";
 
-import ThemeToggle from "@src/components/layout/ThemeToggle.astro";
-import AppLogo from "@src/components/ui/AppLogo.astro";
-import Link from "@src/components/ui/Link.astro";
+import ThemeToggle from "@/components/layout/ThemeToggle.astro";
+import AppLogo from "@/components/ui/AppLogo.astro";
+import Link from "@/components/ui/Link.astro";
 
-import { SITE } from "@src/config/common";
-import { NAV_LINKS, SOCIAL_LINKS } from "@src/config/navigation";
+import { NAV_LINKS } from "@/consts/navigation";
+import { SOCIALS } from "@/consts/social";
 
 const { pathname } = Astro.url;
 ---
@@ -46,20 +44,17 @@ const { pathname } = Astro.url;
         aria-label="Redes sociales"
         class="flex"
       >
-        <Link
-          href={SOCIAL_LINKS.github}
-          variant="icon"
-          aria-label=`Perfil de Github ${SITE.author}`
-        >
-          <GithubIcon />
-        </Link>
-        <Link
-          href={SOCIAL_LINKS.linkedin}
-          variant="icon"
-          aria-label=`Perfil de Linkedin ${SITE.author}`
-        >
-          <LinkedinIcon />
-        </Link>
+        {
+          SOCIALS.map((item) => (
+            <Link
+              href={item.url}
+              variant="icon"
+              aria-label={item.label}
+            >
+              <item.image />
+            </Link>
+          ))
+        }
       </nav>
       <ThemeToggle />
     </div>
