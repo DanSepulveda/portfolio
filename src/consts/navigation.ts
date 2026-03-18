@@ -1,4 +1,4 @@
-interface NavLink {
+export interface NavLink {
   name: string;
   url: string;
 }
@@ -8,11 +8,6 @@ export const INTERNAL_URLS = {
   projects: "/proyectos",
   about: "/sobre-mi",
   contact: "/contacto",
-};
-
-export const SOCIAL_LINKS = {
-  github: "https://github.com/DanSepulveda",
-  linkedin: "https://www.linkedin.com/in/dansepulvedap",
 };
 
 export const NAV_LINKS: NavLink[] = [
