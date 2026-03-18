@@ -18,13 +18,13 @@ export const SOCIALS: Social[] = [
     name: "Github",
     image: Github,
     url: "https://github.com/DanSepulveda",
-    label: `Perfil de Github ${SITE.author}`,
+    label: `Perfil de Github ${SITE.author.name}`,
   },
   {
     id: "linkedin",
     name: "LinkedIn",
     image: LinkedIn,
     url: "https://www.linkedin.com/in/dansepulvedap",
-    label: `Perfil de Linkedin ${SITE.author}`,
+    label: `Perfil de Linkedin ${SITE.author.name}`,
   },
 ];
