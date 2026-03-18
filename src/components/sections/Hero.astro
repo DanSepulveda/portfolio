@@ -1,12 +1,12 @@
 ---
-import Link from "@src/components/ui/Link.astro";
-import Status from "@src/components/ui/Status.astro";
-import Title from "@src/components/ui/Title.astro";
+import Link from "@/components/ui/Link.astro";
+import Status from "@/components/ui/Status.astro";
+import Title from "@/components/ui/Title.astro";
 
-import { INTERNAL_URLS } from "@src/config/navigation";
+import { INTERNAL_URLS } from "@/consts/navigation";
+import { getTechObjects } from "@/lib/techs";
 
-const images = import.meta.glob("../../assets/images/techs/*.svg");
-const techs = ["JavaScript", "TypeScript", "Python"];
+const languages = getTechObjects(["javascript", "typescript", "python"]);
 ---
 
 <section
@@ -65,16 +65,12 @@ const techs = ["JavaScript", "TypeScript", "Python"];
         class="flex flex-wrap justify-center gap-x-10 gap-y-2"
       >
         {
-          techs.map(async (tech) => {
-            const svgRoute = `../../assets/images/techs/${tech.toLowerCase()}.svg`;
-            const Icon = (await images[svgRoute]()) as any;
-            return (
-              <li class="flex items-center justify-center gap-2 py-2">
-                <Icon.default class="h-6 w-auto" />
-                <span class="font-medium text-foreground">{tech}</span>
-              </li>
-            );
-          })
+          languages.map((item) => (
+            <li class="flex items-center justify-center gap-2 py-2">
+              <item.logo class="h-6 w-auto" />
+              <span class="font-medium text-foreground">{item.name}</span>
+            </li>
+          ))
         }
       </ul>
     </div>
