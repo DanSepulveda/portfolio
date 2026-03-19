@@ -1,0 +1,61 @@
+---
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+import TechBadge from "@/components/ui/TechBadge.astro";
+
+import { TECHS_MAP, type TechId } from "@/consts/techs";
+
+const ids: TechId[] = [
+  "javascript",
+  "typescript",
+  "node",
+  "python",
+  "django",
+  "react",
+  "next",
+  "astro",
+  "tailwind",
+  "postgres",
+  "mongo",
+  "redis",
+  "supabase",
+  "cloudflare",
+  "vercel",
+  "git",
+  "jira",
+];
+
+const techs = ids.map((id) => TECHS_MAP[id]);
+---
+
+<section
+  id="stack"
+  class="md:py-8 bg-background"
+>
+  <div class="page">
+    <div class="text-center mb-16">
+      <SectionTitle
+        main="Stack"
+        accent="tecnológico"
+      />
+      <p class="text-muted text-balance max-w-xl mx-auto">
+        Herramientas y lenguajes que utilizo para desarrollar soluciones
+        eficientes y trabajar en equipo.
+      </p>
+    </div>
+
+    <div class="max-w-3xl mx-auto flex justify-center flex-wrap gap-3">
+      {
+        techs.map((item) => {
+          return (
+            <TechBadge
+              name={item.name}
+              light={item.logo}
+              dark={item.darkLogo}
+              size="lg"
+            />
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
