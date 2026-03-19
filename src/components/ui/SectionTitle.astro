@@ -1,0 +1,13 @@
+---
+interface Props {
+  main: string;
+  accent: string;
+}
+
+const { main, accent } = Astro.props;
+---
+
+<h2 class="text-3xl md:text-4xl font-bold text-foreground mb-4">
+  {main}
+  <span class="text-primary dark:text-primary-lighter">{accent}</span>
+</h2>
