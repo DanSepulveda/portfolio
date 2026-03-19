@@ -6,7 +6,9 @@ import CloudinaryLight from "@/assets/images/techs/cloudinary.svg";
 import DjangoLight from "@/assets/images/techs/django.svg";
 import FastapiLight from "@/assets/images/techs/fastapi.svg";
 import FirebaseLight from "@/assets/images/techs/firebase.svg";
+import GitLight from "@/assets/images/techs/git.svg";
 import JavascriptLight from "@/assets/images/techs/javascript.svg";
+import JiraLight from "@/assets/images/techs/jira.svg";
 import MongoDark from "@/assets/images/techs/mongo-dark.svg";
 import MongoLight from "@/assets/images/techs/mongo.svg";
 import NetlifyLight from "@/assets/images/techs/netlify.svg";
@@ -67,9 +69,21 @@ export const TECHS = [
     darkLogo: null,
   },
   {
+    id: "git",
+    name: "Git",
+    logo: GitLight,
+    darkLogo: null,
+  },
+  {
     id: "javascript",
     name: "JavaScript",
     logo: JavascriptLight,
+    darkLogo: null,
+  },
+  {
+    id: "jira",
+    name: "Jira",
+    logo: JiraLight,
     darkLogo: null,
   },
   {
