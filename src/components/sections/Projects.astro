@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+import Link from "@/components/ui/Link.astro";
+import ProjectCard from "@/components/ui/ProjectCard.astro";
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+
+import { INTERNAL_URLS } from "@/consts/navigation";
+
+const projects = (
+  await getCollection("projects", ({ data }) => data.featured)
+).sort((a, b) => a.data.position.valueOf() - b.data.position.valueOf());
+---
+
+<section
+  id="proyectos"
+  class="py-24 bg-background"
+>
+  <div class="page">
+    <div class="mb-16">
+      <SectionTitle
+        main="Proyectos"
+        accent="destacados"
+      />
+
+      <p class="text-muted max-w-xl text-lg font-light leading-relaxed">
+        Selección de soluciones de software desarrolladas con herramientas
+        sólidas para garantizar proyectos <span
+          class="text-foreground font-normal"
+          >robustos, mantenibles y escalables</span
+        >.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </div>
+  <div class="flex justify-center mt-8">
+    <Link href={INTERNAL_URLS.projects}>Ver todos los proyectos</Link>
+  </div>
+</section>
