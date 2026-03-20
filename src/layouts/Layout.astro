@@ -1,9 +1,10 @@
 ---
-import "@src/styles/global.css";
-import Footer from "@src/components/layout/Footer.astro";
-import Header from "@src/components/layout/Header.astro";
+import "@/styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import Footer from "@/components/layout/Footer.astro";
+import Header from "@/components/layout/Header.astro";
 
-import { SITE } from "@src/config/common";
+import { SITE } from "@/consts/config";
 
 interface Props {
   title: string;
@@ -17,13 +18,22 @@ const { title, description } = Astro.props;
 <html lang="es">
   <head>
     <script is:inline>
-      const theme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      if (theme === "dark" || (!theme && prefersDark)) {
-        document.documentElement.classList.add("dark");
-      }
+      const setTheme = () => {
+        const theme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+
+        if (theme === "dark" || (!theme && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      };
+
+      setTheme();
+
+      document.addEventListener("astro:after-swap", setTheme);
     </script>
     <meta charset="UTF-8" />
     <meta
@@ -48,6 +58,7 @@ const { title, description } = Astro.props;
       content={Astro.generator}
     />
     <title>{title} - {SITE.titleSuffix}</title>
+    <ClientRouter />
   </head>
   <body class="flex flex-col min-h-screen">
     <Header />
