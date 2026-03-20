@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import Arrow from "@lucide/astro/icons/arrow-right";
+
+import SectionTitle from "@/components/ui/SectionTitle.astro";
+
+import me from "@/assets/images/me.png";
+import { SITE } from "@/consts/config";
+import { INTERNAL_URLS } from "@/consts/navigation";
+// TODO: cambiar foto
+---
+
+<section class="md:pt-24 pb-10 bg-background">
+  <div class="page grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div
+      class="aspect-square rounded-2xl overflow-hidden bg-background-secondary border border-border shadow-xl"
+    >
+      <Image
+        src={me}
+        alt={SITE.author.name}
+        class="w-full h-full object-cover object-top"
+        loading="eager"
+      />
+    </div>
+
+    <div>
+      <SectionTitle
+        main="Un poco"
+        accent="sobre mí"
+      />
+
+      <p class="mb-6 leading-relaxed text-muted text-lg">
+        Más que escribir código, <span class="font-semibold text-foreground"
+          >me apasiona resolver problemas</span
+        >. Disfruto analizar desafíos técnicos y diseñar la arquitectura más
+        eficiente para superarlos.
+      </p>
+
+      <p class="mb-10 leading-relaxed text-muted text-lg">
+        Priorizo el rendimiento, la accesibilidad y el UX/UI en cada desarrollo, <span
+          class="font-semibold text-foreground"
+          >transformando código funcional en experiencias</span
+        > de usuario de alta calidad.
+      </p>
+
+      <a
+        href={INTERNAL_URLS.about}
+        class="group flex items-center gap-1 font-semibold text-accent"
+      >
+        <span class="group-hover:underline underline-offset-3 transition-all"
+          >Quiero saber más</span
+        >
+        <span class="group-hover:translate-x-0.5 transition-all"
+          ><Arrow class="size-3.5" /></span
+        >
+      </a>
+    </div>
+  </div>
+</section>
