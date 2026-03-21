@@ -3,7 +3,14 @@ import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"a"> {
   href: string;
-  variant?: "primary" | "outline" | "navbar" | "icon" | "footer" | "white";
+  variant?:
+    | "primary"
+    | "outline"
+    | "navbar"
+    | "icon"
+    | "footer"
+    | "white"
+    | "card";
   active?: boolean;
   class?: string;
 }
@@ -18,7 +25,7 @@ const {
 
 const variants = {
   primary:
-    "px-6 h-11 text-base text-primary-foreground bg-primary hover:bg-primary-darker hover:dark:bg-primary-lighter hover:shadow-lg hover:shadow-shadow/30",
+    "px-6 h-11 text-base text-primary-foreground bg-primary hover:bg-primary-darker hover:dark:bg-primary-light hover:shadow-lg hover:shadow-shadow/30",
   outline:
     "px-6 h-11 text-base border border-primary text-primary hover:bg-primary/5 dark:border-muted dark:text-muted hover:dark:border-white hover:dark:text-white hover:shadow-lg hover:shadow-shadow/30",
   navbar: active
@@ -29,10 +36,13 @@ const variants = {
     "text-sm text-muted hover:text-accent hover:underline underline-offset-2",
   white:
     "px-6 h-11 text-base text-primary bg-white hover:bg-neutral-100 hover:shadow-lg hover:shadow-shadow/30",
+  card: "flex-1 py-2 text-sm font-medium flex justify-center items-center gap-1.5 text-muted hover:text-foreground hover:bg-accent/10 transition-colors duration-250",
 };
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 text-center font-medium rounded-lg transition-all duration-250 [&_svg]:h-5";
+  variant == "card"
+    ? ""
+    : "inline-flex items-center justify-center gap-2 text-center font-medium rounded-lg transition-all duration-250 [&_svg]:h-5";
 
 const external = href.startsWith("https");
 ---

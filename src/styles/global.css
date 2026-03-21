@@ -13,7 +13,7 @@
 
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-
+  --color-card: var(--bg-card);
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
 
@@ -36,6 +36,7 @@
 
   --foreground: var(--color-zinc-800);
   --muted: var(--color-zinc-600);
+  --bg-card: #fff;
 
   --background: var(--color-zinc-50);
   --background-secondary: var(--color-zinc-100);
@@ -50,6 +51,7 @@
 
   --foreground: var(--color-zinc-50);
   --muted: var(--color-zinc-400);
+  --bg-card: oklch(27.99% 0.0408 260.347 / 0.5);
 
   --background: var(--color-slate-950);
   --background-secondary: var(--color-gray-950);
