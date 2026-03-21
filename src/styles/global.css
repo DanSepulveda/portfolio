@@ -1,38 +1,6 @@
 @import "tailwindcss";
 @import "tailwind-animations";
 
-@font-face {
-  font-family: "Playfair";
-  src: url("../assets/fonts/playfair-regular.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Playfair";
-  src: url("../assets/fonts/playfair-italic.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../assets/fonts/nunito-regular.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("../assets/fonts/nunito-italic.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: italic;
-  font-display: swap;
-}
-
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -53,16 +21,18 @@
   --color-border-dark: var(--border-dark);
   --color-shadow: var(--shadow);
 
-  --font-primary: "Playfair", serif;
+  --tw-duration: 300ms;
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
 }
 
 :root {
   --primary: var(--color-cyan-700);
   --primary-darker: var(--color-cyan-800);
-  --primary-lighter: var(--color-cyan-600);
+  --primary-lighter: var(--color-cyan-500);
   --primary-foreground: #fff;
 
-  --accent: var(--color-sky-700);
+  --accent: var(--color-cyan-700);
 
   --foreground: var(--color-zinc-800);
   --muted: var(--color-zinc-600);
@@ -90,13 +60,20 @@
 }
 
 @layer base {
-  body {
-    scroll-behavior: smooth;
-    font-family: "Nunito", sans-serif;
+  html {
+    font-family: var(--font-sans), sans-serif;
   }
 
   h1,
   h2 {
-    font-family: "Playfair", serif;
+    font-family: var(--font-serif), serif;
+  }
+
+  .page {
+    @apply max-w-5xl mx-auto px-6;
+  }
+
+  .gradient-brand {
+    @apply from-cyan-700 via-cyan-600 to-teal-500;
   }
 }

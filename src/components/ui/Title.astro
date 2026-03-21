@@ -8,13 +8,11 @@ const { main, accent } = Astro.props;
 ---
 
 <h1
-  class="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6"
+  class="text-5xl md:text-7xl font-extrabold text-foreground mb-6 md:leading-20"
 >
   {main}
   <br />
-  <span
-    class="text-transparent bg-clip-text bg-linear-to-r gradient-brand italic"
-  >
+  <span class="text-transparent bg-clip-text bg-linear-to-r gradient-brand">
     {accent}
   </span>
 </h1>
