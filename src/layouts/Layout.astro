@@ -41,8 +41,14 @@ const { title, description } = Astro.props;
       content={Astro.generator}
     />
     <title>{title} - {SITE.titleSuffix}</title>
-    <Font cssVariable="--font-playfair" />
-    <Font cssVariable="--font-inter" />
+    <Font
+      cssVariable="--font-playfair"
+      preload
+    />
+    <Font
+      cssVariable="--font-inter"
+      preload
+    />
     <script is:inline>
       const setTheme = () => {
         const theme = localStorage.getItem("theme");
