@@ -2,16 +2,20 @@
 interface Props {
   main: string;
   accent: string;
+  variant?: "hero" | "page";
 }
 
-const { main, accent } = Astro.props;
+const { main, accent, variant = "page" } = Astro.props;
+
+const variants = {
+  hero: "text-5xl md:text-7xl md:leading-20",
+  page: "text-4xl md:text-6xl",
+};
 ---
 
-<h1
-  class="text-5xl md:text-7xl font-extrabold text-foreground mb-6 md:leading-20"
->
+<h1 class:list={["font-extrabold text-foreground mb-6", variants[variant]]}>
   {main}
-  <br />
+  {variant === "hero" && <br />}
   <span class="text-transparent bg-clip-text bg-linear-to-r gradient-brand">
     {accent}
   </span>
