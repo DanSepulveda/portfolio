@@ -67,7 +67,10 @@ const languages = getTechObjects(["javascript", "typescript", "python"]);
         {
           languages.map((item) => (
             <li class="flex items-center justify-center gap-2 py-2">
-              <item.logo class="h-6 w-auto" />
+              <item.logo
+                class="h-6 w-auto"
+                aria-hidden="true"
+              />
               <span class="font-medium text-foreground">{item.name}</span>
             </li>
           ))
