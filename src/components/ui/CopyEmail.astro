@@ -11,6 +11,7 @@ const [user, domain] = SITE.author.email.split("@");
   <span
     id="email-text"
     class="text-sm font-medium px-2 select-none text-foreground flex"
+    aria-hidden="true"
   >
     <span id="user">{user}</span>
     <span id="domain">{domain}</span>
@@ -19,10 +20,16 @@ const [user, domain] = SITE.author.email.split("@");
     <button
       id="copy-button"
       class="inline-flex items-center justify-center rounded-lg transition-all duration-250 size-9 [&>svg]:size-4.5 [&_svg]:transition-colors [&_svg]:duration-250 [&_svg]:stroke-muted hover:[&_svg]:stroke-foreground hover:bg-foreground/5 dark:hover:bg-foreground/15 cursor-pointer"
-      aria-label="Copiar correo"
+      aria-label="Copiar correo electrónico"
+      aria-describedby="copy-status"
     >
       <CopyIcon class="size-4" />
     </button>
+    <span
+      id="copy-status"
+      class="sr-only"
+      aria-live="polite"
+    ></span>
     <span
       id="tooltip"
       class="hidden absolute bottom-10 bg-black/70 px-2 py-1 rounded-md text-white text-sm animate-zoom-in animate-duration-200"
@@ -42,18 +49,19 @@ const [user, domain] = SITE.author.email.split("@");
   const tooltip = document.getElementById("tooltip");
   const user = document.getElementById("user")?.innerText;
   const domain = document.getElementById("domain")?.innerText;
+  const status = document.getElementById("copy-status")!;
 
   button?.addEventListener("click", () => {
     const email = `${user}@${domain}`;
+    status.textContent = "Correo copiado al portapapeles";
 
-    if (email) {
-      navigator.clipboard.writeText(email).then(() => {
-        if (tooltip) tooltip.classList.remove("hidden");
+    navigator.clipboard.writeText(email).then(() => {
+      if (tooltip) tooltip.classList.remove("hidden");
 
-        setTimeout(() => {
-          if (tooltip) tooltip.classList.add("hidden");
-        }, 2000);
-      });
-    }
+      setTimeout(() => {
+        status.textContent = "";
+        if (tooltip) tooltip.classList.add("hidden");
+      }, 2000);
+    });
   });
 </script>
