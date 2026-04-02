@@ -16,7 +16,7 @@ const projects = (
   id="proyectos"
   class="py-24 bg-background"
 >
-  <div class="page">
+  <div class="page flex flex-col">
     <div class="mb-16">
       <SectionTitle
         main="Proyectos"
@@ -32,11 +32,14 @@ const projects = (
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
-  </div>
-  <div class="flex justify-center mt-8">
-    <Link href={INTERNAL_URLS.projects}>Ver todos los proyectos</Link>
+
+    <Link
+      href={INTERNAL_URLS.projects}
+      class="self-center"
+      >Ver todos los proyectos</Link
+    >
   </div>
 </section>
