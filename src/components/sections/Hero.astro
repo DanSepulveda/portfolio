@@ -53,29 +53,27 @@ const languages = getTechObjects(["javascript", "typescript", "python"]);
       <Link href={INTERNAL_URLS.contact}>Hablemos</Link>
     </div>
 
-    <div class="animate-blurred-fade-in animate-duration-600">
-      <p
-        id="lista-tecnologias"
-        class="font-medium tracking-wide text-muted mb-2"
-      >
-        Lenguajes que utilizo
-      </p>
-      <ul
-        aria-labelledby="lista-tecnologias"
-        class="flex flex-wrap justify-center gap-x-10 gap-y-2"
-      >
-        {
-          languages.map((item) => (
-            <li class="flex items-center justify-center gap-2 py-2">
-              <item.logo
-                class="h-6 w-auto"
-                aria-hidden="true"
-              />
-              <span class="font-medium text-foreground">{item.name}</span>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+    <p
+      id="lista-tecnologias"
+      class="font-medium tracking-wide text-muted mb-2"
+    >
+      Lenguajes que utilizo
+    </p>
+    <ul
+      aria-labelledby="lista-tecnologias"
+      class="flex flex-wrap justify-center gap-x-10 gap-y-2"
+    >
+      {
+        languages.map((item) => (
+          <li class="flex items-center justify-center gap-2 py-2">
+            <item.logo
+              class="h-6 w-auto"
+              aria-hidden="true"
+            />
+            <span class="font-medium text-foreground">{item.name}</span>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
