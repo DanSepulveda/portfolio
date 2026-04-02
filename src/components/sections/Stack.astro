@@ -27,10 +27,7 @@ const ids: TechId[] = [
 const techs = ids.map((id) => TECHS_MAP[id]);
 ---
 
-<section
-  id="stack"
-  class="md:py-8 bg-background"
->
+<section class="md:py-8 bg-background">
   <div class="page">
     <div class="text-center mb-16">
       <SectionTitle
@@ -47,19 +44,22 @@ const techs = ids.map((id) => TECHS_MAP[id]);
       </p>
     </div>
 
-    <div class="max-w-3xl mx-auto flex justify-center flex-wrap gap-3">
+    <ul
+      class="max-w-3xl mx-auto flex justify-center flex-wrap gap-3"
+      aria-label="Mi stack de tecnologías"
+    >
       {
-        techs.map((item) => {
-          return (
+        techs.map((item) => (
+          <li>
             <TechBadge
               name={item.name}
               light={item.logo}
               dark={item.darkLogo}
               size="lg"
             />
-          );
-        })
+          </li>
+        ))
       }
-    </div>
+    </ul>
   </div>
 </section>
