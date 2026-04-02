@@ -30,6 +30,7 @@ const { pathname } = Astro.url;
                 href={link.url}
                 variant="navbar"
                 active={link.url == pathname}
+                aria-current={link.url === pathname ? "page" : null}
               >
                 {link.name}
               </Link>
@@ -40,29 +41,34 @@ const { pathname } = Astro.url;
     </nav>
 
     <div class="flex grow justify-end md:grow-0 gap-1 [&>nav]:gap-1">
-      <nav
+      <ul
         aria-label="Redes sociales"
         class="flex"
       >
         {
           SOCIALS.map((item) => (
-            <Link
-              href={item.url}
-              variant="icon"
-              aria-label={item.label}
-            >
-              <item.image />
-            </Link>
+            <li>
+              <Link
+                href={item.url}
+                variant="icon"
+                aria-label={item.label}
+              >
+                <item.image />
+              </Link>
+            </li>
           ))
         }
-      </nav>
+      </ul>
       <ThemeToggle />
     </div>
 
     <button
       id="menu-btn"
-      aria-label="Abrir/cerrar menú"
       class="text-muted p-2 md:hidden focus:outline-none [&>svg]:size-5.5"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-haspopup="true"
+      aria-label="Abrir menú navegación"
     >
       <MenuIcon />
     </button>
@@ -70,20 +76,24 @@ const { pathname } = Astro.url;
 
   <nav
     id="mobile-menu"
-    aria-label="Navegación principal móvil"
-    class="absolute hidden top-full left-0 w-full bg-background border-b border-border p-6 flex-col gap-2 md:hidden animate-flip-in-y animate-duration-300"
+    aria-label="Navegación principal"
+    class="absolute hidden top-full left-0 w-full bg-background border-b border-border p-6 md:hidden animate-flip-in-y animate-duration-300"
   >
-    {
-      NAV_LINKS.map((link) => (
-        <Link
-          href={link.url}
-          variant="navbar"
-          class="text-lg"
-        >
-          {link.name}
-        </Link>
-      ))
-    }
+    <ul class="flex flex-col gap-2 text-center w-full">
+      {
+        NAV_LINKS.map((link) => (
+          <li>
+            <Link
+              href={link.url}
+              variant="navbar"
+              class="text-lg"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 </header>
 
@@ -95,6 +105,12 @@ const { pathname } = Astro.url;
   // Toggle mobile menu
   menuBtn?.addEventListener("click", () => {
     const isOpen = mobileMenu?.classList.contains("flex");
+    const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!isExpanded));
+    menuBtn.setAttribute(
+      "aria-label",
+      isExpanded ? "Abrir menú navegación" : "Cerrar menú navegación",
+    );
 
     if (isOpen) {
       mobileMenu?.classList.replace("animate-flip-in-y", "animate-flip-out-y");
