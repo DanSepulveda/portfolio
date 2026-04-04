@@ -2,17 +2,19 @@
 import "@/styles/global.css";
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
+
 import Footer from "@/components/layout/Footer.astro";
 import Header from "@/components/layout/Header.astro";
-
 import { SITE } from "@/consts/config";
 
 interface Props {
   title: string;
   description: string;
+  noindex?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, noindex = true } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -24,9 +26,26 @@ const { title, description } = Astro.props;
       content="width=device-width"
     />
     <meta
+      name="generator"
+      content={Astro.generator}
+    />
+
+    <title>{title} - {SITE.titleSuffix}</title>
+    <meta
       name="description"
       content={description}
     />
+    <link
+      rel="canonical"
+      href={canonicalURL}
+    />
+    <meta
+      name="robots"
+      content={noindex
+        ? "noindex, nofollow"
+        : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+    />
+
     <link
       rel="icon"
       type="image/svg+xml"
@@ -36,11 +55,10 @@ const { title, description } = Astro.props;
       rel="icon"
       href="/favicon.ico"
     />
-    <meta
-      name="generator"
-      content={Astro.generator}
+    <link
+      rel="sitemap"
+      href={new URL("sitemap-index.xml", Astro.site)}
     />
-    <title>{title} - {SITE.titleSuffix}</title>
     <Font
       cssVariable="--font-playfair"
       preload
@@ -71,7 +89,7 @@ const { title, description } = Astro.props;
   </head>
   <body class="flex flex-col min-h-screen">
     <Header />
-    <main class="flex-1">
+    <main class="flex-1 bg-background">
       <slot />
     </main>
     <Footer />

@@ -1,6 +1,9 @@
 // @ts-check
+import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
+
+import { SITE } from "./src/consts/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,4 +27,6 @@ export default defineConfig({
       styles: ["normal"],
     },
   ],
+  site: SITE.url,
+  integrations: [sitemap()],
 });
