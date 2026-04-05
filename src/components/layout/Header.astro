@@ -98,54 +98,68 @@ const { pathname } = Astro.url;
 </header>
 
 <script>
-  const menuBtn = document.getElementById("menu-btn");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const navbar = document.getElementById("navbar");
+  import { $, addClass, replaceClass } from "@/lib/dom";
 
-  // Toggle mobile menu
-  menuBtn?.addEventListener("click", () => {
-    const isOpen = mobileMenu?.classList.contains("flex");
-    const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
-    menuBtn.setAttribute("aria-expanded", String(!isExpanded));
-    menuBtn.setAttribute(
-      "aria-label",
-      isExpanded ? "Abrir menú navegación" : "Cerrar menú navegación",
-    );
+  let scrollHandler: () => void;
 
-    if (isOpen) {
-      mobileMenu?.classList.replace("animate-flip-in-y", "animate-flip-out-y");
+  document.addEventListener("astro:page-load", () => {
+    const menuBtn = $("#menu-btn") as HTMLButtonElement;
+    const mobileMenu = $("#mobile-menu") as HTMLElement;
+    const navbar = $("#navbar") as HTMLElement;
 
-      setTimeout(() => {
-        mobileMenu?.classList.replace("flex", "hidden");
-      }, 300);
-    } else {
-      mobileMenu?.classList.replace("hidden", "flex");
-      mobileMenu?.classList.replace("animate-flip-out-y", "animate-flip-in-y");
-    }
-  });
+    // Toggle mobile menu
+    menuBtn?.addEventListener("click", () => {
+      const isOpen = mobileMenu?.classList.contains("flex");
+      const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
 
-  // Close menu when click a link
-  const links = mobileMenu?.querySelectorAll("a");
-  links?.forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
+      menuBtn.setAttribute("aria-expanded", String(!isExpanded));
+      menuBtn.setAttribute(
+        "aria-label",
+        isExpanded ? "Abrir menú navegación" : "Cerrar menú navegación",
+      );
+
+      if (isOpen) {
+        replaceClass(mobileMenu, "animate-flip-in-y", "animate-flip-out-y");
+
+        setTimeout(() => {
+          replaceClass(mobileMenu, "flex", "hidden");
+        }, 300);
+      } else {
+        replaceClass(mobileMenu, "hidden", "flex");
+        replaceClass(mobileMenu, "animate-flip-out-y", "animate-flip-in-y");
+      }
     });
+
+    // Close menu when click a link
+    const links = mobileMenu?.querySelectorAll("a");
+
+    links?.forEach((link) => {
+      link.addEventListener("click", () => {
+        addClass(mobileMenu, "hidden");
+      });
+    });
+
+    // Scroll effect
+    scrollHandler = () => {
+      if (window.scrollY > 40) {
+        navbar?.classList.add(
+          "border-border!",
+          "md:bg-background/70",
+          "shadow-sm",
+        );
+      } else {
+        navbar?.classList.remove(
+          "border-border!",
+          "md:bg-background/70",
+          "shadow-sm",
+        );
+      }
+    };
+
+    window.addEventListener("scroll", scrollHandler);
   });
 
-  // Scroll effect
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      navbar?.classList.add(
-        "border-border!",
-        "md:bg-background/70",
-        "shadow-sm",
-      );
-    } else {
-      navbar?.classList.remove(
-        "border-border!",
-        "md:bg-background/70",
-        "shadow-sm",
-      );
-    }
+  document.addEventListener("astro:before-swap", () => {
+    window.removeEventListener("scroll", scrollHandler);
   });
 </script>
