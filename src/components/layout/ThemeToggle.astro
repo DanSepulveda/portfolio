@@ -23,9 +23,11 @@ import Sun from "@lucide/astro/icons/sun";
 </button>
 
 <script>
-  const toggle = document.getElementById("theme-toggle");
-  const iconLight = document.getElementById("icon-light");
-  const iconDark = document.getElementById("icon-dark");
+  import { $ } from "@/lib/dom";
+
+  const toggle = $("#theme-toggle");
+  const iconLight = $("#icon-light");
+  const iconDark = $("#icon-dark");
   const html = document.documentElement;
 
   // Get user's preference
