@@ -1,0 +1,26 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+import { baseInputStyle } from "../base-styles";
+import ErrorMessage from "./ErrorMessage.astro";
+import Label from "./Label.astro";
+
+interface Props extends Omit<HTMLAttributes<"textarea">, "id"> {
+  label: string;
+  name: string;
+}
+
+const { label, name, class: className, ...rest } = Astro.props;
+---
+
+<div class="flex flex-col gap-1.5">
+  <Label for={name}>{label}</Label>
+  <textarea
+    id={name}
+    name={name}
+    class:list={["form-control resize-none", baseInputStyle, className]}
+    aria-describedby={name + "-error-text"}
+    {...rest}
+  ></textarea>
+  <ErrorMessage name={name} />
+</div>

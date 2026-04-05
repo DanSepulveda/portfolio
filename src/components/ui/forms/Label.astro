@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"label">, "for"> {
+  for: string;
+}
+
+const { class: className, for: htmlFor, ...rest } = Astro.props;
+---
+
+<label
+  for={htmlFor}
+  class:list={["text-sm font-medium text-foreground", className]}
+  {...rest}
+>
+  <slot />
+</label>

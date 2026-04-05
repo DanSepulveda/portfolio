@@ -1,0 +1,28 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { CircleAlert } from "@lucide/astro";
+
+interface Props extends HTMLAttributes<"div"> {
+  name: string;
+}
+
+const { name, ...rest } = Astro.props;
+---
+
+<div class="h-4">
+  <div
+    id={name + "-error"}
+    class="hidden items-center gap-1 text-xs text-destructive pl-1"
+    role="alert"
+    {...rest}
+  >
+    <CircleAlert
+      size={14}
+      aria-hidden="true"
+    />
+    <span
+      id={name + "-error-text"}
+      aria-live="assertive"
+    ></span>
+  </div>
+</div>
