@@ -32,7 +32,7 @@ const [user, domain] = SITE.author.email.split("@");
     ></span>
     <span
       id="tooltip"
-      class="hidden absolute bottom-10 bg-black/70 px-2 py-1 rounded-md text-white text-sm animate-zoom-in animate-duration-200"
+      class="hidden absolute bottom-10 bg-black/70 px-2 py-1 rounded-md text-white text-sm animate-zoom-in animate-duration-200 select-none"
       aria-hidden={true}
       >Copiado</span
     >
@@ -45,27 +45,27 @@ const [user, domain] = SITE.author.email.split("@");
 </style>
 
 <script>
-  const setupButton = () => {
-    const button = document.getElementById("copy-button");
-    const tooltip = document.getElementById("tooltip");
-    const user = document.getElementById("user")?.innerText;
-    const domain = document.getElementById("domain")?.innerText;
-    const status = document.getElementById("copy-status")!;
+  import { $, addClass, removeClass } from "@/lib/dom";
+
+  document.addEventListener("astro:page-load", () => {
+    const button = $("#copy-button") as HTMLButtonElement;
+    const tooltip = $("#tooltip") as HTMLSpanElement;
+    const user = ($("#user") as HTMLSpanElement).innerText;
+    const domain = ($("#domain") as HTMLSpanElement).innerText;
+    const status = $("#copy-status") as HTMLSpanElement;
 
     button?.addEventListener("click", () => {
       const email = `${user}@${domain}`;
       status.textContent = "Correo copiado al portapapeles";
 
       navigator.clipboard.writeText(email).then(() => {
-        if (tooltip) tooltip.classList.remove("hidden");
+        removeClass(tooltip, "hidden");
 
         setTimeout(() => {
           status.textContent = "";
-          if (tooltip) tooltip.classList.add("hidden");
+          addClass(tooltip, "hidden");
         }, 2000);
       });
     });
-  };
-
-  document.addEventListener("astro:page-load", setupButton);
+  });
 </script>

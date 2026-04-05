@@ -18,6 +18,13 @@ export const addClass = (element: HTMLElement | Element, className: string) => {
   element.classList.add(className);
 };
 
+export const removeClass = (
+  element: HTMLElement | Element,
+  className: string,
+) => {
+  element.classList.remove(className);
+};
+
 export const replaceClass = (
   element: HTMLElement | Element,
   remove: string,
