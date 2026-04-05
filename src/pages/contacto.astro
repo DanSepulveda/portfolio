@@ -1,4 +1,5 @@
 ---
+import { SendHorizontal } from "@lucide/astro";
 import { SOCIALS } from "@/consts/social";
 import Layout from "@/layouts/Layout.astro";
 import CopyEmail from "@/components/ui/CopyEmail.astro";
@@ -6,6 +7,10 @@ import Input from "@/components/ui/forms/Input.astro";
 import Link from "@/components/ui/Link.astro";
 import Textarea from "@/components/ui/forms/Textarea.astro";
 import Title from "@/components/ui/Title.astro";
+import {
+  baseButtonStyle,
+  primaryButtonStyle,
+} from "@/components/ui/base-styles";
 ---
 
 <Layout
@@ -75,9 +80,10 @@ import Title from "@/components/ui/Title.astro";
 
           <button
             type="submit"
-            class="inline-flex items-center justify-center gap-2 px-6 h-11 rounded-lg font-medium text-base text-primary-foreground bg-primary hover:bg-primary-darker transition-all duration-250 hover:shadow-lg hover:shadow-shadow/30 cursor-pointer"
+            class:list={[baseButtonStyle, primaryButtonStyle, "cursor-pointer"]}
           >
             Enviar mensaje
+            <SendHorizontal />
           </button>
         </form>
       </div>

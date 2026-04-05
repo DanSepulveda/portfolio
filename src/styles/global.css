@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tailwind-animations";
+@plugin "@tailwindcss/typography";
 
 @variant dark (&:where(.dark, .dark *));
 
@@ -16,6 +17,7 @@
   --color-card: var(--bg-card);
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
+  --color-destructive: var(--destructive);
 
   --color-border: var(--border);
   --color-border-dark: var(--border-dark);
@@ -29,7 +31,7 @@
 :root {
   --primary: var(--color-cyan-700);
   --primary-darker: var(--color-cyan-800);
-  --primary-lighter: var(--color-cyan-500);
+  --primary-lighter: var(--color-cyan-600);
   --primary-foreground: #fff;
 
   --accent: var(--color-cyan-700);
@@ -40,6 +42,7 @@
 
   --background: var(--color-zinc-50);
   --background-secondary: var(--color-zinc-100);
+  --destructive: var(--color-red-600);
 
   --border: var(--color-zinc-200);
   --border-dark: var(--color-zinc-300);
@@ -55,6 +58,7 @@
 
   --background: var(--color-slate-950);
   --background-secondary: var(--color-gray-950);
+  --destructive: var(--color-red-300);
 
   --border: var(--color-slate-800);
   --border-dark: var(--color-zinc-700);

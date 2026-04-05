@@ -1,6 +1,8 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
+import { baseButtonStyle, primaryButtonStyle } from "./base-styles";
+
 interface Props extends HTMLAttributes<"a"> {
   href: string;
   variant?:
@@ -24,10 +26,9 @@ const {
 } = Astro.props;
 
 const variants = {
-  primary:
-    "px-6 h-11 text-base text-primary-foreground bg-primary hover:bg-primary-darker hover:dark:bg-primary-light hover:shadow-lg hover:shadow-shadow/30",
+  primary: primaryButtonStyle,
   outline:
-    "px-6 h-11 text-base border border-primary text-primary hover:bg-primary/5 dark:border-muted dark:text-muted hover:dark:border-white hover:dark:text-white hover:shadow-lg hover:shadow-shadow/30",
+    "px-6 h-11 text-base border border-primary text-primary hover:bg-primary/5 dark:border-muted dark:text-muted hover:dark:border-white hover:dark:text-white",
   navbar: active
     ? "px-2.5 h-9 text-primary-darker bg-primary-darker/10 dark:text-foreground dark:bg-foreground/15"
     : "px-2.5 h-9 text-muted hover:text-primary-darker hover:bg-primary-darker/5 dark:hover:text-foreground dark:hover:bg-foreground/8",
@@ -35,14 +36,11 @@ const variants = {
   footer:
     "text-sm text-muted hover:text-accent hover:underline underline-offset-2",
   white:
-    "px-6 h-11 text-base text-primary hover:bg-white bg-zinc-100 hover:shadow-lg hover:shadow-shadow/30",
+    "px-6 h-11 text-base text-primary hover:bg-white bg-zinc-100 hover:scale-102",
   card: "flex-1 py-2 text-sm font-medium flex justify-center items-center gap-1.5 text-muted hover:text-foreground hover:bg-accent/10 transition-colors duration-250",
 };
 
-const baseClasses =
-  variant == "card"
-    ? ""
-    : "inline-flex items-center justify-center gap-2 text-center font-medium rounded-lg transition-all duration-250 [&_svg]:h-5";
+const baseClasses = variant == "card" ? "" : baseButtonStyle;
 
 const external = href.startsWith("https");
 ---

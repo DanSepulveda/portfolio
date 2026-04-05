@@ -23,7 +23,7 @@ export default defineConfig({
       name: "Inter",
       cssVariable: "--font-inter",
       provider: fontProviders.fontsource(),
-      weights: [400, 500, 600],
+      weights: [400, 500, 600, 700, 800],
       styles: ["normal"],
     },
   ],
