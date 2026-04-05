@@ -1,10 +1,150 @@
 ---
-import Layout from "@src/layouts/Layout.astro";
+import { SOCIALS } from "@/consts/social";
+import Layout from "@/layouts/Layout.astro";
+import CopyEmail from "@/components/ui/CopyEmail.astro";
+import Input from "@/components/ui/forms/Input.astro";
+import Link from "@/components/ui/Link.astro";
+import Textarea from "@/components/ui/forms/Textarea.astro";
+import Title from "@/components/ui/Title.astro";
 ---
 
 <Layout
   title="Contacto"
-  description="Página de contacto"
+  description="¿Tienes un proyecto en mente o buscas un desarrollador Full Stack para tu equipo? Ponte en contacto conmigo y hablemos de cómo puedo ayudarte."
 >
-  <h1>Página contacto</h1>
+  <section class="py-30 bg-background">
+    <div
+      class="page grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-start"
+    >
+      <div class="flex flex-col gap-6">
+        <Title
+          main="Envíame un"
+          accent="mensaje"
+        />
+
+        <p class="text-lg text-muted leading-relaxed">
+          Estoy disponible para colaboraciones y oportunidades. Puedes
+          contactarme a través del formulario o directamente por email.
+        </p>
+
+        <div class="flex items-center gap-4">
+          <div class="w-fit">
+            <CopyEmail />
+          </div>
+          {
+            SOCIALS.map((social) => (
+              <Link
+                href={social.url}
+                variant="icon"
+                aria-label={social.label}
+              >
+                <social.image />
+              </Link>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="bg-card border border-border rounded-2xl h-125 shadow-sm flex flex-col justify-center overflow-hidden"
+      >
+        <form
+          id="form"
+          class="flex flex-col gap-5 mx-6 md:mx-8"
+        >
+          <Input
+            label="Nombre"
+            name="name"
+            placeholder="Tu nombre"
+            autocomplete="name"
+          />
+
+          <Input
+            label="Correo electrónico"
+            name="email"
+            placeholder="tu@email.com"
+            autocomplete="email"
+          />
+
+          <Textarea
+            label="Mensaje"
+            name="message"
+            placeholder="Cuéntame sobre tu proyecto o consulta..."
+            rows={4}
+          />
+
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center gap-2 px-6 h-11 rounded-lg font-medium text-base text-primary-foreground bg-primary hover:bg-primary-darker transition-all duration-250 hover:shadow-lg hover:shadow-shadow/30 cursor-pointer"
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<script>
+  import { ContactSchema } from "@/lib/schemas";
+  import { $, $$, replaceClass } from "@/lib/dom";
+
+  const parseForm = (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    return ContactSchema.safeParse(data);
+  };
+
+  const getControlElements = (name: string) => {
+    const input = $(`#${name}`) as HTMLInputElement | HTMLTextAreaElement;
+    const wrapper = $(`#${name}-error`) as HTMLDivElement;
+    const text = $(`#${name}-error-text`) as HTMLSpanElement;
+
+    return { input, wrapper, text };
+  };
+
+  const resetForm = () => {
+    const controls = $$(".form-control");
+
+    controls.forEach((control) => {
+      const { text, wrapper } = getControlElements(control.id);
+
+      text.textContent = "";
+      replaceClass(wrapper, "flex", "hidden");
+
+      replaceClass(control, "border-destructive", "border-border");
+      control.setAttribute("aria-invalid", "false");
+    });
+  };
+
+  const setupForm = () => {
+    const form = $("#form") as HTMLFormElement;
+
+    form?.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      resetForm();
+
+      const result = parseForm(form);
+
+      if (!result.success) {
+        result.error.issues.forEach((issue) => {
+          const { wrapper, input, text } = getControlElements(
+            String(issue.path[0]),
+          );
+
+          text.textContent = issue.message;
+          replaceClass(wrapper, "hidden", "flex");
+
+          replaceClass(input, "border-border", "border-destructive");
+          input.setAttribute("aria-invalid", "true");
+        });
+
+        return;
+      }
+      console.log(result.data);
+      // todo: envío de correo
+    });
+  };
+
+  document.addEventListener("astro:page-load", setupForm);
+</script>
