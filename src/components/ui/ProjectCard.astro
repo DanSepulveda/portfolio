@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import { type CollectionEntry } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
-import CirclePlay from "@lucide/astro/icons/circle-play";
+import ExternalLink from "@lucide/astro/icons/external-link";
 import FileText from "@lucide/astro/icons/file-text";
 import Github from "@lucide/astro/icons/github";
 
@@ -50,27 +50,42 @@ const languages = getTechObjects(project.data.languages);
         >
           {project.data.title}
         </h3>
-        <div class="flex gap-3">
-          {languages.map((item) => <item.logo class="h-5.5 w-auto" />)}
-        </div>
+        <ul
+          class="flex gap-3"
+          aria-label="Lenguajes utilizados"
+        >
+          {
+            languages.map((item) => (
+              <li aria-label={item.name}>
+                <item.logo
+                  class="h-5.5 w-auto"
+                  aria-hidden="true"
+                />
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   </header>
 
   <main class="p-6 flex flex-col flex-1">
-    <div class="flex flex-wrap gap-1.5 mb-5 items-start">
+    <ul
+      class="flex flex-wrap gap-1.5 mb-5 items-start"
+      aria-label="Tecnologías utilizadas"
+    >
       {
-        techs.map((item) => {
-          return (
+        techs.map((item) => (
+          <li>
             <TechBadge
               name={item.name}
               light={item.logo}
               dark={item.darkLogo}
             />
-          );
-        })
+          </li>
+        ))
       }
-    </div>
+    </ul>
 
     <p class="text-muted flex-1">
       {project.data.description}
@@ -87,8 +102,8 @@ const languages = getTechObjects(project.data.languages);
           variant="card"
           class="text-foreground!"
         >
-          <CirclePlay size={16} />
-          Demo
+          <ExternalLink size={16} />
+          Sitio
         </Link>
       )
     }
