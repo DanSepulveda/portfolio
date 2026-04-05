@@ -1,12 +1,14 @@
 ---
-import { SendHorizontal } from "@lucide/astro";
+import { LoaderCircle, SendHorizontal } from "@lucide/astro";
+
 import { SOCIALS } from "@/consts/social";
 import Layout from "@/layouts/Layout.astro";
 import CopyEmail from "@/components/ui/CopyEmail.astro";
-import Input from "@/components/ui/forms/Input.astro";
 import Link from "@/components/ui/Link.astro";
-import Textarea from "@/components/ui/forms/Textarea.astro";
 import Title from "@/components/ui/Title.astro";
+import Input from "@/components/ui/forms/Input.astro";
+import Result from "@/components/ui/forms/Result.astro";
+import Textarea from "@/components/ui/forms/Textarea.astro";
 import {
   baseButtonStyle,
   primaryButtonStyle,
@@ -53,6 +55,12 @@ import {
       <div
         class="bg-card border border-border rounded-2xl h-125 shadow-sm flex flex-col justify-center overflow-hidden"
       >
+        <Result
+          id="result-success"
+          success
+        />
+        <Result id="result-error" />
+
         <form
           id="form"
           class="flex flex-col gap-5 mx-6 md:mx-8"
@@ -82,8 +90,12 @@ import {
             type="submit"
             class:list={[baseButtonStyle, primaryButtonStyle, "cursor-pointer"]}
           >
-            Enviar mensaje
-            <SendHorizontal />
+            <span id="btn-text">Enviar mensaje</span>
+            <SendHorizontal id="btn-icon" />
+            <LoaderCircle
+              id="btn-loader"
+              class="hidden animate-spin"
+            />
           </button>
         </form>
       </div>
@@ -93,7 +105,7 @@ import {
 
 <script>
   import { ContactSchema } from "@/lib/schemas";
-  import { $, $$, replaceClass } from "@/lib/dom";
+  import { $, $$, addClass, removeClass, replaceClass } from "@/lib/dom";
 
   const parseForm = (form: HTMLFormElement) => {
     const formData = new FormData(form);
@@ -123,6 +135,35 @@ import {
     });
   };
 
+  const handleResult = (form: HTMLFormElement, success: boolean) => {
+    const successContainer = $("#result-success") as HTMLDivElement;
+    const errorContainer = $("#result-error") as HTMLDivElement;
+
+    replaceClass(form, "flex", "hidden");
+    const container = success ? successContainer : errorContainer;
+    replaceClass(container, "hidden", "flex");
+  };
+
+  const toggleLoader = (form: HTMLFormElement) => {
+    const icon = $("#btn-icon") as HTMLElement;
+    const loader = $("#btn-loader") as HTMLElement;
+    const text = $("#btn-text") as HTMLSpanElement;
+
+    const loading = !loader.classList.contains("hidden");
+    const newText = loading ? "Enviar mensaje" : "Enviando mensaje";
+    text.textContent = newText;
+
+    if (loading) {
+      addClass(loader, "hidden");
+      removeClass(icon, "hidden");
+      form.classList.remove("pointer-events-none", "opacity-80");
+    } else {
+      form.classList.add("pointer-events-none", "opacity-80");
+      removeClass(loader, "hidden");
+      addClass(icon, "hidden");
+    }
+  };
+
   const setupForm = () => {
     const form = $("#form") as HTMLFormElement;
 
@@ -147,8 +188,26 @@ import {
 
         return;
       }
-      console.log(result.data);
-      // todo: envío de correo
+
+      try {
+        toggleLoader(form);
+
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          body: JSON.stringify(result.data),
+          headers: { "Content-Type": "application/json" },
+        });
+
+        if (!response.ok) {
+          handleResult(form, true);
+        } else {
+          throw new Error();
+        }
+      } catch {
+        handleResult(form, false);
+      } finally {
+        toggleLoader(form);
+      }
     });
   };
 
