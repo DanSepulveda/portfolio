@@ -26,11 +26,20 @@ const sizes = {
   {
     Dark ? (
       <div>
-        <Light class="w-auto dark:hidden" />
-        <Dark class="w-auto hidden dark:block" />
+        <Light
+          class="w-auto dark:hidden"
+          aria-hidden="true"
+        />
+        <Dark
+          class="w-auto hidden dark:block"
+          aria-hidden="true"
+        />
       </div>
     ) : (
-      <Light class="w-auto" />
+      <Light
+        class="w-auto"
+        aria-hidden="true"
+      />
     )
   }
 
