@@ -50,12 +50,12 @@ const [user, domain] = SITE.author.email.split("@");
   document.addEventListener("astro:page-load", () => {
     const button = $("#copy-button") as HTMLButtonElement;
     const tooltip = $("#tooltip") as HTMLSpanElement;
-    const user = ($("#user") as HTMLSpanElement).innerText;
-    const domain = ($("#domain") as HTMLSpanElement).innerText;
+    const user = $("#user") as HTMLSpanElement;
+    const domain = $("#domain") as HTMLSpanElement;
     const status = $("#copy-status") as HTMLSpanElement;
 
     button?.addEventListener("click", () => {
-      const email = `${user}@${domain}`;
+      const email = `${user.innerText}@${domain.innerText}`;
       status.textContent = "Correo copiado al portapapeles";
 
       navigator.clipboard.writeText(email).then(() => {
