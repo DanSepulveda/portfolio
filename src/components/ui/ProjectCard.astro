@@ -73,13 +73,11 @@ const languages = getTechObjects(project.data.languages);
     >
       {
         techs.map((item) => (
-          <li>
-            <TechBadge
-              name={item.name}
-              light={item.logo}
-              dark={item.darkLogo}
-            />
-          </li>
+          <TechBadge
+            name={item.name}
+            light={item.logo}
+            dark={item.darkLogo}
+          />
         ))
       }
     </ul>

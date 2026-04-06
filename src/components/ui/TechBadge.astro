@@ -1,47 +1,68 @@
 ---
-import type { SvgComponent } from "astro/types";
+import { Image } from "astro:assets";
+
+import type { ImgLoading, SVG } from "@/types";
 
 interface Props {
   name: string;
-  light: SvgComponent;
-  dark?: SvgComponent | null;
+  light: SVG;
+  dark?: SVG | null;
   size?: "default" | "lg";
+  loading?: ImgLoading;
 }
 
-const { name, light: Light, dark: Dark, size = "default" } = Astro.props;
+const { dark, light, loading = "lazy", name, size = "default" } = Astro.props;
 
 const sizes = {
-  default: "text-xs [&_svg]:h-3.5 py-1",
-  lg: "text-sm [&_svg]:h-4 md:px-3 py-1.5",
+  default: {
+    height: 14,
+    imgClass: "h-3.5",
+    containerClass: "text-xs py-1",
+  },
+  lg: {
+    height: 16,
+    imgClass: "h-4",
+    containerClass: "text-sm md:px-3 py-1.5",
+  },
 };
+
+const { containerClass, height, imgClass } = sizes[size];
 ---
 
-<span
+<li
   class:list={[
     "font-medium tracking-wide text-muted flex items-center gap-1.5 px-2",
     "rounded-lg border border-border bg-primary/5 dark:bg-muted/10",
-    sizes[size],
+    containerClass,
   ]}
 >
   {
-    Dark ? (
-      <div>
-        <Light
-          class="w-auto dark:hidden"
-          aria-hidden="true"
+    dark ? (
+      <>
+        <Image
+          src={light}
+          alt=""
+          class:list={[imgClass, "w-auto dark:hidden"]}
+          height={height}
+          loading={loading}
         />
-        <Dark
-          class="w-auto hidden dark:block"
-          aria-hidden="true"
+        <Image
+          src={dark}
+          alt=""
+          class:list={[imgClass, "w-auto hidden dark:block"]}
+          height={height}
+          loading={loading}
         />
-      </div>
+      </>
     ) : (
-      <Light
-        class="w-auto"
-        aria-hidden="true"
+      <Image
+        src={light}
+        alt=""
+        class:list={[imgClass, "w-auto"]}
+        height={height}
+        loading={loading}
       />
     )
   }
-
   {name}
-</span>
+</li>
