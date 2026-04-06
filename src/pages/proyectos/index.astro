@@ -1,10 +1,33 @@
 ---
-import Layout from "@src/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+import Layout from "@/layouts/Layout.astro";
+import ProjectCard from "@/components/ui/ProjectCard.astro";
+import Title from "@/components/ui/Title.astro";
+
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.position.valueOf() - b.data.position.valueOf(),
+);
 ---
 
 <Layout
   title="Proyectos"
-  description="Página de proyectos"
+  description="Proyectos web desarrollados con React, Node.js, PostgreSQL y más. Soluciones robustas, mantenibles y escalables para problemas reales.
+"
 >
-  <h1>Página proyectos</h1>
+  <section class="page py-30">
+    <Title
+      main="Proyectos"
+      accent="desarrollados"
+    />
+
+    <p class="text-muted max-w-2xl text-lg leading-relaxed mb-16">
+      Cada proyecto nació de un problema concreto. Aquí encontrarás cómo lo
+      abordé, qué stack utilicé y qué aprendí en el proceso.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
 </Layout>
