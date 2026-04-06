@@ -1,10 +1,110 @@
 ---
-import Layout from "@src/layouts/Layout.astro";
+import { ArrowLeft, BookOpenCheck, Network, Puzzle } from "@lucide/astro";
+
+import { JOBS, STUDIES } from "@/consts/experience";
+import Layout from "@/layouts/Layout.astro";
+import Title from "@/components/ui/Title.astro";
+import Experience from "@/components/sections/Experience.astro";
+import Link from "@/components/ui/Link.astro";
+import { INTERNAL_URLS } from "@/consts/navigation";
+
+const philosophy = [
+  {
+    title: "Modularidad",
+    icon: Puzzle,
+    content:
+      "Prefiero tomarme el tiempo extra para hacerlo bien desde el principio.",
+  },
+  {
+    title: "Contexto primero",
+    icon: Network,
+    content:
+      "Entender el problema antes de escribir la primera línea de código.",
+  },
+  {
+    title: "Aprendizaje continuo",
+    icon: BookOpenCheck,
+    content: "Me gusta mantenerme al día para elegir mejor las herramientas.",
+  },
+];
 ---
 
 <Layout
   title="Sobre mí"
-  description="Página sobre mí"
+  description="Desarrollador web full stack especializado en MERN stack, PostgreSQL y Python. Conoce mi enfoque, experiencia, estudios y las tecnologías con las que trabajo."
 >
-  <h1>Página sobre mí</h1>
+  <section class="py-30 page max-w-3xl!">
+    <Title
+      main="Algunos datos"
+      accent="sobre mí"
+    />
+    <p class="text-lg text-muted mb-10 italic">
+      Disfruto convertir ideas complejas en soluciones simples. El stack cambia,
+      la atención al detalle no.
+    </p>
+
+    <div class="text-muted text-lg mt-10">
+      <p class="mb-10">
+        Desde 2022 combino formación estructurada y aprendizaje autodidacta para
+        crecer como desarrollador. Esa forma de aprender, buscando, probando y
+        equivocándome, es parte de cómo también enfrento los problemas en cada
+        proyecto.
+      </p>
+
+      <h2 class="text-2xl text-foreground mb-8 font-semibold">
+        Filosofía de Trabajo
+      </h2>
+      <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {
+          philosophy.map((item) => (
+            <li class="flex flex-col gap-2 p-6 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow">
+              <span class="p-3 bg-primary/20 w-fit rounded-full mb-2">
+                <item.icon class="size-4.5 text-primary-darker dark:text-white" />
+              </span>
+              <h3 class="font-medium text-neutral-900 dark:text-neutral-100 text-base">
+                {item.title}
+              </h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-400">
+                {item.content}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <Experience
+      title="Experiencia"
+      items={JOBS}
+    />
+
+    <div
+      class="bg-primary text-zinc-50 p-8 rounded-2xl border border-primary/50 my-6"
+    >
+      <h3 class="font-bold text-lg m-0">Proyecto actual</h3>
+      <p class="m-0 mt-4 text-zinc-100">
+        Debido a mi interés en el aprendizaje de idiomas y mi gusto variado de
+        la música, actualmente me encuentro desarrollando una aplicación que
+        combina ambas cosas.
+        <!-- TODO: agregar enlace -->
+      </p>
+    </div>
+
+    <Experience
+      title="Educación"
+      items={STUDIES}
+    />
+
+    <div
+      class="mt-16 pt-8 border-t border-zinc-200 dark:border-zinc-800 flex justify-between items-center"
+    >
+      <Link
+        href={INTERNAL_URLS.home}
+        variant="text"
+      >
+        <ArrowLeft size={16} />volver al inicio</Link
+      >
+      <Link href={INTERNAL_URLS.contact}>Conversemos</Link>
+    </div>
+  </section>
 </Layout>
