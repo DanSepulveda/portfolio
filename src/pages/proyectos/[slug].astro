@@ -1,10 +1,165 @@
 ---
-import Layout from "@src/layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import ArrowLeft from "@lucide/astro/icons/arrow-left";
+import ExternalLink from "@lucide/astro/icons/external-link";
+import Github from "@lucide/astro/icons/github";
+
+import { TECHS_MAP } from "@/consts/techs";
+import { getTechObjects } from "@/lib/techs";
+import Layout from "@/layouts/Layout.astro";
+import Link from "@/components/ui/Link.astro";
+import TechBadge from "@/components/ui/TechBadge.astro";
+import { INTERNAL_URLS } from "@/consts/navigation";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+const techs = project.data.tags.map((id) => TECHS_MAP[id]);
+const languages = getTechObjects(project.data.languages);
 ---
 
 <Layout
-  title="Proyecto"
-  description="Página de proyecto"
+  title={project.data.title}
+  description={project.data.description}
 >
-  <h1>Página proyecto</h1>
+  <section class="py-24 bg-background">
+    <div class="page min-h-screen">
+      <Link
+        href={INTERNAL_URLS.projects}
+        variant="outline"
+        class="text-sm! h-9! px-0! border-none! mb-6"
+      >
+        <ArrowLeft size={16} />
+        volver al listado
+      </Link>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-14 items-start">
+        <div
+          class="rounded-2xl overflow-hidden border border-border shadow shadow-foreground/10 aspect-video"
+        >
+          <Image
+            src={project.data.image}
+            alt={project.data.title}
+            class="h-full w-full object-cover"
+            width={1280}
+            height={720}
+            quality="max"
+          />
+        </div>
+
+        <div class="flex flex-col gap-6">
+          <div class="flex items-center justify-between gap-4">
+            <h1
+              class="text-3xl md:text-4xl font-extrabold text-foreground leading-tight"
+            >
+              {project.data.title}
+            </h1>
+            <ul
+              class="flex gap-3"
+              aria-label="Lenguajes utilizados"
+            >
+              {
+                languages.map((item) => (
+                  <li aria-label={item.name}>
+                    <item.logo
+                      class="h-5.5 w-auto"
+                      aria-hidden="true"
+                    />
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <p class="text-muted text-base leading-relaxed">
+            {project.data.description}
+          </p>
+
+          <div>
+            <p
+              id="techs"
+              class="text-xs font-semibold uppercase tracking-wide text-muted mb-2"
+            >
+              Tecnologías
+            </p>
+            <ul
+              class="flex flex-wrap gap-1.5"
+              aria-labeledby="techs"
+            >
+              {
+                techs.map((item) => (
+                  <li>
+                    <TechBadge
+                      name={item.name}
+                      light={item.logo}
+                      dark={item.darkLogo}
+                    />
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-auto pt-2">
+            {
+              project.data.demo && (
+                <Link
+                  href={project.data.demo}
+                  variant="primary"
+                  class="h-8! px-4!"
+                >
+                  <ExternalLink size={16} />
+                  Ver sitio
+                </Link>
+              )
+            }
+            {
+              project.data.repository && (
+                <Link
+                  href={project.data.repository}
+                  variant="outline"
+                  class="h-8! px-4!"
+                >
+                  <Github size={16} />
+                  Repositorio
+                </Link>
+              )
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-border pt-12">
+        <p class="text-lg font-semibold tracking-wide text-muted mb-6">
+          Detalles del proyecto
+        </p>
+        <div
+          class:list={[
+            "prose prose-zinc dark:prose-invert max-w-none",
+            "prose-headings:font-medium prose-headings:text-foreground",
+            "prose-p:text-muted prose-p:leading-relaxed",
+            "prose-a:text-primary prose-a:no-underline hover:prose-a:underline",
+            "prose-strong:text-foreground",
+            "prose-code:text-primary prose-code:bg-primary/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-medium prose-code:before:content-none prose-code:after:content-none",
+            "prose-pre:bg-card prose-pre:border prose-pre:border-border prose-pre:rounded-xl",
+            "prose-img:rounded-xl prose-img:border prose-img:border-border",
+            "prose-li:text-muted",
+            "prose-hr:border-border",
+          ]}
+        >
+          <Content />
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
