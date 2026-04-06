@@ -12,7 +12,8 @@ interface Props extends HTMLAttributes<"a"> {
     | "icon"
     | "footer"
     | "white"
-    | "card";
+    | "card"
+    | "text";
   active?: boolean;
   class?: string;
 }
@@ -38,6 +39,7 @@ const variants = {
   white:
     "px-6 h-11 text-base text-primary hover:bg-white bg-zinc-100 hover:scale-102",
   card: "flex-1 py-2 text-sm font-medium flex justify-center items-center gap-1.5 text-muted hover:text-foreground hover:bg-accent/10 transition-colors duration-250",
+  text: "h-11 text-base text-muted hover:text-foreground",
 };
 
 const baseClasses = variant == "card" ? "" : baseButtonStyle;
