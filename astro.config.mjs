@@ -15,7 +15,7 @@ export default defineConfig({
       name: "Playfair Display",
       cssVariable: "--font-playfair",
       provider: fontProviders.fontsource(),
-      weights: [500, 800],
+      weights: [500, 600, 800],
       styles: ["normal"],
       fallbacks: ["serif"],
     },

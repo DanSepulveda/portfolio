@@ -40,7 +40,7 @@
   --muted: var(--color-zinc-600);
   --bg-card: #fff;
 
-  --background: var(--color-zinc-50);
+  --background: var(--color-zinc-100);
   --background-secondary: var(--color-zinc-100);
   --destructive: var(--color-red-600);
 
