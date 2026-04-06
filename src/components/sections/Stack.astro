@@ -1,8 +1,7 @@
 ---
+import { TECHS_MAP, type TechId } from "@/consts/techs";
 import SectionTitle from "@/components/ui/SectionTitle.astro";
 import TechBadge from "@/components/ui/TechBadge.astro";
-
-import { TECHS_MAP, type TechId } from "@/consts/techs";
 
 const ids: TechId[] = [
   "javascript",
@@ -27,39 +26,38 @@ const ids: TechId[] = [
 const techs = ids.map((id) => TECHS_MAP[id]);
 ---
 
-<section class="md:py-8 bg-background">
-  <div class="page">
-    <div class="text-center mb-16">
-      <SectionTitle
-        main="Stack"
-        accent="tecnológico"
-      />
-      <p
-        class="text-muted text-balance max-w-xl mx-auto text-lg leading-relaxed"
-      >
-        Herramientas y lenguajes que utilizo para <span
-          class="text-foreground font-semibold"
-          >desarrollar soluciones eficientes</span
-        > y trabajar en equipo.
-      </p>
-    </div>
+<section class="page md:py-8 w-full">
+  <SectionTitle
+    main="Stack"
+    accent="tecnológico"
+    class="text-center"
+  />
 
-    <ul
-      class="max-w-3xl mx-auto flex justify-center flex-wrap gap-3"
-      aria-label="Mi stack de tecnologías"
-    >
-      {
-        techs.map((item) => (
-          <li>
-            <TechBadge
-              name={item.name}
-              light={item.logo}
-              dark={item.darkLogo}
-              size="lg"
-            />
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <p
+    class:list={[
+      "max-w-xl mx-auto mb-16",
+      "text-muted text-balance text-center text-lg leading-relaxed",
+    ]}
+  >
+    Herramientas y lenguajes que utilizo para <span
+      class="text-foreground font-semibold"
+      >desarrollar soluciones eficientes</span
+    > y trabajar en equipo.
+  </p>
+
+  <ul
+    class="max-w-3xl mx-auto flex justify-center flex-wrap gap-3"
+    aria-label="Mi stack de tecnologías"
+  >
+    {
+      techs.map((item) => (
+        <TechBadge
+          name={item.name}
+          light={item.logo}
+          dark={item.darkLogo}
+          size="lg"
+        />
+      ))
+    }
+  </ul>
 </section>
